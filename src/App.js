@@ -14,6 +14,8 @@ import AdminMangaCreate from "./pages/admin/AdminMangaCreate"
 import AdminMangaUpdate from "./pages/admin/AdminMangaUpdate"
 import AdminMangaDelete from "./pages/admin/AdminMangaDelete"
 
+import "./App.css"
+
 function App() {
   return (
     <BrowserRouter>
@@ -21,7 +23,7 @@ function App() {
         {/* Routes Guest */}
         <Route path="/" element={<HomePage />} />
         <Route path="/mangas" element={<MangasPage />} />
-        <Route path="/mangas/:id/details" element={<MangaDetailsPage />} />
+        <Route path="/mangas/details/:mangaId" element={<MangaDetailsPage />} />
         <Route path="/mangas/random" element={<MangaRandomPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/users/:id" element={<ProfilePage />} />

@@ -1,5 +1,5 @@
-import Footer from "../../components/guest/Footer"
-import Header from "../../components/guest/Header"
+import Footer from "../../components/guest/footer/Footer"
+import Header from "../../components/guest/header/Header"
 
 const ProfilePage = () => {
   return (

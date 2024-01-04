@@ -1,0 +1,31 @@
+ul {
+    list-style-type: none;
+}
+
+.ulNav {
+    background-color: #002466;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.liLogo {
+    margin-right: auto;
+    height: 15vh;
+    width: 15vh;
+}
+
+.logo {
+    height: 100%;
+    width: 100%;
+}
+
+.liNav {
+    margin-right: 3%;
+}
+
+.liNav a{
+    text-decoration: none;
+    color: #FFD38C;
+}
