@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import HeaderAdmin from "../../components/admin/HeaderAdmin"
-import { useVerifyIfUserIsLogged } from "../../utils/security-utils"
+import HeaderAdmin from "../../../components/admin/HeaderAdmin"
+import { useVerifyIfUserIsLogged } from "../../../utils/security-utils"
 import { useEffect, useState } from "react"
 
 const AdminMangaUpdate = () => {

@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import "./App.css"
 import HomePage from "./pages/guest/HomePage"
 import MangasPage from "./pages/guest/MangasPage"
 import MangaRandomPage from "./pages/guest/MangaRandomPage"
@@ -9,11 +10,10 @@ import ContactPage from "./pages/guest/ContactPage"
 import ProfilePage from "./pages/guest/ProfilePage"
 import CollectionMangaPage from "./pages/guest/CollectionMangaPage"
 import AdminDashboard from "./pages/admin/AdminDashboard"
-import AdminMangasPage from "./pages/admin/AdminMangasPage"
-import AdminMangaCreate from "./pages/admin/AdminMangaCreate"
-import AdminMangaUpdate from "./pages/admin/AdminMangaUpdate"
-
-import "./App.css"
+import AdminMangasPage from "./pages/admin/adminManga/AdminMangasPage"
+import AdminMangaCreate from "./pages/admin/adminManga/AdminMangaCreate"
+import AdminMangaUpdate from "./pages/admin/adminManga/AdminMangaUpdate"
+import AdminUsersPage from "./pages/admin/adminUser/AdminUsersPage"
 
 function App() {
   return (
@@ -36,6 +36,7 @@ function App() {
         <Route path="/admin/mangas" element={<AdminMangasPage />} />
         <Route path="/admin/mangas/create" element={<AdminMangaCreate />} />
         <Route path="/admin/mangas/update/:mangaId" element={<AdminMangaUpdate />} />
+        <Route path="/admin/users" element={<AdminUsersPage />} />
       </Routes>
     </BrowserRouter>
   )

@@ -1,6 +1,6 @@
 import { useState } from "react"
-import HeaderAdmin from "../../components/admin/HeaderAdmin"
-import { useVerifyIfUserIsLogged } from "../../utils/security-utils"
+import HeaderAdmin from "../../../components/admin/HeaderAdmin"
+import { useVerifyIfUserIsLogged } from "../../../utils/security-utils"
 
 const AdminMangaCreate = () => {
   useVerifyIfUserIsLogged()

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import HeaderAdmin from "../../components/admin/HeaderAdmin"
-import { useVerifyIfUserIsLogged } from "../../utils/security-utils"
+import HeaderAdmin from "../../../components/admin/HeaderAdmin"
+import { useVerifyIfUserIsLogged } from "../../../utils/security-utils"
 import { jwtDecode } from "jwt-decode"
 import { Link } from "react-router-dom"
 
