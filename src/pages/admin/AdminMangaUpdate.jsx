@@ -66,31 +66,31 @@ const AdminMangaUpdate = () => {
           <div>
             <label>
               Titre
-              <input type="text" name="title" />
+              <input type="text" name="title" defaultValue={manga.title} />
             </label>
           </div>
           <div>
             <label>
               Auteur
-              <input type="text" name="author" />
+              <input type="text" name="author" defaultValue={manga.author} />
             </label>
           </div>
           <div>
             <label>
               Synopsis
-              <input type="text" name="synopsis" />
+              <input type="text" name="synopsis" defaultValue={manga.synopsis} />
             </label>
           </div>
           <div>
             <label>
               Genres
-              <input type="text" name="genre" />
+              <input type="text" name="genre" defaultValue={manga.genre} />
             </label>
           </div>
           <div>
             <label>
               Nombre de volumes
-              <input type="number" name="volumeNumber" />
+              <input type="number" name="volumeNumber" defaultValue={manga.volumeNumber} />
             </label>
           </div>
 
