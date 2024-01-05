@@ -33,8 +33,12 @@ const MangaDetailsPage = () => {
       <Header />
       {manga ? (
         <article>
-          <h3>{manga.title}</h3>
           <img src={manga.imageUrl} alt={manga.title}></img>
+          <h3>{manga.title}</h3>
+          <p>Auteur: {manga.author}</p>
+          <p>Genres: {manga.genre}</p>
+          <p>Nombre de tome: {manga.volumeNumber}</p>
+          <p>Résumé: {manga.synopsis}</p>
         </article>
       ) : (
         <p>En cours de chargement</p>

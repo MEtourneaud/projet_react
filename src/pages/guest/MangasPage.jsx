@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Footer from "../../components/guest/footer/Footer"
 import Header from "../../components/guest/header/Header"
+import { Link } from "react-router-dom"
 
 const MangasPage = () => {
   const [mangas, setMangas] = useState(null)
@@ -23,7 +24,9 @@ const MangasPage = () => {
             return (
               <article>
                 <h3>{manga.title}</h3>
-                <img src={manga.imageUrl} alt={manga.title}></img>
+                <Link to={`/mangas/details/${manga.id}`}>
+                  <img src={manga.imageUrl} alt={manga.title}></img>
+                </Link>
               </article>
             )
           })}
