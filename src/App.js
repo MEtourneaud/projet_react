@@ -12,7 +12,6 @@ import AdminDashboard from "./pages/admin/AdminDashboard"
 import AdminMangasPage from "./pages/admin/AdminMangasPage"
 import AdminMangaCreate from "./pages/admin/AdminMangaCreate"
 import AdminMangaUpdate from "./pages/admin/AdminMangaUpdate"
-import AdminMangaDelete from "./pages/admin/AdminMangaDelete"
 
 import "./App.css"
 
@@ -36,8 +35,7 @@ function App() {
         <Route path="/admin/" element={<AdminDashboard />} />
         <Route path="/admin/mangas" element={<AdminMangasPage />} />
         <Route path="/admin/mangas/create" element={<AdminMangaCreate />} />
-        <Route path="/admin/mangas/update" element={<AdminMangaUpdate />} />
-        <Route path="/admin/mangas/delete" element={<AdminMangaDelete />} />
+        <Route path="/admin/mangas/update/:mangaId" element={<AdminMangaUpdate />} />
       </Routes>
     </BrowserRouter>
   )
