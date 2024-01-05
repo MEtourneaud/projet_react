@@ -29,25 +29,24 @@ const AdminMangaUpdate = () => {
     const synopsis = event.target.synopsis.value
     const volumeNumber = event.target.volumeNumber.value
 
-    const mangaUpdateData = {
-      title: title,
-      author: author,
-      genre: genre,
-      synopsis: synopsis,
-      volumeNumber: volumeNumber,
-    }
+    const formData = new FormData()
 
-    const mangaUpdateDataJson = JSON.stringify(mangaUpdateData)
+    formData.append("title", title)
+    formData.append("authors", author)
+    formData.append("genres", genre)
+    formData.append("synopsis", synopsis)
+    formData.append("volumeNumber", volumeNumber)
+
+    formData.append("image", event.target.image.files[0])
 
     const token = localStorage.getItem("jwt")
 
-    const mangaUpdateResponse = await fetch(`http://localhost:3000/api/mangas/${mangaId}`, {
+    const mangaUpdateResponse = await fetch(`http://localhost:3000/api/mangas/withImg/${mangaId}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
         Authorization: "Bearer " + token,
       },
-      body: mangaUpdateDataJson,
+      body: formData,
     })
 
     if (mangaUpdateResponse.status === 201) {
