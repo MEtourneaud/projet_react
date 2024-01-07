@@ -1,14 +1,21 @@
+import { useState } from "react"
 import Footer from "../../components/guest/footer/Footer"
 import Header from "../../components/guest/header/Header"
+import { useNavigate } from "react-router"
 
 const LoginPage = (event) => {
+  // eslint-disable-next-line
+  const [message, setMessage] = useState(null)
+  const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("jwt") !== null)
+  const navigate = useNavigate()
+
   const handleLogin = async (event) => {
     event.preventDefault()
 
     const username = event.target.username.value
     const password = event.target.password.value
 
-    console.log(username, password)
+    // console.log(username, password)
 
     const loginData = {
       username,
@@ -31,12 +38,20 @@ const LoginPage = (event) => {
 
     if (token) {
       localStorage.setItem("jwt", token)
+      setIsAuthenticated(true) // Mettez à jour l'état d'authentification après la connexion réussie
+    }
+
+    if (loginResponse.status === 200) {
+      setMessage("Vous êtes bien connecté")
+      navigate("/")
+    } else {
+      setMessage("Erreur lors de l'enregistrement")
     }
   }
 
   return (
     <>
-      <Header />
+      <Header isAuthenticated={isAuthenticated} />
       <section>
         <form onSubmit={handleLogin}>
           <label>
