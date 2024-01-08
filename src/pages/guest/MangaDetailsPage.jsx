@@ -87,6 +87,30 @@ const MangaDetailsPage = () => {
     }
   }
 
+  const handleAddToProfile = async (mangaId) => {
+    console.log("Manga ID :", mangaId) // Ajoutez cette ligne
+    try {
+      console.log("Before fetch")
+      const response = await fetch(`http://localhost:3000/api/manga/addMangaToProfile/${mangaId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      })
+      console.log("After fetch")
+
+      if (response.ok) {
+        alert("Manga ajouté au profil avec succès.")
+        // Ajoutez ici le code pour mettre à jour l'état ou effectuer d'autres actions après l'ajout
+      } else {
+        alert("Le manga n'a pas pu être ajouté au profil. Veuillez réessayer.")
+      }
+    } catch (error) {
+      alert("Une erreur est survenue. Veuillez réessayer.")
+    }
+  }
+
   return (
     <>
       <Header />
@@ -100,12 +124,17 @@ const MangaDetailsPage = () => {
             <p>Nombre de tome: {manga.volumeNumber}</p>
             <p>Résumé: {manga.synopsis}</p>
           </article>
-          {/* <button
-            onClick={() => addToProfile(manga)}
-            style={{ backgroundColor: "green", color: "white", padding: "10px", cursor: "pointer" }}
+          <button
+            onClick={() => handleAddToProfile(manga.id)}
+            style={{
+              backgroundColor: "green",
+              color: "white",
+              padding: "10px",
+              cursor: "pointer",
+            }}
           >
             Ajouter au profil
-          </button> */}
+          </button>
 
           <div>
             <p>Donnez vorte avis.</p>
