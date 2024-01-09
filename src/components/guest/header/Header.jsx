@@ -27,7 +27,7 @@ const Header = () => {
       <nav>
         <ul className="ulNav">
           <li className="liLogo">
-            <Link className="homelogo" to="/">
+            <Link to="/">
               <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
             </Link>
           </li>

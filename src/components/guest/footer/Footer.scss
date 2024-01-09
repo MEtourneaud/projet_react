@@ -1,8 +1,37 @@
-.foot {
+.foot { 
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 100%;
+    
+    top: 0; left: 0; right: 0;
+}
+
+.ulFooter {
     background-color: #334768;
-    color: #FFD38C;
+    height: 15vh;
     width: 100%;
     display: flex; 
     align-items: center;
-    height: 15vh;
+    justify-content: flex-end;
 }
+  
+.liTop {
+    height: 5vh;
+    width: 5vh;
+    cursor: pointer;
+    margin-right: 3%;
+}
+
+.liFooter {
+    margin-right: auto;
+    color: #FFD38C;
+    padding-left: 45%;
+}
+
+.topButton {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+  

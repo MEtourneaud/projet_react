@@ -1,3 +1,4 @@
+import React from "react"
 import "./Footer.scss"
 
 const Footer = () => {
@@ -10,10 +11,19 @@ const Footer = () => {
 
   return (
     <footer className="foot">
-      <p>Les Archives d'Ohara</p>
-      <button className="scrollToTopButton" onClick={scrollToTop}>
-        Revenir en haut
-      </button>
+      <ul className="ulFooter">
+        <li className="liFooter">
+          <h2 className="liArchives">Les Archives d'Ohara</h2>
+        </li>
+        <li className="liTop">
+          <img
+            className="topButton"
+            src="/assets/images/topButton.svg"
+            alt="topButton"
+            onClick={scrollToTop}
+          />
+        </li>
+      </ul>
     </footer>
   )
 }
