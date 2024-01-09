@@ -23,7 +23,7 @@ const Header = () => {
   }, [isAuthenticated, navigate])
 
   return (
-    <header>
+    <header className="header">
       <nav>
         <ul className="ulNav">
           <li className="liLogo">

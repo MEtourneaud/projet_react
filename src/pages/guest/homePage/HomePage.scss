@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+main{
+    background-color: #3c5891;
+    color: black;
+}
+
+.imgBloc {
+    height: 50vh; /* ou toute autre hauteur fixe souhaitée */
+    width: 30vh; /* ou toute autre largeur fixe souhaitée */
+    border: solid #e0dede 1px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0; /* Empêche l'image de réduire sa taille si le conteneur est trop petit */
+    // margin-right: 20px; /* Si vous souhaitez toujours un espace à droite de l'image */
+}
+
+.mangaImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Assurez-vous que l'image conserve ses proportions sans être déformée */
+}
+
+.textContainer {
+    flex-grow: 1; /* Le texte prendra autant d'espace que possible pour éviter l'écrasement */
+    width: 100%;
+}
+
+.centeredContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+  
+.mangasContainer {
+    width: 100%; /* Utilise toute la largeur de la page */
+    max-width: 1200px; /* Ajoutez une largeur maximale si nécessaire */
+    background-color: rgba(255, 255, 255, 0.7); /* Couleur blanche avec un canal alpha de 0.8 pour une transparence légère */   
+    padding: 1em;
+    border-radius: 3px;
+}
+
+.mangasList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Répartit équitablement les mangas sur toute la largeur */
+    gap: 20px; /* Espace entre les mangas */
+    padding: 1em;
+    text-align: center;
+}
+
+.recommendationArticle {
+    display: flex;
+    align-items: center; /* Alignez verticalement les éléments au centre si nécessaire */
+    padding: 1em;
+}
+  
+.textContainer {
+    flex-grow: 1;
+}
+  

@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
-import HomePage from "./pages/guest/HomePage"
 import MangasPage from "./pages/guest/MangasPage"
 import MangaRandomPage from "./pages/guest/MangaRandomPage"
 import MangaDetailsPage from "./pages/guest/MangaDetailsPage"
@@ -14,6 +13,7 @@ import AdminMangasPage from "./pages/admin/adminManga/AdminMangasPage"
 import AdminMangaCreate from "./pages/admin/adminManga/AdminMangaCreate"
 import AdminMangaUpdate from "./pages/admin/adminManga/AdminMangaUpdate"
 import AdminUsersPage from "./pages/admin/adminUser/AdminUsersPage"
+import HomePage from "./pages/guest/homePage/HomePage"
 
 function App() {
   return (
