@@ -67,51 +67,53 @@ const AdminMangaCreate = () => {
   }
 
   return (
-    <>
+    <section className="adminManga">
       <HeaderAdmin />
       {message && <p>{message}</p>}
-      <form onSubmit={handleCreateManga}>
-        <div>
-          <label>
-            Titre
-            <input type="text" name="title" />
-          </label>
-        </div>
-        <div>
-          <label>
-            Auteur
-            <input type="text" name="author" />
-          </label>
-        </div>
-        <div>
-          <label>
-            Synopsis
-            <input type="text" name="synopsis" />
-          </label>
-        </div>
-        <div>
-          <label>
-            Genres
-            <input type="text" name="genre" />
-          </label>
-        </div>
-        <div>
-          <label>
-            Nombre de volumes
-            <input type="number" name="volumeNumber" />
-          </label>
-        </div>
+      <div className="adminContainer">
+        <form className="adminForm" onSubmit={handleCreateManga}>
+          <div>
+            <label>
+              Titre
+              <input type="text" name="title" />
+            </label>
+          </div>
+          <div>
+            <label>
+              Auteur
+              <input type="text" name="author" />
+            </label>
+          </div>
+          <div>
+            <label>
+              Synopsis
+              <textarea type="text" name="content" />
+            </label>
+          </div>
+          <div>
+            <label>
+              Genres
+              <input type="text" name="genre" />
+            </label>
+          </div>
+          <div>
+            <label>
+              Nombre de volumes
+              <input type="number" name="volumeNumber" />
+            </label>
+          </div>
 
-        <div>
-          <label>
-            Image
-            <input type="file" name="image" />
-          </label>
-        </div>
+          <div>
+            <label>
+              Image
+              <input type="file" name="image" />
+            </label>
+          </div>
 
-        <input type="submit" />
-      </form>
-    </>
+          <input type="submit" />
+        </form>
+      </div>
+    </section>
   )
 }
 

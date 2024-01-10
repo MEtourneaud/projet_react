@@ -10,6 +10,7 @@ const MangaDetailsPage = () => {
   const [manga, setManga] = useState(null)
   const [reviews, setReviews] = useState(null)
   const [averageRating, setAverageRating] = useState(0) // Ajout de l'état pour la moyenne des notes
+  const [editingReview, setEditingReview] = useState(null)
   const token = localStorage.getItem("jwt")
 
   useEffect(() => {
@@ -89,6 +90,16 @@ const MangaDetailsPage = () => {
     }
   }
 
+  // Fonction pour démarrer la modification d'un commentaire
+  const startEditing = (review) => {
+    setEditingReview(review)
+  }
+
+  // Fonction pour arrêter la modification
+  const stopEditing = () => {
+    setEditingReview(null)
+  }
+
   return (
     <>
       <Header />
@@ -125,6 +136,9 @@ const MangaDetailsPage = () => {
                           <p>Utilisateur : {review.User.username}</p>
                           <p>Note : {review.rating}</p>
                           <p>Commentaire : {review.content}</p>
+                          <Link className="editButton" onClick={() => startEditing(review)}>
+                            Modifier
+                          </Link>
                         </article>
                       ))}
                   </div>
