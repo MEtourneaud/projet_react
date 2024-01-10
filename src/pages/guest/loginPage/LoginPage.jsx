@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { useNavigate } from "react-router"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
-import { useNavigate } from "react-router"
+import "./LoginPage.scss"
+import { Link } from "react-router-dom"
 
 const LoginPage = (event) => {
   // eslint-disable-next-line
@@ -14,8 +16,6 @@ const LoginPage = (event) => {
 
     const username = event.target.username.value
     const password = event.target.password.value
-
-    // console.log(username, password)
 
     const loginData = {
       username,
@@ -45,15 +45,16 @@ const LoginPage = (event) => {
       setMessage("Vous êtes bien connecté")
       navigate("/")
     } else {
-      setMessage("Erreur lors de l'enregistrement")
+      setMessage("Erreur lors de la connexion")
     }
   }
 
   return (
-    <>
-      <Header isAuthenticated={isAuthenticated} />
-      <section>
-        <form onSubmit={handleLogin}>
+    <section className="loginPage">
+      <Header />
+      <div className="loginContainer">
+        <form className="loginForm" onSubmit={handleLogin}>
+          <h2>Login</h2>
           <label>
             username
             <input type="text" name="username" />
@@ -63,10 +64,15 @@ const LoginPage = (event) => {
             <input type="password" name="password" />
           </label>
           <input type="submit" />
+          <div className="centeredContainer">
+            <Link className="loginFormLink" to="/users/sign_up">
+              Inscris-toi !
+            </Link>
+          </div>
         </form>
-      </section>
+      </div>
       <Footer />
-    </>
+    </section>
   )
 }
 

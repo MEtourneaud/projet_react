@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
-import { Link } from "react-router-dom"
-import "./HomePage.scss"
 import StarRating from "../../../components/StarRating"
+import "./HomePage.scss"
 
 const HomePage = () => {
   const [mangas, setMangas] = useState(null)

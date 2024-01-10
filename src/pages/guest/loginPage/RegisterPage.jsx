@@ -17,12 +17,15 @@ const RegisterPage = () => {
       setMessage(`Le mot de passe ne correspond pas.`)
       return
     }
+
     const registerData = {
       username: username,
       password: password,
       RoleId: 3,
     }
+
     const registerDataJson = JSON.stringify(registerData)
+
     const registerResponse = await fetch("http://localhost:3000/api/users", {
       method: "POST",
       headers: {
@@ -40,11 +43,12 @@ const RegisterPage = () => {
   }
 
   return (
-    <>
+    <section className="loginPage">
       <Header />
-      <section>
+      <div className="loginContainer">
         {message && <p>{message}</p>}
-        <form onSubmit={handleRegistration}>
+        <form className="loginForm" onSubmit={handleRegistration}>
+          <h2>Inscription</h2>
           <label>
             Nom d'utilisateur
             <input type="text" name="username" />
@@ -59,9 +63,9 @@ const RegisterPage = () => {
           </label>
           <input type="submit" />
         </form>
-      </section>
+      </div>
       <Footer />
-    </>
+    </section>
   )
 }
 

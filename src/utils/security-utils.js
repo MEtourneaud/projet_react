@@ -8,7 +8,7 @@ export const useVerifyIfUserIsLogged = () => {
     const token = localStorage.getItem("jwt")
 
     if (!token) {
-      navigate("/login")
+      navigate("/users/sign_in")
     }
-  })
+  }, [])
 }

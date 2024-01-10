@@ -14,9 +14,8 @@ const Header = () => {
   }
 
   useEffect(() => {
-    // useEffect sera appelé après la mise à jour de l'état
-    if (!isAuthenticated) {
-      // Redirige l'utilisateur vers la page de connexion
+    if (!isAuthenticated && !window.location.pathname.includes("/users/sign_up")) {
+      // Redirige l'utilisateur vers la page de connexion, sauf s'il est sur la page d'inscription
       console.log("Après déconnexion, isAuthenticated :", isAuthenticated)
       navigate("/users/sign_in")
     }
@@ -59,6 +58,13 @@ const Header = () => {
             ) : (
               <Link className="hover-link" to="/users/sign_in">
                 Se connecter
+              </Link>
+            )}
+          </li>
+          <li className="liNav">
+            {!isAuthenticated && (
+              <Link className="hover-link" to="/users/sign_up">
+                Inscris-toi !
               </Link>
             )}
           </li>

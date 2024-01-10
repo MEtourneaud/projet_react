@@ -2,43 +2,44 @@ import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
+import StarRating from "../../../components/StarRating"
 import "./MangaDetailsPage.scss"
 
 const MangaDetailsPage = () => {
   const { mangaId } = useParams()
   const [manga, setManga] = useState(null)
   const [reviews, setReviews] = useState(null)
+  const [averageRating, setAverageRating] = useState(0) // Ajout de l'état pour la moyenne des notes
   const token = localStorage.getItem("jwt")
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const mangaResponse = await fetch(`http://localhost:3000/api/mangas/${mangaId}`)
+        const reviewsResponse = await fetch("http://localhost:3000/api/reviews")
 
-        if (!mangaResponse.ok) {
-          // Si la réponse n'est pas OK, déclencher une erreur
+        if (!mangaResponse.ok || !reviewsResponse.ok) {
           throw new Error(`La requête a échoué avec le statut ${mangaResponse.status}`)
         }
 
-        const mangaResponseData = await mangaResponse.json()
-        setManga(mangaResponseData.data)
+        const mangaData = await mangaResponse.json()
+        const reviewsData = await reviewsResponse.json()
+
+        setManga(mangaData.data)
+        setReviews(reviewsData)
+
+        // Calcul de la moyenne des notes
+        const mangaReviews = reviewsData.filter((review) => review.MangaId === mangaData.data.id)
+        const totalRating = mangaReviews.reduce((acc, review) => acc + review.rating, 0)
+        const averageRating = mangaReviews.length > 0 ? totalRating / mangaReviews.length : 0
+        setAverageRating(averageRating)
       } catch (error) {
         console.error("Erreur lors de la récupération des détails du manga :", error.message)
-        // Gérer l'erreur ici (peut-être définir un état d'erreur)
       }
     }
 
     fetchData()
   }, [mangaId])
-
-  useEffect(() => {
-    ;(async () => {
-      const reviewsReponse = await fetch("http://localhost:3000/api/reviews")
-      const reviewsData = await reviewsReponse.json()
-
-      setReviews(reviewsData)
-    })()
-  }, [])
 
   // je créé une fonction, qui récupère un  id de manga et qui va créer sur l'api une review
   const handleCreateReview = async (event, mangaId) => {
@@ -102,6 +103,7 @@ const MangaDetailsPage = () => {
                 </div>
                 <div className="textContainer">
                   <h3>{manga.title}</h3>
+                  <StarRating rating={averageRating} />
                   <p>Auteur: {manga.author}</p>
                   <p>Genres: {manga.genre}</p>
                   <p>Nombre de tome: {manga.volumeNumber}</p>
@@ -112,7 +114,7 @@ const MangaDetailsPage = () => {
                 </div>
               </article>
 
-              <h4>Donnez votre avis.</h4>
+              <h4>Donnez votre avis</h4>
               <div className="reviewsBloc">
                 {reviews ? (
                   <div>
@@ -129,17 +131,19 @@ const MangaDetailsPage = () => {
                 ) : (
                   <p>En cours de chargement</p>
                 )}
-                <form onSubmit={(event) => handleCreateReview(event, manga.id)}>
-                  <label>
-                    Note
-                    <input className="feedback-input" type="number" name="rating" />
-                  </label>
-                  <label>
-                    Commentaire
-                    <textarea className="feedback-input" type="text" name="content" />
-                  </label>
-                  <input type="submit" />
-                </form>
+                <div className="reviewFormSection">
+                  <form onSubmit={(event) => handleCreateReview(event, manga.id)}>
+                    <label>
+                      Note
+                      <input className="feedback-input" type="number" name="rating" />
+                    </label>
+                    <label>
+                      Commentaire
+                      <textarea className="feedback-input" type="text" name="content" />
+                    </label>
+                    <input type="submit" />
+                  </form>
+                </div>
               </div>
             </div>
           </div>
