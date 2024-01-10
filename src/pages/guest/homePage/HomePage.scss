@@ -9,20 +9,25 @@ main{
     color: black;
 }
 
+main a{
+    text-decoration: none;
+    color: black;
+}
+
 .imgBloc {
-    height: 50vh; /* ou toute autre hauteur fixe souhaitée */
-    width: 30vh; /* ou toute autre largeur fixe souhaitée */
+    height: 45vh;
+    width: 30vh;
     border: solid #e0dede 1px;
     border-radius: 5px;
     overflow: hidden;
     flex-shrink: 0; /* Empêche l'image de réduire sa taille si le conteneur est trop petit */
-    // margin-right: 20px; /* Si vous souhaitez toujours un espace à droite de l'image */
+    margin-bottom: 20px; 
 }
 
 .mangaImg {
     height: 100%;
     width: 100%;
-    object-fit: cover; /* Assurez-vous que l'image conserve ses proportions sans être déformée */
+    object-fit: cover; 
 }
 
 .textContainer {
@@ -39,8 +44,8 @@ main{
   
 .mangasContainer {
     width: 100%; /* Utilise toute la largeur de la page */
-    max-width: 1400px; /* Ajoutez une largeur maximale si nécessaire */
-    background-color: rgba(255, 255, 255, 0.7); /* Couleur blanche avec un canal alpha de 0.8 pour une transparence légère */   
+    max-width: 1400px; 
+    background-color: rgba(255, 255, 255, 0.7); 
     padding: 1em;
     border-radius: 3px;
 }
@@ -62,5 +67,5 @@ main{
   
 .textContainer {
     flex-grow: 1;
+    padding-left: 2em;
 }
-  

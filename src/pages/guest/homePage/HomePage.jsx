@@ -69,10 +69,10 @@ const HomePage = () => {
             {topRatedMangas ? (
               topRatedMangas.map((manga) => (
                 <article key={manga.id}>
-                  <div className="imgBloc">
-                    <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
-                  </div>
                   <Link to={`/mangas/details/${manga.id}`}>
+                    <div className="imgBloc">
+                      <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
+                    </div>
                     <h3>{manga.title}</h3>
                   </Link>
                   <StarRating rating={manga.averageRating} />
@@ -91,11 +91,13 @@ const HomePage = () => {
           {selectedRecommendation && (
             <article className="recommendationArticle">
               <div className="imgBloc">
-                <img
-                  className="mangaImg"
-                  src={selectedRecommendation.imageUrl}
-                  alt={selectedRecommendation.title}
-                />
+                <Link to={`/mangas/details/${selectedRecommendation.id}`}>
+                  <img
+                    className="mangaImg"
+                    src={selectedRecommendation.imageUrl}
+                    alt={selectedRecommendation.title}
+                  />
+                </Link>
               </div>
               <div className="textContainer">
                 <Link to={`/mangas/details/${selectedRecommendation.id}`}>
@@ -121,10 +123,10 @@ const HomePage = () => {
                 {lastFourMangas.map((manga) => {
                   return (
                     <article key={manga.id}>
-                      <div className="imgBloc">
-                        <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
-                      </div>
                       <Link to={`/mangas/details/${manga.id}`}>
+                        <div className="imgBloc">
+                          <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
+                        </div>
                         <h3>{manga.title}</h3>
                       </Link>
                     </article>

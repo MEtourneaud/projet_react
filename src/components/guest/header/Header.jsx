@@ -32,24 +32,34 @@ const Header = () => {
             </Link>
           </li>
           <li className="liNav">
-            <Link to="/mangas">Liste des mangas</Link>
+            <Link className="hover-link" to="/mangas">
+              Liste des mangas
+            </Link>
           </li>
           <li className="liNav">
-            <Link to="/mangas/random">Au hasard</Link>
+            <Link className="hover-link" to="/mangas/random">
+              Au hasard
+            </Link>
           </li>
           <li className="liNav">
-            <Link to="/users/:id">Profil</Link>
+            <Link className="hover-link" to="/users/:id">
+              Profil
+            </Link>
           </li>
           <li className="liNav">
-            <Link to="/contact">Contact</Link>
+            <Link className="hover-link" to="/contact">
+              Contact
+            </Link>
           </li>
           <li className="liNav">
             {isAuthenticated ? (
-              <Link to="#" onClick={handleLogout}>
+              <Link className="hover-link" to="#" onClick={handleLogout}>
                 Déconnexion
               </Link>
             ) : (
-              <Link to="/users/sign_in">Se connecter</Link>
+              <Link className="hover-link" to="/users/sign_in">
+                Se connecter
+              </Link>
             )}
           </li>
         </ul>
