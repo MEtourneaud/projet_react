@@ -75,7 +75,7 @@ const HomePage = () => {
                     </div>
                     <h3>{manga.title}</h3>
                   </Link>
-                  <StarRating rating={manga.averageRating} />
+                  <StarRating className="starRating " rating={manga.averageRating} />
                 </article>
               ))
             ) : (
@@ -108,6 +108,7 @@ const HomePage = () => {
                 <p>Genres: {selectedRecommendation.genre}</p>
                 <p>Nombre de volumes: {selectedRecommendation.volumeNumber}</p>
                 <p>Synopsis: {selectedRecommendation.synopsis}</p>
+                {console.log("Synopsis:", selectedRecommendation.synopsis)}
               </div>
             </article>
           )}

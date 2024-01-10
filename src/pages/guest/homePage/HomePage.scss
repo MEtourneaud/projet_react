@@ -30,16 +30,15 @@ main a{
     object-fit: cover; 
 }
 
-.textContainer {
-    flex-grow: 1; /* Le texte prendra autant d'espace que possible pour éviter l'écrasement */
-    width: 100%;
-}
-
 .centeredContainer {
     display: flex;
     justify-content: center;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+.centeredContainer h2{
+    text-align: center;
 }
   
 .mangasContainer {
@@ -68,4 +67,18 @@ main a{
 .textContainer {
     flex-grow: 1;
     padding-left: 2em;
+}
+
+
+.textContainer h3 {
+    padding-bottom: 30px;
+}
+
+.starRating {
+    margin-top: 5px; /* Ajuste la marge en haut de l'évaluation */
+    margin-bottom: 10px; /* Ajuste la marge en bas de l'évaluation */
+}
+
+.textContainer p {
+    margin-bottom: 10px; /* Ajoute une marge en bas de chaque paragraphe */
 }

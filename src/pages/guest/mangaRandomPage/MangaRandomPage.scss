@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.randomManga {
+    background-color: #3c5891;
+    color: black;
+}
+
+.randomManga a{
+    text-decoration: none;
+    color: black;
+}
+
+.imgRandomBloc {
+    height: 60vh;
+    width: 40vh;
+    border: solid #e0dede 1px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0; /* Empêche l'image de réduire sa taille si le conteneur est trop petit */
+    margin-bottom: 20px; 
+}
+
+.randomButton {
+    display: flex;
+    justify-content: center;
+}
+  
+.randomButton a, .randomButton p {
+    margin-right: 10px; /* Ajoutez une marge à droite pour séparer les liens */
+    margin-top: 20px;
+    padding: 8px 12px; /* Ajoutez un peu de rembourrage pour améliorer l'apparence */
+    border: 1px solid #dd5d42; /* Définissez la couleur, l'épaisseur et le style de la bordure */
+    border-radius: 5px; /* Ajoutez une bordure arrondie */
+    color: #dd5d42; /* Définissez la couleur du texte */
+}
+
+.randomButton a:hover, .randomButton p:hover {
+    background-color: #dd5d42; /* Changez la couleur de fond au survol pour donner un effet de bouton */
+    color: #fff; /* Changez la couleur du texte au survol */
+}
+  

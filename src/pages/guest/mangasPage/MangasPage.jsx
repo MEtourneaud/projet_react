@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
-import { Link } from "react-router-dom"
+import "./MangasPage.scss"
 
 const MangasPage = () => {
   const [mangas, setMangas] = useState(null)
@@ -10,30 +11,43 @@ const MangasPage = () => {
     ;(async () => {
       const mangasResponse = await fetch(`http://localhost:3000/api/mangas`)
       const mangasResponseData = await mangasResponse.json()
-      setMangas(mangasResponseData)
+
+      const sortedMangas = mangasResponseData.sort((a, b) => a.title.localeCompare(b.title))
+
+      setMangas(sortedMangas)
     })()
   }, [])
 
   return (
     <>
       <Header />
-      <h2>Liste des mangas</h2>
-      {mangas ? (
-        <>
-          {mangas.map((manga) => {
-            return (
-              <article>
-                <h3>{manga.title}</h3>
-                <Link to={`/mangas/details/${manga.id}`}>
-                  <img src={manga.imageUrl} alt={manga.title}></img>
-                </Link>
-              </article>
-            )
-          })}
-        </>
-      ) : (
-        <p>En cours de chargement</p>
-      )}
+      <section className="mangaList">
+        <div className="centeredContainer">
+          <div className="mangasContainer">
+            <h2>Liste des mangas</h2>
+            <div className="mangasList">
+              {mangas ? (
+                <>
+                  {mangas.map((manga) => {
+                    return (
+                      <article>
+                        <Link to={`/mangas/details/${manga.id}`}>
+                          <div className="imgBloc">
+                            <img className="mangaImg" src={manga.imageUrl} alt={manga.title}></img>
+                          </div>
+                          <h3>{manga.title}</h3>
+                        </Link>
+                      </article>
+                    )
+                  })}
+                </>
+              ) : (
+                <p>En cours de chargement</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer />
     </>
   )
