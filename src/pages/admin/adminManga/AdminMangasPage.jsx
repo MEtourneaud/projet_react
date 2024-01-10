@@ -30,6 +30,14 @@ const AdminMangasPage = () => {
     setMangas(mangasResponseData)
   }
 
+  if (!token) {
+    // Gérer le cas où le token est null ou inexistant
+    console.error("Token absent ou invalide")
+    return
+  }
+
+  console.log("Token :", token)
+
   return (
     <>
       <HeaderAdmin />
@@ -38,7 +46,7 @@ const AdminMangasPage = () => {
         <>
           {mangas.map((manga) => {
             return (
-              <article>
+              <article key={manga.id}>
                 <h3>{manga.title}</h3>
                 {decodedToken.data.role !== 3 && (
                   <button onClick={(event) => handleDeleteCoworking(event, manga.id)}>
