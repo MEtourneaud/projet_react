@@ -29,7 +29,7 @@
     justify-content: center;
 }
   
-.randomButton a, .randomButton p {
+.randomButton a {
     margin-right: 10px; /* Ajoutez une marge à droite pour séparer les liens */
     margin-top: 20px;
     padding: 8px 12px; /* Ajoutez un peu de rembourrage pour améliorer l'apparence */
@@ -38,7 +38,7 @@
     color: #dd5d42; /* Définissez la couleur du texte */
 }
 
-.randomButton a:hover, .randomButton p:hover {
+.randomButton a:hover {
     background-color: #dd5d42; /* Changez la couleur de fond au survol pour donner un effet de bouton */
     color: #fff; /* Changez la couleur du texte au survol */
 }

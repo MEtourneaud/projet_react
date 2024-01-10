@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.detailsManga{
+    background-color: #3c5891;
+    color: black;
+    
+}
+
+.detailsManga a{
+    text-decoration: none;
+    color: black;
+}
+
+.randomButton a {
+    margin-right: 10px; /* Ajoutez une marge à droite pour séparer les liens */
+    margin-top: 20px;
+    padding: 8px 12px; /* Ajoutez un peu de rembourrage pour améliorer l'apparence */
+    border: 1px solid #dd5d42; /* Définissez la couleur, l'épaisseur et le style de la bordure */
+    border-radius: 5px; /* Ajoutez une bordure arrondie */
+    color: #dd5d42; /* Définissez la couleur du texte */
+}
+
+.randomButton a:hover {
+    background-color: #dd5d42; /* Changez la couleur de fond au survol pour donner un effet de bouton */
+    color: #fff; /* Changez la couleur du texte au survol */
+}
+
+form { 
+    max-width:420px 
+}
+
+.feedback-input {
+  color:black;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #dd5d42;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #dd5d42; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  width: 100%;
+  background:#dd5d42;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#dd5d42; }
