@@ -1,54 +1,70 @@
-.header{
+// Header.scss
+
+.header {
     margin: 0;
     border: 0;
     padding: 0;
     width: 100%;
-    
-    top: 0; left: 0; right: 0;
-}
-
-@font-face {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  @font-face {
     font-family: "Montserrat";
     src: "/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf" format("truetype");
-}
-
-body{
+  }
+  
+  body {
     font-family: "Montserrat", sans-serif;
-}
-
-ul {
+  }
+  
+  ul {
     list-style-type: none;
-}
-
+  }
+  
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FFD38C;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
 .ulNav {
     background-color: #334768;
-    width: 100%;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: flex-end;
-}
+  }
 
 .liLogo {
     margin-right: auto;
     height: 15vh;
     width: 15vh;
 }
-
-.logo {
+  
+  .logo {
     height: 100%;
     width: 100%;
-}
-
-.liNav {
+  }
+  
+  .liNav {
     margin-right: 3%;
-}
-
-.liNav a{
+  }
+  
+  .liNav a {
     text-decoration: none;
     color: #FFD38C;
-}
-
-.hover-link::after {
+  }
+  
+  .hover-link::after {
     content: '';
     display: block;
     width: 0;
@@ -56,9 +72,45 @@ ul {
     background: #FFD38C;
     transition: width .3s;
     margin-top: 10px;
-}
-
-.hover-link:hover::after {
+  }
+  
+  .hover-link:hover::after {
     width: 100%;
     transition: width .3s;
+  }
+  
+  @media only screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+    background-color: #334768;
+  }
+
+  .ulNav {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: #334768;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+
+    &.open {
+      max-height: 300px;
+    }
+  }
+
+  .liNav {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .liLogo {
+    margin-right: auto; // Le logo reste à droite, il ne bouge pas
+  }
 }
+
+  
+  

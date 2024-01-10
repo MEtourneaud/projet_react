@@ -1,3 +1,5 @@
+// Header.jsx
+
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import "./Header.scss"
@@ -5,26 +7,32 @@ import "./Header.scss"
 const Header = () => {
   const navigate = useNavigate()
   const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("jwt") !== null)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const handleLogout = () => {
-    console.log("Avant déconnexion, isAuthenticated :", isAuthenticated) // Supprime le token du local storage
     localStorage.removeItem("jwt")
-    // Met à jour l'état d'authentification
     setIsAuthenticated(false)
   }
 
   useEffect(() => {
     if (!isAuthenticated && !window.location.pathname.includes("/users/sign_up")) {
-      // Redirige l'utilisateur vers la page de connexion, sauf s'il est sur la page d'inscription
-      console.log("Après déconnexion, isAuthenticated :", isAuthenticated)
       navigate("/users/sign_in")
     }
   }, [isAuthenticated, navigate])
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
   return (
     <header className="header">
       <nav>
-        <ul className="ulNav">
+        <div className="menu-icon" onClick={toggleMenu}>
+          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+        </div>
+        <ul className={`ulNav ${menuOpen ? "open" : ""}`}>
           <li className="liLogo">
             <Link to="/">
               <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
@@ -38,11 +46,6 @@ const Header = () => {
           <li className="liNav">
             <Link className="hover-link" to="/mangas/random">
               Au hasard
-            </Link>
-          </li>
-          <li className="liNav">
-            <Link className="hover-link" to="/users/:id">
-              Profil
             </Link>
           </li>
           <li className="liNav">

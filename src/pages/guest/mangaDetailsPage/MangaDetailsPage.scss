@@ -104,3 +104,75 @@ textarea {
 [type="submit"]:hover { 
     background:#dd5d42; 
 }
+
+
+@media screen and (max-width: 768px) {
+    .imgRandomBloc {
+      height: 30vh;
+      width: 20vh;
+    }
+  
+    .mangaImg {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  
+    .centeredContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .centeredContainer h2 {
+      text-align: center;
+    }
+  
+    .mangasContainer {
+      width: 80%;
+    }
+  
+    .mangasList {
+      flex-direction: column;
+    }
+  
+    .recommendationArticle {
+      flex-direction: column;
+    }
+  
+    .textContainer {
+      padding-left: 0; /* Ajustement pour l'espace sur les côtés */
+    }
+  
+    .reviewsBloc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+    .reviewContent {
+      width: 100%; /* Ajustez la largeur des commentaires */
+    }
+  
+    .reviewFormSection {
+        width: 80%; /* Ajustez la largeur du formulaire */
+        margin: 0 auto; /* Centre le formulaire horizontalement */
+      }
+  
+      form {
+        max-width: 100%; /* Utilise la largeur totale du parent */
+      }
+      
+      .feedback-input {
+        max-width: 100%; /* Utilise la largeur totale du parent */
+        font-size: 16px; /* Réduisez la taille de la police du formulaire */
+      }
+    
+      textarea {
+        height: 100px; /* Réduisez la hauteur du textarea */
+      }
+    
+      [type="submit"] {
+        font-size: 20px; /* Réduisez la taille de la police du bouton */
+      }
+  }
+  
