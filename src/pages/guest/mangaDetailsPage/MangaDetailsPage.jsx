@@ -103,9 +103,8 @@ const MangaDetailsPage = () => {
   return (
     <>
       <Header />
-
-      {manga ? (
-        <section className="detailsManga">
+      <section className="detailsManga">
+        {manga ? (
           <div className="centeredContainer">
             <div className="mangasContainer">
               <article className="recommendationArticle">
@@ -161,10 +160,10 @@ const MangaDetailsPage = () => {
               </div>
             </div>
           </div>
-        </section>
-      ) : (
-        <p>En cours de chargement</p>
-      )}
+        ) : (
+          <p>En cours de chargement</p>
+        )}
+      </section>
 
       <Footer />
     </>

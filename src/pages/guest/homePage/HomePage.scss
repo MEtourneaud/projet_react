@@ -4,8 +4,6 @@
     border: 0;
 }
 
-
-
 main{
     background-color: #3c5891;
     color: black;
@@ -23,7 +21,8 @@ main a{
     border-radius: 5px;
     overflow: hidden;
     flex-shrink: 0; /* Empêche l'image de réduire sa taille si le conteneur est trop petit */
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    margin: auto 
 }
 
 .mangaImg {
@@ -31,6 +30,7 @@ main a{
     width: 100%;
     object-fit: cover; 
 }
+
 
 .centeredContainer {
     display: flex;
@@ -41,12 +41,12 @@ main a{
 
 .centeredContainer h2{
     text-align: center;
+    margin: 1em auto 1em auto;
 }
   
 .mangasContainer {
     width: 100%; /* Utilise toute la largeur de la page */
     background-color: rgba(255, 255, 255, 0.7); 
-    padding: 1em;
     border-radius: 3px;
 }
 
@@ -59,6 +59,9 @@ main a{
     text-align: center;
 }
 
+.mangasList h3{
+    margin-top: 1em;
+}
 .recommendationArticle {
     display: flex;
     align-items: center; /* Alignez verticalement les éléments au centre si nécessaire */
