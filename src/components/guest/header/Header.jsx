@@ -15,7 +15,12 @@ const Header = () => {
   }
 
   useEffect(() => {
-    if (!isAuthenticated && !window.location.pathname.includes("/users/sign_up")) {
+    const isHomePageOrPublicRoute =
+      window.location.pathname === "/" ||
+      window.location.pathname === "/contact" ||
+      window.location.pathname.includes("/users/sign_in")
+
+    if (!isAuthenticated && !isHomePageOrPublicRoute) {
       navigate("/users/sign_in")
     }
   }, [isAuthenticated, navigate])
