@@ -79,7 +79,7 @@ const AdminMangaUpdate = () => {
             <div>
               <label>
                 Synopsis
-                <textarea type="text" name="content" defaultValue={manga.synopsis} />
+                <textarea type="text" name="synopsis" defaultValue={manga.synopsis} />
               </label>
             </div>
             <div>

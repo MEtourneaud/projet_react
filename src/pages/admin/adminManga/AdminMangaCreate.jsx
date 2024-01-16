@@ -87,7 +87,7 @@ const AdminMangaCreate = () => {
           <div>
             <label>
               Synopsis
-              <textarea type="text" name="content" />
+              <textarea type="text" name="synopsis" />
             </label>
           </div>
           <div>
