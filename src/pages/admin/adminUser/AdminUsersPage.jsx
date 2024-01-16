@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import HeaderAdmin from "../../../components/admin/HeaderAdmin"
 import { useVerifyIfUserIsLogged } from "../../../utils/security-utils"
 import { jwtDecode } from "jwt-decode"
+import HeaderAdmin from "../../../components/admin/HeaderAdmin"
+import "./AdminUsersPage.scss"
 
 const AdminUsersPage = () => {
   useVerifyIfUserIsLogged()
@@ -32,25 +33,27 @@ const AdminUsersPage = () => {
   return (
     <>
       <HeaderAdmin />
-      <h2>Liste des users</h2>
-      {users ? (
-        <>
-          {users.map((user) => {
-            return (
-              <article>
-                <h3>{user.username}</h3>
-                {decodedToken.data.role !== 3 && (
-                  <button onClick={(event) => handleDeleteCoworking(event, user.id)}>
-                    Supprimer
-                  </button>
-                )}
-              </article>
-            )
-          })}
-        </>
-      ) : (
-        <p>Mangas en préparation</p>
-      )}
+      <div className="userDelete">
+        <h2>Liste des users</h2>
+        {users ? (
+          <>
+            {users.map((user) => {
+              return (
+                <article>
+                  <h3>{user.username}</h3>
+                  {decodedToken.data.role !== 3 && (
+                    <button onClick={(event) => handleDeleteCoworking(event, user.id)}>
+                      Supprimer
+                    </button>
+                  )}
+                </article>
+              )
+            })}
+          </>
+        ) : (
+          <p>Mangas en préparation</p>
+        )}
+      </div>
     </>
   )
 }

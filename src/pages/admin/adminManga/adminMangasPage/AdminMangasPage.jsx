@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import HeaderAdmin from "../../../components/admin/HeaderAdmin"
-import { useVerifyIfUserIsLogged } from "../../../utils/security-utils"
+import HeaderAdmin from "../../../../components/admin/HeaderAdmin"
+import { useVerifyIfUserIsLogged } from "../../../../utils/security-utils"
 import { jwtDecode } from "jwt-decode"
 import { Link } from "react-router-dom"
+import "./AdminMangasPage.scss"
 
 const AdminMangasPage = () => {
   useVerifyIfUserIsLogged()
@@ -41,28 +42,30 @@ const AdminMangasPage = () => {
   return (
     <>
       <HeaderAdmin />
-      <h2>Liste des mangas</h2>
-      {mangas ? (
-        <>
-          {mangas.map((manga) => {
-            return (
-              <article key={manga.id}>
-                <h3>{manga.title}</h3>
-                {decodedToken.data.role !== 3 && (
-                  <button onClick={(event) => handleDeleteCoworking(event, manga.id)}>
-                    Supprimer
-                  </button>
-                )}
-                <Link to={`/admin/mangas/update/${manga.id}`}>
-                  <button>Modifier</button>
-                </Link>
-              </article>
-            )
-          })}
-        </>
-      ) : (
-        <p>Mangas en préparation</p>
-      )}
+      <div className="main-container">
+        <h2>Liste des mangas</h2>
+        {mangas ? (
+          <>
+            {mangas.map((manga) => {
+              return (
+                <article key={manga.id}>
+                  <h3>{manga.title}</h3>
+                  {decodedToken.data.role !== 3 && (
+                    <button onClick={(event) => handleDeleteCoworking(event, manga.id)}>
+                      Supprimer
+                    </button>
+                  )}
+                  <Link to={`/admin/mangas/update/${manga.id}`}>
+                    <button>Modifier</button>
+                  </Link>
+                </article>
+              )
+            })}
+          </>
+        ) : (
+          <p>Mangas en préparation</p>
+        )}
+      </div>
     </>
   )
 }

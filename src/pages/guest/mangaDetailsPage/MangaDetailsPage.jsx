@@ -90,16 +90,6 @@ const MangaDetailsPage = () => {
     }
   }
 
-  // Fonction pour démarrer la modification d'un commentaire
-  const startEditing = (review) => {
-    setEditingReview(review)
-  }
-
-  // Fonction pour arrêter la modification
-  const stopEditing = () => {
-    setEditingReview(null)
-  }
-
   return (
     <>
       <Header />
@@ -135,9 +125,9 @@ const MangaDetailsPage = () => {
                           <p>Utilisateur : {review.User.username}</p>
                           <p>Note : {review.rating}</p>
                           <p>Commentaire : {review.content}</p>
-                          <Link className="editButton" onClick={() => startEditing(review)}>
+                          {/* <Link className="editButton" onClick={() => startEditing(review)}>
                             Modifier
-                          </Link>
+                          </Link> */}
                         </article>
                       ))}
                   </div>
