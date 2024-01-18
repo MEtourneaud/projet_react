@@ -22,15 +22,13 @@ function App() {
         {/* Routes Guest */}
         <Route path="/" element={<HomePage />} />
         <Route path="/mangas" element={<MangasPage />} />
-        <Route path="/mangas/details/:mangaId" element={<MangaDetailsPage />} />
+        <Route path="/mangas/details/:mangaId" element={<MangaDetailsPage />} />s
         <Route path="/mangas/random" element={<MangaRandomPage />} />
         <Route path="/contact" element={<ContactPage />} />
         {/* <Route path="/users/:id" element={<ProfilePage />} />
         <Route path="/users/:id/collection" element={<CollectionMangaPage />} /> */}
-
         <Route path="/users/sign_up" element={<RegisterPage />} />
         <Route path="/users/sign_in" element={<LoginPage />} />
-
         {/* Routes Admin */}
         <Route path="/admin/" element={<AdminDashboard />} />
         <Route path="/admin/mangas" element={<AdminMangasPage />} />

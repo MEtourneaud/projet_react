@@ -10,7 +10,6 @@ const MangaDetailsPage = () => {
   const [manga, setManga] = useState(null)
   const [reviews, setReviews] = useState(null)
   const [averageRating, setAverageRating] = useState(0) // Ajout de l'état pour la moyenne des notes
-  const [editingReview, setEditingReview] = useState(null)
   const token = localStorage.getItem("jwt")
 
   useEffect(() => {

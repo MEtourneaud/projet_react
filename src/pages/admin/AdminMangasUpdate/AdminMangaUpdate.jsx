@@ -21,7 +21,7 @@ const AdminMangaUpdate = () => {
     // eslint-disable-next-line
   }, [])
 
-  const handleUpdateteManga = async (event) => {
+  const handleUpdateManga = async (event) => {
     event.preventDefault()
 
     const title = event.target.title.value
@@ -50,7 +50,7 @@ const AdminMangaUpdate = () => {
       body: formData,
     })
 
-    if (mangaUpdateResponse.status === 201) {
+    if (mangaUpdateResponse.status === 200) {
       setMessage("Mise à jour OK")
     } else {
       setMessage("Erreur")
@@ -63,7 +63,7 @@ const AdminMangaUpdate = () => {
       {message && <p>{message}</p>}
       {manga && (
         <div className="adminContainer">
-          <form className="adminForm" onSubmit={handleUpdateteManga}>
+          <form className="adminForm" onSubmit={handleUpdateManga}>
             <div>
               <label>
                 Titre
