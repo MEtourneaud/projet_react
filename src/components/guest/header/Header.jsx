@@ -18,6 +18,7 @@ const Header = () => {
     const isHomePageOrPublicRoute =
       window.location.pathname === "/" ||
       window.location.pathname === "/contact" ||
+      window.location.pathname === "/users/sign_up" ||
       window.location.pathname.includes("/users/sign_in")
 
     if (!isAuthenticated && !isHomePageOrPublicRoute) {
@@ -44,14 +45,18 @@ const Header = () => {
             </Link>
           </li>
           <li className="liNav">
-            <Link className="hover-link" to="/mangas">
-              Liste des mangas
-            </Link>
+            {isAuthenticated && (
+              <Link className="hover-link" to="/mangas">
+                Liste des mangas
+              </Link>
+            )}
           </li>
           <li className="liNav">
-            <Link className="hover-link" to="/mangas/random">
-              Au hasard
-            </Link>
+            {isAuthenticated && (
+              <Link className="hover-link" to="/mangas/random">
+                Au hasard
+              </Link>
+            )}
           </li>
           <li className="liNav">
             <Link className="hover-link" to="/contact">
