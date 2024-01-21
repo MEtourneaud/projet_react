@@ -9,9 +9,8 @@
 }
 
 
-.randomManga a{
+.randomButton a{
     text-decoration: none;
-    color: black;
 }
 
 .imgRandomBloc {
@@ -30,16 +29,18 @@
 }
   
 .randomButton a {
-    margin-right: 10px; /* Ajoutez une marge à droite pour séparer les liens */
+    margin-right: 10px; 
     margin-top: 20px;
-    padding: 8px 12px; /* Ajoutez un peu de rembourrage pour améliorer l'apparence */
-    border: 1px solid #dd5d42; /* Définissez la couleur, l'épaisseur et le style de la bordure */
-    border-radius: 5px; /* Ajoutez une bordure arrondie */
-    color: #dd5d42; /* Définissez la couleur du texte */
+    padding: 8px 12px; 
+    border: 1px solid #dd5d42; 
+    border-radius: 5px; 
+    color: #fff;
+    background-color: #dd5d42; 
 }
 
 .randomButton a:hover {
-    background-color: #dd5d42; /* Changez la couleur de fond au survol pour donner un effet de bouton */
-    color: #fff; /* Changez la couleur du texte au survol */
+    background-color: #334768;
+    color: #FFD38C;
+    border: 1px solid #334768; 
 }
   

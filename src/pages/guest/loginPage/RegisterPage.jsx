@@ -1,7 +1,8 @@
-import Footer from "../../../components/guest/footer/Footer"
-import Header from "../../../components/guest/header/Header"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Footer from "../../../components/guest/footer/Footer"
+import Header from "../../../components/guest/header/Header"
+import "./RegisterPage.scss"
 
 const RegisterPage = () => {
   const [message, setMessage] = useState(null)
@@ -43,11 +44,11 @@ const RegisterPage = () => {
   }
 
   return (
-    <section className="loginPage">
+    <section className="registerPage">
       <Header />
-      <div className="loginContainer">
+      <div className="registerContainer">
         {message && <p>{message}</p>}
-        <form className="loginForm" onSubmit={handleRegistration}>
+        <form className="registerForm" onSubmit={handleRegistration}>
           <h2>Inscription</h2>
           <label>
             Nom d'utilisateur

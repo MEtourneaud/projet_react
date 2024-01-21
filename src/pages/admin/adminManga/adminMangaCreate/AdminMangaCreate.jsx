@@ -1,6 +1,7 @@
 import { useState } from "react"
-import HeaderAdmin from "../../../../components/admin/HeaderAdmin"
 import { useVerifyIfUserIsLogged } from "../../../../utils/security-utils"
+import HeaderAdmin from "../../../../components/admin/HeaderAdmin"
+import "./AdminMangaCreate.scss"
 
 const AdminMangaCreate = () => {
   useVerifyIfUserIsLogged()
@@ -67,11 +68,11 @@ const AdminMangaCreate = () => {
   }
 
   return (
-    <section className="adminManga">
+    <section className="adminMangaCreate">
       <HeaderAdmin />
       {message && <p>{message}</p>}
-      <div className="adminContainer">
-        <form className="adminForm" onSubmit={handleCreateManga}>
+      <div className="adminCreateContainer">
+        <form className="adminCreateForm" onSubmit={handleCreateManga}>
           <div>
             <label>
               Titre

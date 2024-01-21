@@ -58,12 +58,12 @@ const AdminMangaUpdate = () => {
   }
 
   return (
-    <section className="adminManga">
+    <section className="adminUpdateManga">
       <HeaderAdmin />
       {message && <p>{message}</p>}
       {manga && (
-        <div className="adminContainer">
-          <form className="adminForm" onSubmit={handleUpdateManga}>
+        <div className="adminUpdateContainer">
+          <form className="adminUpdateForm" onSubmit={handleUpdateManga}>
             <div>
               <label>
                 Titre

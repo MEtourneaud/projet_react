@@ -6,14 +6,21 @@ import StarRating from "../../../components/StarRating"
 import "./HomePage.scss"
 
 const HomePage = () => {
+  // useState permet de stocker dans une variable et donner par défaut la valeur "null" et l'utilisera au premier chargement du composant
+  // Aux chargements suivants, il prendra la valeur stocké dans le composant
   const [mangas, setMangas] = useState(null)
   const [reviews, setReviews] = useState(null)
   const [selectedRecommendation, setSelectedRecommendation] = useState(null)
   const [topRatedMangas, setTopRatedMangas] = useState(null)
 
+  // useEffect permet d'exécuter du code uniquement à certains chargements du composant
   useEffect(() => {
+    // Fonction anonyme qui s'auto-invoque (plus moderne)
+    // Cela permet d'effectuer des opérations asynchrones (fetch) sans devoir créer une fonction asynchrone (qu'on devrait appeler avec un await)
     ;(async () => {
+      // Le premier "await" permet d'attendre jusqu'à avoir récupéré les données de l'API
       const mangasResponse = await fetch(`http://localhost:3000/api/mangas`)
+      // Une fois les données récupérées, le second "await" permet d'afficher ces données json en js
       const mangasResponseData = await mangasResponse.json()
       console.log("Mangas with reviews:", mangasResponseData)
       setMangas(mangasResponseData)
@@ -26,8 +33,8 @@ const HomePage = () => {
 
       // Ajout de la propriété 'averageRating' et 'reviews' à chaque manga
       // Ajoutez ces logs pour mieux comprendre la structure des données et les notes des reviews
-      console.log("Mangas with reviews:", mangasResponseData)
-      console.log("Reviews:", reviewsResponseData)
+      // console.log("Mangas with reviews:", mangasResponseData)
+      // console.log("Reviews:", reviewsResponseData)
 
       const mangasWithAverageRatingAndReviews = mangasResponseData.map((manga) => {
         const mangaReviews = reviewsResponseData.filter((review) => review.MangaId === manga.id)
@@ -48,6 +55,8 @@ const HomePage = () => {
       // Sélection des trois mieux notés
       setTopRatedMangas(sortedMangas.slice(0, 4))
     })()
+    // Ici on place un tableau vide en deuxième paramètre de use effect
+    // pour executer la fonction une seule fois au premier chargement du composant
   }, [])
 
   const lastFourMangas = mangas ? mangas.slice(-4) : null

@@ -15,6 +15,7 @@ const MangaRandomPage = () => {
     })()
   }, [])
 
+  // Sélectionne un index aléatoire pour obtenir un manga aléatoire
   const randomMangaIndex =
     randomManga && randomManga.length > 0
       ? randomManga[Math.floor(Math.random() * randomManga.length)]

@@ -18,24 +18,33 @@
     color: black;
 }
 
-.randomButton a {
-    margin-right: 10px; /* Ajoutez une marge à droite pour séparer les liens */
-    margin-top: 20px;
-    padding: 8px 12px; /* Ajoutez un peu de rembourrage pour améliorer l'apparence */
-    border: 1px solid #dd5d42; /* Définissez la couleur, l'épaisseur et le style de la bordure */
-    border-radius: 5px; /* Ajoutez une bordure arrondie */
-    color: #dd5d42; /* Définissez la couleur du texte */
+.detailsButton {
+  display: flex;
+  justify-content: center;
+  
 }
 
-.randomButton a:hover {
-    background-color: #dd5d42; /* Changez la couleur de fond au survol pour donner un effet de bouton */
-    color: #fff; /* Changez la couleur du texte au survol */
+.detailsButton a {
+    margin-right: 10px; 
+    margin-top: 20px;
+    padding: 8px 12px; 
+    border: 1px solid #dd5d42; 
+    border-radius: 5px; 
+    color: #fff;
+    background-color: #dd5d42; 
+}
+
+.detailsButton a:hover {
+  background-color: #334768;
+  color: #FFD38C;
+  border: 1px solid #334768; 
 }
 
 h4{
     text-align: center;
     margin-bottom: 20px;
 }
+
 .reviewsBloc {
     display: flex;
     flex-wrap: wrap;
@@ -59,13 +68,24 @@ h4{
     margin-top: 16px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border:2px solid #dd5d42;
+    border:1px solid #dd5d42;
     padding: 20px;
+    background-color: #fff  
 }
 
 .reviewFormSection {
     width: 48%; /* Ajustez la largeur du formulaire */
     margin-bottom: 20px;
+}
+
+.reviewFormSection input:hover{
+  background-color: #334768;
+  color: #FFD38C;
+}
+
+.reviewFormSection textarea:hover{
+  background-color: #334768;
+  color: #FFD38C;
 }
 
 form { 
@@ -79,18 +99,20 @@ form {
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border:2px solid #dd5d42;
+  border:1px solid #dd5d42;
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
   width:100%;
   box-sizing: border-box;
   outline:0;
+  background-color: #fff
 }
 
 .feedback-input:focus { 
     border:2px solid #dd5d42; 
 }
+
 
 textarea {
   height: 150px;
@@ -116,9 +138,9 @@ textarea {
 }
 
 [type="submit"]:hover { 
-    background:#dd5d42; 
+    background:#334768; 
+    color: #FFD38C;
 }
-
 
 @media screen and (max-width: 768px) {
     .imgRandomBloc {

@@ -6,6 +6,7 @@ import StarRating from "../../../components/StarRating"
 import "./MangaDetailsPage.scss"
 
 const MangaDetailsPage = () => {
+  // Récupère l'ID du manga à partir des paramètres d'URL
   const { mangaId } = useParams()
   const [manga, setManga] = useState(null)
   const [reviews, setReviews] = useState(null)
@@ -107,7 +108,7 @@ const MangaDetailsPage = () => {
                   <p>Genres: {manga.genre}</p>
                   <p>Nombre de tome: {manga.volumeNumber}</p>
                   <p>Résumé: {manga.synopsis}</p>
-                  <div className="randomButton">
+                  <div className="detailsButton">
                     <Link to="#">Ajouter au profil</Link>
                   </div>
                 </div>
