@@ -64,10 +64,12 @@ const AdminMangaUpdate = () => {
       const responseData = await mangaUpdateResponse.json()
 
       if (mangaUpdateResponse.status === 200 || mangaUpdateResponse.status === 201) {
-        setMessage("Mise à jour OK")
+        alert("Mise à jour OK")
+
+        window.location.reload()
       } else {
         console.error("Erreur lors de la mise à jour du manga :", responseData.message)
-        setMessage("Erreur lors de la mise à jour du manga.")
+        alert("Erreur lors de la mise à jour du manga.")
       }
     } catch (error) {
       console.error("Erreur lors de la conversion de la réponse en JSON :", error)

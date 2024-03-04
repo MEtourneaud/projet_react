@@ -50,10 +50,12 @@ const AdminMangaCreate = () => {
       const responseData = await createMangaResponse.json()
 
       if (createMangaResponse.ok) {
-        setMessage("Manga créé !")
+        alert("Manga créé !")
+
+        window.location.reload()
       } else {
         console.error("Error response from server:", responseData)
-        setMessage("Erreur !")
+        alert("Erreur lors de la création du manga.")
       }
     } catch (error) {
       console.error("Error parsing JSON response:", error)

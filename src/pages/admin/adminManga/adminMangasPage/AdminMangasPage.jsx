@@ -21,10 +21,27 @@ const AdminMangasPage = () => {
   }, [])
 
   const handleDeleteCoworking = async (event, mangaId) => {
-    await fetch(`http://localhost:3000/api/mangas/${mangaId}`, {
-      method: "DELETE",
-      headers: { Authorization: "Bearer " + token },
-    })
+    // Utilisez window.confirm pour obtenir la confirmation de l'utilisateur
+    const confirmed = window.confirm("Êtes-vous sûr de vouloir supprimer ce manga ?")
+
+    if (!confirmed) {
+      // L'utilisateur a annulé la suppression
+      return
+    }
+
+    // L'utilisateur a confirmé la suppression, effectuez la requête DELETE
+
+    try {
+      await fetch(`http://localhost:3000/api/mangas/${mangaId}`, {
+        method: "DELETE",
+        headers: { Authorization: "Bearer " + token },
+      })
+
+      // Afficher une fenêtre d'alerte pour informer de la suppression réussie
+      window.alert("Le manga a bien été supprimé.")
+    } catch (error) {
+      console.error("Erreur lors de la suppression du manga :", error)
+    }
 
     const mangasResponse = await fetch("http://localhost:3000/api/mangas")
     const mangasResponseData = await mangasResponse.json()
