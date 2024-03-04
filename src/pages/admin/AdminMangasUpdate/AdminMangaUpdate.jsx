@@ -13,10 +13,13 @@ const AdminMangaUpdate = () => {
 
   useEffect(() => {
     ;(async () => {
-      const mangaResponse = await fetch(`http://localhost:3000/api/mangas/${mangaId}`)
-      const mangaResponseData = await mangaResponse.json()
-
-      setManga(mangaResponseData.data)
+      try {
+        const mangaResponse = await fetch(`http://localhost:3000/api/mangas/${mangaId}`)
+        const mangaResponseData = await mangaResponse.json()
+        setManga(mangaResponseData.data)
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données du manga :", error)
+      }
     })()
     // eslint-disable-next-line
   }, [])
@@ -38,7 +41,12 @@ const AdminMangaUpdate = () => {
     formData.append("synopsis", synopsis)
     formData.append("volumeNumber", volumeNumber)
 
-    formData.append("image", event.target.image.files[0])
+    const imageFile = event.target.image.files[0]
+
+    // Ajoutez cette vérification pour n'ajouter l'image que si elle est sélectionnée
+    if (imageFile) {
+      formData.append("image", imageFile)
+    }
 
     const token = localStorage.getItem("jwt")
 
@@ -50,10 +58,20 @@ const AdminMangaUpdate = () => {
       body: formData,
     })
 
-    if (mangaUpdateResponse.status === 200) {
-      setMessage("Mise à jour OK")
-    } else {
-      setMessage("Erreur")
+    console.log("Réponse de la mise à jour du manga :", mangaUpdateResponse)
+
+    try {
+      const responseData = await mangaUpdateResponse.json()
+
+      if (mangaUpdateResponse.status === 200 || mangaUpdateResponse.status === 201) {
+        setMessage("Mise à jour OK")
+      } else {
+        console.error("Erreur lors de la mise à jour du manga :", responseData.message)
+        setMessage("Erreur lors de la mise à jour du manga.")
+      }
+    } catch (error) {
+      console.error("Erreur lors de la conversion de la réponse en JSON :", error)
+      setMessage("Erreur lors de la mise à jour du manga.")
     }
   }
 

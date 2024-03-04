@@ -17,23 +17,17 @@ const AdminMangaCreate = () => {
     const synopsis = event.target.synopsis.value
     const volumeNumber = event.target.volumeNumber.value
 
-    // const mangaToCreateJson = JSON.stringify(mangaToCreate);
-
-    // je créé un objet "FormData" => ça me permet d'envoyer
-    // à mon api à la fois des infos JSON (text, number etc)
-    // et des fichiers
+    // je créé un objet "FormData" => ça me permet d'envoyer à mon api à la fois des infos JSON (text, number etc) et des fichiers
     const formData = new FormData()
 
-    // dans mon formdata, je créé un champs name, qui contient
-    // le nom issu du champs "name", transformé en json
+    // dans mon formdata, je créé un champs name, qui contient le nom issu du champs "name", transformé en json
     formData.append("title", title)
     formData.append("author", author)
     formData.append("genre", genre)
     formData.append("synopsis", synopsis)
     formData.append("volumeNumber", volumeNumber)
 
-    // dans mon formData, je créé un champs file, qui contient
-    // le fichier issu du champs image
+    // dans mon formData, je créé un champs file, qui contient le fichier issu du champs image
     formData.append("image", event.target.image.files[0])
 
     const token = localStorage.getItem("jwt")
