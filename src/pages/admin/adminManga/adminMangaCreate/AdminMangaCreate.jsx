@@ -32,7 +32,7 @@ const AdminMangaCreate = () => {
 
     const token = localStorage.getItem("jwt")
 
-    const createMangaResponse = await fetch("http://localhost:3000/api/mangas/withImg", {
+    const createMangaResponse = await fetch("http://localhost:3000/api/mangas", {
       method: "POST",
       headers: {
         // vu que j'envoie un formData (car j'ai des fichiers)

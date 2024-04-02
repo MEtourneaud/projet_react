@@ -50,7 +50,7 @@ const AdminMangaUpdate = () => {
 
     const token = localStorage.getItem("jwt")
 
-    const mangaUpdateResponse = await fetch(`http://localhost:3000/api/mangas/withImg/${mangaId}`, {
+    const mangaUpdateResponse = await fetch(`http://localhost:3000/api/mangas/${mangaId}`, {
       method: "PUT",
       headers: {
         Authorization: "Bearer " + token,
