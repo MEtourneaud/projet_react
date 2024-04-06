@@ -64,53 +64,55 @@ const AdminMangaCreate = () => {
   }
 
   return (
-    <section className="adminMangaCreate">
+    <>
       <HeaderAdmin />
-      {message && <p>{message}</p>}
-      <div className="adminCreateContainer">
-        <form className="adminCreateForm" onSubmit={handleCreateManga}>
-          <div>
-            <label>
-              Titre
-              <input type="text" name="title" />
-            </label>
-          </div>
-          <div>
-            <label>
-              Auteur
-              <input type="text" name="author" />
-            </label>
-          </div>
-          <div>
-            <label>
-              Synopsis
-              <textarea type="text" name="synopsis" />
-            </label>
-          </div>
-          <div>
-            <label>
-              Genres
-              <input type="text" name="genre" />
-            </label>
-          </div>
-          <div>
-            <label>
-              Nombre de volumes
-              <input type="number" name="volumeNumber" />
-            </label>
-          </div>
+      <section className="adminMangaCreate">
+        {message && <p>{message}</p>}
+        <div className="adminCreateContainer">
+          <form className="adminCreateForm" onSubmit={handleCreateManga}>
+            <div>
+              <label>
+                Titre
+                <input type="text" name="title" />
+              </label>
+            </div>
+            <div>
+              <label>
+                Auteur
+                <input type="text" name="author" />
+              </label>
+            </div>
+            <div>
+              <label>
+                Synopsis
+                <textarea type="text" name="synopsis" />
+              </label>
+            </div>
+            <div>
+              <label>
+                Genres
+                <input type="text" name="genre" />
+              </label>
+            </div>
+            <div>
+              <label>
+                Nombre de volumes
+                <input type="number" name="volumeNumber" />
+              </label>
+            </div>
 
-          <div>
-            <label>
-              Image
-              <input type="file" name="image" />
-            </label>
-          </div>
+            <div>
+              <label>
+                Image
+                <input type="file" name="image" />
+              </label>
+            </div>
 
-          <input type="submit" />
-        </form>
-      </div>
-    </section>
+            <input type="submit" />
+          </form>
+        </div>
+      </section>
+    </>
   )
 }
 

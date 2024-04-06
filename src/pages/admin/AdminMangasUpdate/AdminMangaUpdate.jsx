@@ -78,55 +78,57 @@ const AdminMangaUpdate = () => {
   }
 
   return (
-    <section className="adminUpdateManga">
+    <>
       <HeaderAdmin />
-      {message && <p>{message}</p>}
-      {manga && (
-        <div className="adminUpdateContainer">
-          <form className="adminUpdateForm" onSubmit={handleUpdateManga}>
-            <div>
-              <label>
-                Titre
-                <input type="text" name="title" defaultValue={manga.title} />
-              </label>
-            </div>
-            <div>
-              <label>
-                Auteur
-                <input type="text" name="author" defaultValue={manga.author} />
-              </label>
-            </div>
-            <div>
-              <label>
-                Synopsis
-                <textarea type="text" name="synopsis" defaultValue={manga.synopsis} />
-              </label>
-            </div>
-            <div>
-              <label>
-                Genres
-                <input type="text" name="genre" defaultValue={manga.genre} />
-              </label>
-            </div>
-            <div>
-              <label>
-                Nombre de volumes
-                <input type="number" name="volumeNumber" defaultValue={manga.volumeNumber} />
-              </label>
-            </div>
+      <section className="adminUpdateManga">
+        {message && <p>{message}</p>}
+        {manga && (
+          <div className="adminUpdateContainer">
+            <form className="adminUpdateForm" onSubmit={handleUpdateManga}>
+              <div>
+                <label>
+                  Titre
+                  <input type="text" name="title" defaultValue={manga.title} />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Auteur
+                  <input type="text" name="author" defaultValue={manga.author} />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Synopsis
+                  <textarea type="text" name="synopsis" defaultValue={manga.synopsis} />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Genres
+                  <input type="text" name="genre" defaultValue={manga.genre} />
+                </label>
+              </div>
+              <div>
+                <label>
+                  Nombre de volumes
+                  <input type="number" name="volumeNumber" defaultValue={manga.volumeNumber} />
+                </label>
+              </div>
 
-            <div>
-              <label>
-                Image
-                <input type="file" name="image" />
-              </label>
-            </div>
+              <div>
+                <label>
+                  Image
+                  <input type="file" name="image" />
+                </label>
+              </div>
 
-            <input type="submit" />
-          </form>
-        </div>
-      )}
-    </section>
+              <input type="submit" />
+            </form>
+          </div>
+        )}
+      </section>
+    </>
   )
 }
 

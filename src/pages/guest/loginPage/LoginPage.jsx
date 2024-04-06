@@ -58,29 +58,31 @@ const LoginPage = (event) => {
   }
 
   return (
-    <section className="loginPage">
+    <>
       <Header />
-      <div className="loginContainer">
-        <form className="loginForm" onSubmit={handleLogin}>
-          <h2>Login</h2>
-          <label>
-            username
-            <input type="text" name="username" />
-          </label>
-          <label>
-            password
-            <input type="password" name="password" />
-          </label>
-          <input type="submit" />
-          <div className="centeredContainer">
-            <Link className="loginFormLink" to="/users/sign_up">
-              Inscris-toi !
-            </Link>
-          </div>
-        </form>
-      </div>
+      <section className="loginPage">
+        <div className="loginContainer">
+          <form className="loginForm" onSubmit={handleLogin}>
+            <h2>Login</h2>
+            <label>
+              username
+              <input type="text" name="username" />
+            </label>
+            <label>
+              password
+              <input type="password" name="password" />
+            </label>
+            <input type="submit" />
+            <div className="centeredContainer">
+              <Link className="loginFormLink" to="/users/sign_up">
+                Inscris-toi !
+              </Link>
+            </div>
+          </form>
+        </div>
+      </section>
       <Footer />
-    </section>
+    </>
   )
 }
 

@@ -44,29 +44,31 @@ const RegisterPage = () => {
   }
 
   return (
-    <section className="registerPage">
+    <>
       <Header />
-      <div className="registerContainer">
-        {message && <p>{message}</p>}
-        <form className="registerForm" onSubmit={handleRegistration}>
-          <h2>Inscription</h2>
-          <label>
-            Nom d'utilisateur
-            <input type="text" name="username" />
-          </label>
-          <label>
-            Mot de passe
-            <input type="password" name="password" />
-          </label>
-          <label>
-            Confirmer le mot de passe
-            <input type="password" name="confirmPassword" />
-          </label>
-          <input type="submit" />
-        </form>
-      </div>
+      <section className="registerPage">
+        <div className="registerContainer">
+          {message && <p>{message}</p>}
+          <form className="registerForm" onSubmit={handleRegistration}>
+            <h2>Inscription</h2>
+            <label>
+              Nom d'utilisateur
+              <input type="text" name="username" />
+            </label>
+            <label>
+              Mot de passe
+              <input type="password" name="password" />
+            </label>
+            <label>
+              Confirmer le mot de passe
+              <input type="password" name="confirmPassword" />
+            </label>
+            <input type="submit" />
+          </form>
+        </div>
+      </section>
       <Footer />
-    </section>
+    </>
   )
 }
 
