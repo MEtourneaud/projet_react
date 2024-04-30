@@ -1,0 +1,43 @@
+.carousel-container {
+    max-width: 800px; /* Taille maximale du carrousel */
+    height: 400px; /* Hauteur fixe du carrousel */
+    overflow: hidden; /* Cache ce qui dépasse */
+    margin: auto; /* Centre le carrousel */
+  }
+  
+  .carousel-slide {
+    position: relative; /* Permet le positionnement absolu des enfants */
+    height: 400px; /* Hauteur fixe pour chaque diapositive */
+  }
+  
+  .carousel-image {
+    width: 100%; /* Image prend toute la largeur */
+    height: 100%; /* Image prend toute la hauteur */
+    object-fit: cover; /* Remplit le cadre sans déformation */
+  }
+  
+  .button-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .slide-button {
+    min-width: 100px; /* Largeur minimale */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    padding: 10px 20px;
+    color: #ffd18b;
+    background: #dd5d42;
+    border: 3px solid #000000;
+    border-radius: 30px;
+    text-align: center;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .slide-button:hover {
+    color: #dd5d42;
+    background: #ffd18b;
+  }
+  

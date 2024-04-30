@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
 import StarRating from "../../../components/StarRating"
+import Carousel from "../../../components/guest/carrousel/carrousel"
 import "./HomePage.scss"
 
 const HomePage = () => {
@@ -72,6 +73,7 @@ const HomePage = () => {
     <>
       <Header />
       <main>
+        <Carousel />
         <div className="centeredContainer">
           <div className="mangasContainer">
             <h2>Les mieux notés</h2>
