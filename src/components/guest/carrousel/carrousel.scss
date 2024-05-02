@@ -24,15 +24,16 @@
   }
   
   .slide-button {
-    min-width: 100px; /* Largeur minimale */
+    width: 200px; /* Largeur minimale */
     white-space: nowrap; /* Empêche le retour à la ligne */
-    padding: 10px 20px;
+    padding: 20px 40px;
     color: #ffd18b;
     background: #dd5d42;
-    border: 3px solid #000000;
-    border-radius: 30px;
+    border: 3px solid #ffd18b;
+    border-radius: 20px;
     text-align: center;
     margin: 0 10px;
+    font-size: 17px;
     cursor: pointer;
   }
   

@@ -54,13 +54,13 @@ const HomePage = () => {
       )
 
       // Sélection des trois mieux notés
-      setTopRatedMangas(sortedMangas.slice(0, 4))
+      setTopRatedMangas(sortedMangas.slice(0, 3))
     })()
     // Ici on place un tableau vide en deuxième paramètre de use effect
     // pour executer la fonction une seule fois au premier chargement du composant
   }, [])
 
-  const lastFourMangas = mangas ? mangas.slice(-4) : null
+  const lastFourMangas = mangas ? mangas.slice(-3) : null
 
   const manuallySelectedRecommendation = mangas ? mangas.find((manga) => manga.id === 1) : null
 
@@ -94,36 +94,6 @@ const HomePage = () => {
                 <p>En cours de chargement</p>
               )}
             </div>
-          </div>
-        </div>
-
-        <div className="centeredContainer">
-          <div className="mangasContainer">
-            <h2>Recommandation</h2>
-            {selectedRecommendation && (
-              <article className="recommendationArticle">
-                <div className="imgBloc">
-                  <Link to={`/mangas/details/${selectedRecommendation.id}`}>
-                    <img
-                      className="mangaImg"
-                      src={selectedRecommendation.imageUrl}
-                      alt={selectedRecommendation.title}
-                    />
-                  </Link>
-                </div>
-                <div className="textContainer">
-                  <Link to={`/mangas/details/${selectedRecommendation.id}`}>
-                    <h3>{selectedRecommendation.title}</h3>
-                  </Link>
-                  <StarRating rating={selectedRecommendation.averageRating} />
-                  <p>Auteur: {selectedRecommendation.author}</p>
-                  <p>Genres: {selectedRecommendation.genre}</p>
-                  <p>Nombre de volumes: {selectedRecommendation.volumeNumber}</p>
-                  <p>Synopsis: {selectedRecommendation.synopsis}</p>
-                  {console.log("Synopsis:", selectedRecommendation.synopsis)}
-                </div>
-              </article>
-            )}
           </div>
         </div>
 
