@@ -1,13 +1,13 @@
 .carousel-container {
-    max-width: 800px; /* Taille maximale du carrousel */
-    height: 400px; /* Hauteur fixe du carrousel */
+    max-width: 100%; /* Taille maximale du carrousel */
+    height: 90vh; /* Hauteur fixe du carrousel */
     overflow: hidden; /* Cache ce qui dépasse */
     margin: auto; /* Centre le carrousel */
   }
   
   .carousel-slide {
     position: relative; /* Permet le positionnement absolu des enfants */
-    height: 400px; /* Hauteur fixe pour chaque diapositive */
+    height: 80vh; /* Hauteur fixe pour chaque diapositive */
   }
   
   .carousel-image {
@@ -39,5 +39,19 @@
   .slide-button:hover {
     color: #dd5d42;
     background: #ffd18b;
+  }
+
+  .slick-dots li button {
+    font-size: 16px; /* Augmentation de la taille de la police */
+  }
+  
+  .slick-dots li button:before {
+    content: "•"; /* Utilisation d'un point comme indicateur */
+    font-size: 20px; /* Taille du point indicateur */
+    color: #ffd18b; /* Couleur du point */
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #dd5d42; /* Couleur du point actif */
   }
   

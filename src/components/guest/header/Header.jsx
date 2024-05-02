@@ -1,19 +1,20 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { jwtDecode } from "jwt-decode"
 import "./Header.scss"
 
 const Header = () => {
   const navigate = useNavigate()
   // Vérifie si l'utilisateur est authentifié en vérifiant la présence d'un token dans le localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("jwt") !== null)
-  // Gère l'état de l'ouverture ou de la fermeture du menu de navigation
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [username, setUsername] = useState("") // État pour le nom d'utilisateur
 
   // Fonction appelée lors du clic sur le bouton de déconnexion
   const handleLogout = () => {
     // Supprime le token d'authentification du localStorage et met à jour l'état d'authentification
     localStorage.removeItem("jwt")
     setIsAuthenticated(false)
+    setUsername("") // Réinitialisez le nom d'utilisateur
   }
 
   useEffect(() => {
@@ -28,21 +29,20 @@ const Header = () => {
     if (!isAuthenticated && !publicRoutes) {
       navigate("/users/sign_in")
     }
-  }, [isAuthenticated, navigate])
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen)
-  }
+    // Récupérer le JWT du localStorage et extraire le nom d'utilisateur
+    const jwt = localStorage.getItem("jwt")
+    if (jwt) {
+      const decoded = jwtDecode(jwt) // Décoder le JWT
+      const username = decoded.username // Extraire le nom d'utilisateur
+      setUsername(username) // Stocker le nom d'utilisateur
+    }
+  }, [isAuthenticated, navigate])
 
   return (
     <header className="header">
       <nav>
-        <div className="menu-icon" onClick={toggleMenu}>
-          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-        </div>
-        <ul className={`ulNav ${menuOpen ? "open" : ""}`}>
+        <ul className="ulNav">
           <li className="liLogo">
             <Link to="/">
               <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
@@ -64,13 +64,21 @@ const Header = () => {
             )}
           </li>
           <li className="liNav">
-            <Link className="hover-link" to="/contact">
-              Contact
+            {isAuthenticated && (
+              <Link className="hover-link" to="/contact">
+                Contact
+              </Link>
+            )}
+          </li>
+          <li className="liNav">
+            Bonjour, {/* Texte non cliquable */}
+            <Link className="hover-link" to="/users/profile">
+              {username} {/* Texte cliquable */}
             </Link>
           </li>
           <li className="liNav">
             {isAuthenticated ? (
-              <Link className="hover-link" to="#" onClick={handleLogout}>
+              <Link className="hover-link username-link no-hover" to="#" onClick={handleLogout}>
                 Déconnexion
               </Link>
             ) : (
