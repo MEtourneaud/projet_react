@@ -8,6 +8,7 @@ const Header = () => {
   // Vérifie si l'utilisateur est authentifié en vérifiant la présence d'un token dans le localStorage
   const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("jwt") !== null)
   const [username, setUsername] = useState("") // État pour le nom d'utilisateur
+  const [userRoles, setUserRoles] = useState([]) // Stocker les rôles
 
   // Fonction appelée lors du clic sur le bouton de déconnexion
   const handleLogout = () => {
@@ -15,6 +16,7 @@ const Header = () => {
     localStorage.removeItem("jwt")
     setIsAuthenticated(false)
     setUsername("") // Réinitialisez le nom d'utilisateur
+    setUserRoles([]) // Réinitialisez les rôles
   }
 
   useEffect(() => {
@@ -33,11 +35,24 @@ const Header = () => {
     // Récupérer le JWT du localStorage et extraire le nom d'utilisateur
     const jwt = localStorage.getItem("jwt")
     if (jwt) {
-      const decoded = jwtDecode(jwt) // Décoder le JWT
-      const username = decoded.username // Extraire le nom d'utilisateur
-      setUsername(username) // Stocker le nom d'utilisateur
+      try {
+        const decoded = jwtDecode(jwt)
+        const { username, roles = [] } = decoded
+        setUsername(username)
+        setUserRoles(roles)
+      } catch (error) {
+        console.error("Erreur lors du décodage du JWT:", error.message)
+      }
+    } else {
+      if (!isAuthenticated) {
+        navigate("/users/sign_in")
+      }
     }
   }, [isAuthenticated, navigate])
+
+  const hasRole = (role) => {
+    return userRoles.includes(role) // Vérifier si l'utilisateur a un rôle spécifique
+  }
 
   return (
     <header className="header">
@@ -71,10 +86,21 @@ const Header = () => {
             )}
           </li>
           <li className="liNav">
-            Bonjour, {/* Texte non cliquable */}
-            <Link className="hover-link" to="/users/profile">
-              {username} {/* Texte cliquable */}
-            </Link>
+            {isAuthenticated && (
+              <>
+                Bonjour, <span> </span>
+                <Link className="hover-link" to="/users/profile">
+                  {username}
+                </Link>
+              </>
+            )}
+          </li>
+          <li className="liNav">
+            {isAuthenticated && (hasRole("admin") || hasRole("superadmin")) && (
+              <Link className="hover-link" to="/admin/">
+                Administration
+              </Link>
+            )}
           </li>
           <li className="liNav">
             {isAuthenticated ? (

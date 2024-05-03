@@ -23,20 +23,6 @@
     list-style-type: none;
   }
   
-  .menu-icon {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #FFD38C;
-    margin: 6px 0;
-    transition: 0.4s;
-  }
-  
 .ulNav {
     background-color: #141414;
     display: flex;
@@ -58,6 +44,8 @@
   
   .liNav {
     margin-right: 3%;
+    color: #FFD38C;
+
   }
   
   .liNav a {
@@ -65,20 +53,24 @@
     color: #FFD38C;
   }
 
+  .hover-link {
+    position: relative; // permet l'utilisation de ::after
+  }
+  
   .hover-link::after {
     content: '';
+    position: absolute; // pour que l'animation se déroule sous le texte
+    bottom: -2px; // ajuste la position de l'underline
+    left: 0;
     display: block;
     width: 0;
     height: 2px;
     background: #FFD38C;
     transition: width .3s;
-    margin-top: 10px;
   }
   
   .hover-link:hover::after {
     width: 100%;
-    transition: width .3s;
   }
-
   
   

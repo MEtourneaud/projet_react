@@ -34,7 +34,7 @@ function App() {
         <Route path="/admin/mangas" element={<AdminMangasPage />} />
         <Route path="/admin/mangas/create" element={<AdminMangaCreate />} />
         <Route path="/admin/mangas/update/:mangaId" element={<AdminMangaUpdate />} />
-        <Route path="/admin/users" element={<AdminUsersPage />} />
+        <Route path="/admin/users/:userId" element={<AdminUsersPage />} />
       </Routes>
     </BrowserRouter>
   )
