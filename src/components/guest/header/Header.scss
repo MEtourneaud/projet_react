@@ -1,76 +1,73 @@
 // Header.scss
 
 .header {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  @font-face {
-    font-family: "Montserrat";
-    src: "/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf" format("truetype");
-  }
-  
-  body {
-    font-family: "Montserrat", sans-serif;
-  }
-  
-  ul {
-    list-style-type: none;
-  }
-  
-.ulNav {
-    background-color: #141414;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 17px;
-  }
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 
-.liLogo {
-    margin-right: auto;
-    height: 15vh;
-    width: 15vh;
+@font-face {
+  font-family: "Montserrat";
+  src: "/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf" format("truetype");
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style-type: none;
 }
   
-  .logo {
-    height: 100%;
-    width: 100%;
-  }
-  
-  .liNav {
-    margin-right: 3%;
-    color: #FFD38C;
+.ulNav {
+  background-color: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 17px;
+}
 
-  }
+.liLogo {
+  margin-right: auto;
+  height: 15vh;
+  width: 15vh;
+}
   
-  .liNav a {
-    text-decoration: none;
-    color: #FFD38C;
-  }
+.logo {
+  height: 100%;
+  width: 100%;
+}
+  
+.liNav {
+  margin-right: 3%;
+  color: #FFD38C;
+}
 
-  .hover-link {
-    position: relative; // permet l'utilisation de ::after
-  }
-  
-  .hover-link::after {
-    content: '';
-    position: absolute; // pour que l'animation se déroule sous le texte
-    bottom: -2px; // ajuste la position de l'underline
-    left: 0;
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #FFD38C;
-    transition: width .3s;
-  }
-  
-  .hover-link:hover::after {
-    width: 100%;
-  }
-  
-  
+.liNav a {
+  text-decoration: none;
+  color: #FFD38C;
+}
+
+.hover-link {
+  position: relative; // permet l'utilisation de ::after
+}
+
+.hover-link::after {
+  content: '';
+  position: absolute; // pour que l'animation se déroule sous le texte
+  bottom: -2px; // ajuste la position de l'underline
+  left: 0;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FFD38C;
+  transition: width .3s;
+}
+
+.hover-link:hover::after {
+  width: 100%;
+}
