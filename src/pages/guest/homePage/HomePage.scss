@@ -54,6 +54,19 @@ main a{
     align-items: center;
     box-sizing: border-box; /* Évite que le padding provoque des dépassements */
   }
+
+  /* Style de base pour le h3 */
+.square-left h3, 
+.square-right h3 {
+  transition: all 0.3s ease; /* Transition pour un effet fluide */
+}
+
+/* Effet de hover: changement de couleur */
+.square-left h3:hover, 
+.square-right h3:hover {
+  text-decoration: underline; /* Ajoute un soulignement */
+}
+
   
   /* Contrôle de l'image */
   .imgBloc {
