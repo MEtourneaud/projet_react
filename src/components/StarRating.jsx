@@ -1,12 +1,9 @@
-const StarRating = ({ rating }) => {
-  const maxStars = 5
-
+const StarRating = ({ rating, maxStars = 5 }) => {
   const renderStars = () => {
     const stars = []
 
-    for (let i = 0; i < maxStars; i++) {
-      const isFilled = i < rating
-      stars.push(<span key={i}>{isFilled ? "★" : "☆"}</span>)
+    for (let i = 0; i < rating; i++) {
+      stars.push(<span key={i}>★</span>) // Afficher uniquement des étoiles pleines
     }
 
     return stars

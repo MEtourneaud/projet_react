@@ -74,52 +74,61 @@ const HomePage = () => {
       <Header />
       <main>
         <Carousel />
-        <div className="centeredContainer">
-          <div className="mangasContainer">
-            <h2>Les mieux notés</h2>
-            <div className="mangasList">
-              {topRatedMangas ? (
-                topRatedMangas.map((manga) => (
+
+        <div>
+          <h2 className="homeH2">Les derniers publiés</h2>
+          <div className="mangasList">
+            {lastFourMangas ? (
+              <>
+                {lastFourMangas.map((manga, index) => {
+                  // Déterminer si on utilise le carré à droite ou à gauche
+                  const squareClass = index % 2 === 0 ? "square-right" : "square-left"
+                  return (
+                    <article key={manga.id}>
+                      <div className="imgBloc">
+                        <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
+                        <div className={squareClass}>
+                          <Link to={`/mangas/details/${manga.id}`}>
+                            <h3>{manga.title}</h3>
+                          </Link>
+                          {/* Les étoiles sous le titre, dans le même conteneur */}
+                          <StarRating className="starRating" rating={manga.averageRating} />
+                        </div>
+                      </div>
+                    </article>
+                  )
+                })}
+              </>
+            ) : (
+              <p>En cours de chargement</p>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="homeH2">Les mieux notés</h2>
+          <div className="mangasList">
+            {topRatedMangas ? (
+              topRatedMangas.map((manga, index) => {
+                // Utilise modulo pour alterner la position des carrés
+                const squareClass = index % 2 === 0 ? "square-right" : "square-left"
+                return (
                   <article key={manga.id}>
                     <Link to={`/mangas/details/${manga.id}`}>
                       <div className="imgBloc">
                         <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
-                      </div>
-                      <h3>{manga.title}</h3>
-                    </Link>
-                    <StarRating className="starRating " rating={manga.averageRating} />
-                  </article>
-                ))
-              ) : (
-                <p>En cours de chargement</p>
-              )}
-            </div>
-          </div>
-        </div>
-
-        <div className="centeredContainer">
-          <div className="mangasContainer">
-            <h2>Les derniers publiés</h2>
-            <div className="mangasList">
-              {lastFourMangas ? (
-                <>
-                  {lastFourMangas.map((manga) => {
-                    return (
-                      <article key={manga.id}>
-                        <Link to={`/mangas/details/${manga.id}`}>
-                          <div className="imgBloc">
-                            <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
-                          </div>
+                        <div className={squareClass}>
                           <h3>{manga.title}</h3>
-                        </Link>
-                      </article>
-                    )
-                  })}
-                </>
-              ) : (
-                <p>En cours de chargement</p>
-              )}
-            </div>
+                          <StarRating className="starRating" rating={manga.averageRating} />
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                )
+              })
+            ) : (
+              <p>En cours de chargement</p>
+            )}
           </div>
         </div>
       </main>
