@@ -20,8 +20,8 @@ main a{
     padding-bottom: 5vh; 
     text-align: center;
     font-size: 30px;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 /* Contrôle de la position des carrés */
@@ -30,34 +30,34 @@ main a{
     top: 0;
     right: 0;
     height: 100%; /* Prendre toute la hauteur du conteneur */
-    width: 30%; /* Largeur du carré */
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #ffd18b;
-    display: flex;
-    flex-direction: column; /* Assure un alignement vertical */
+    width: 35%; /* Largeur du carré */
+    padding: 10px; /* Ajoute de la marge intérieure */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond transparent foncé */
+    display: flex; /* Flexbox pour aligner les éléments */
+    flex-direction: column; /* Aligner le contenu verticalement */
     justify-content: center; /* Centre verticalement */
     align-items: center; /* Centre horizontalement */
+    box-sizing: border-box; /* Évite que le padding provoque des dépassements */
   }
   
   .square-left {
     position: absolute;
     top: 0;
-    left: 0;
-    height: 100%;
-    width: 30%;
-    padding: 10px;
+    left: 0; /* Le carré est à gauche */
+    height: 100%; /* Prendre toute la hauteur */
+    width: 30%; /* Largeur du carré */
+    padding: 10px; /* Ajoute de la marge intérieure */
     background-color: rgba(0, 0, 0, 0.5);
-    color: #ffd18b;
     display: flex;
-    flex-direction: column; /* Assure un alignement vertical */
+    flex-direction: column; /* Aligner le contenu verticalement */
     justify-content: center;
     align-items: center;
+    box-sizing: border-box; /* Évite que le padding provoque des dépassements */
   }
   
   /* Contrôle de l'image */
   .imgBloc {
-    position: relative; /* Permet le positionnement absolu des éléments internes */
+    position: relative; /* Permet le positionnement absolu */
     height: 20vh; /* Hauteur du conteneur */
     width: 100%; /* Largeur complète */
   }
@@ -68,10 +68,18 @@ main a{
     object-fit: cover; /* Pour s'assurer que l'image couvre tout le conteneur */
   }
   
+  
   .starRating {
-    font-size: 24px; /* Ajustez la taille des étoiles selon vos besoins */
-    color: gold; /* Couleur des étoiles */
-    display: flex; /* Aligner les étoiles horizontalement */
+    font-size: 50px; /* Taille des étoiles */
+    display: flex; /* Pour aligner les étoiles horizontalement */
   }
   
+  .starRating span {
+    /* Crée un dégradé radial avec le centre doré et les branches rouge-orange */
+    background: radial-gradient(circle at 50% 55%, gold 10%, #dd5d42 40%, transparent 100%);
+    -webkit-background-clip: text; /* Applique le dégradé au texte */
+    color: transparent; /* Le texte doit être transparent pour voir le dégradé */
+    font-weight: bold; /* Pour rendre les étoiles plus visibles */
+    margin-right: 5px; /* Ajoute de l'espace entre les étoiles */
+  }
   
