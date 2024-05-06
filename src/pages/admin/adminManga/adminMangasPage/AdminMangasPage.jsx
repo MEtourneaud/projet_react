@@ -54,7 +54,7 @@ const AdminMangasPage = () => {
     return
   }
 
-  console.log("Token :", token)
+  // console.log("Token :", token)
 
   return (
     <>
@@ -67,7 +67,8 @@ const AdminMangasPage = () => {
               return (
                 <article key={manga.id}>
                   <h3>{manga.title}</h3>
-                  {decodedToken.data.role !== 3 && (
+                  {console.log(decodedToken.roles)}
+                  {decodedToken.roles !== 3 && (
                     <button onClick={(event) => handleDeleteCoworking(event, manga.id)}>
                       Supprimer
                     </button>

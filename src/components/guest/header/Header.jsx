@@ -78,7 +78,7 @@ const Header = () => {
               </Link>
             )}
           </li>
-          <li className="liNav">
+          <li className="liNav liContact">
             {isAuthenticated && (
               <Link className="hover-link" to="/contact">
                 Contact

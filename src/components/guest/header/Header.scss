@@ -28,7 +28,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .liLogo {
@@ -50,6 +50,11 @@ ul {
 .liNav a {
   text-decoration: none;
   color: #FFD38C;
+}
+
+
+.liContact{
+  margin-right: auto;
 }
 
 .hover-link {

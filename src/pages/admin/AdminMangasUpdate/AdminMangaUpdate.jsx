@@ -36,8 +36,8 @@ const AdminMangaUpdate = () => {
     const formData = new FormData()
 
     formData.append("title", title)
-    formData.append("authors", author)
-    formData.append("genres", genre)
+    formData.append("author", author)
+    formData.append("genre", genre)
     formData.append("synopsis", synopsis)
     formData.append("volumeNumber", volumeNumber)
 
@@ -95,6 +95,7 @@ const AdminMangaUpdate = () => {
                 <label>
                   Auteur
                   <input type="text" name="author" defaultValue={manga.author} />
+                  {console.log(manga.author)}
                 </label>
               </div>
               <div>
