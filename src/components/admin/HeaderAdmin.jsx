@@ -5,16 +5,19 @@ import "./HeaderAdmin.scss"
 const HeaderAdmin = () => {
   const navigate = useNavigate()
   const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("jwt") !== null)
+
   const handleLogout = () => {
-    console.log("Déconnexion effectuée") // Vérifiez dans la console si ce message est affiché
-    //Je sors le token du local storage
-    localStorage.removeItem("jwt")
-    setIsAuthenticated(false)
+    console.log("Déconnexion effectuée") // Message de débogage
+    localStorage.removeItem("jwt") // Suppression du token
+    console.log("JWT après suppression:", localStorage.getItem("jwt")) // Devrait être null
+    setIsAuthenticated(false) // Met à jour l'état d'authentification
+    navigate("/users/sign_in") // Redirige après déconnexion
   }
 
   useEffect(() => {
-    if (!isAuthenticated && !window.location.pathname.includes("/users/sign_up")) {
-      navigate("/users/sign_in")
+    if (!isAuthenticated) {
+      console.log("Redirection après déconnexion") // Pour déboguer
+      navigate("/users/sign_in") // Redirige si l'utilisateur n'est pas authentifié
     }
   }, [isAuthenticated, navigate])
 

@@ -1,91 +1,96 @@
 import { useEffect, useState } from "react"
 import HeaderAdmin from "../../../../components/admin/HeaderAdmin"
-import { useVerifyIfUserIsLogged } from "../../../../utils/security-utils"
+// import { useVerifyIfUserIsLogged } from "../../../../utils/security-utils"
 import { jwtDecode } from "jwt-decode"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import "./AdminMangasPage.scss"
 
-const AdminMangasPage = () => {
-  useVerifyIfUserIsLogged()
-
-  const [mangas, setMangas] = useState(null)
-  const token = localStorage.getItem("jwt")
-  const decodedToken = jwtDecode(token)
+const AdminUsersPage = () => {
+  const [users, setUsers] = useState(null)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [decodedToken, setDecodedToken] = useState(null)
+  const navigate = useNavigate()
 
   useEffect(() => {
-    ;(async () => {
-      const mangasResponse = await fetch("http://localhost:3000/api/mangas")
-      const mangasResponseData = await mangasResponse.json()
-      setMangas(mangasResponseData)
-    })()
-  }, [])
+    const token = localStorage.getItem("jwt")
 
-  const handleDeleteCoworking = async (event, mangaId) => {
-    // Utilisez window.confirm pour obtenir la confirmation de l'utilisateur
-    const confirmed = window.confirm("Êtes-vous sûr de vouloir supprimer ce manga ?")
+    // Vérifier si le token est valide
+    if (token && typeof token === "string") {
+      try {
+        const decoded = jwtDecode(token)
+        setDecodedToken(decoded)
+        setIsAuthenticated(true)
+      } catch (error) {
+        console.error("Error decoding token:", error)
+        navigate("/users/sign_in") // Redirige en cas d'erreur de décodage
+      }
+    } else {
+      console.error("Token is missing or invalid")
+      navigate("/users/sign_in") // Redirige si le token est manquant ou invalide
+    }
+  }, [navigate])
 
-    if (!confirmed) {
-      // L'utilisateur a annulé la suppression
+  // Récupérer la liste des utilisateurs
+  useEffect(() => {
+    if (isAuthenticated) {
+      ;(async () => {
+        const usersResponse = await fetch("http://localhost:3000/api/users")
+        const usersResponseData = await usersResponse.json()
+        setUsers(usersResponseData)
+      })()
+    }
+  }, [isAuthenticated])
+
+  const handleDeleteUser = async (event, userId) => {
+    const token = localStorage.getItem("jwt")
+
+    if (!token || !isAuthenticated) {
+      console.error("Cannot delete user without a valid token")
       return
     }
 
-    // L'utilisateur a confirmé la suppression, effectuez la requête DELETE
+    const confirmed = window.confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")
+
+    if (!confirmed) {
+      return // L'utilisateur a annulé
+    }
 
     try {
-      await fetch(`http://localhost:3000/api/mangas/${mangaId}`, {
+      await fetch(`http://localhost:3000/api/users/${userId}`, {
         method: "DELETE",
         headers: { Authorization: "Bearer " + token },
       })
 
-      // Afficher une fenêtre d'alerte pour informer de la suppression réussie
-      window.alert("Le manga a bien été supprimé.")
+      const usersResponse = await fetch("http://localhost:3000/api/users")
+      const usersResponseData = await usersResponse.json()
+      setUsers(usersResponseData)
     } catch (error) {
-      console.error("Erreur lors de la suppression du manga :", error)
+      console.error("Erreur lors de la suppression de l'utilisateur :", error)
     }
-
-    const mangasResponse = await fetch("http://localhost:3000/api/mangas")
-    const mangasResponseData = await mangasResponse.json()
-    setMangas(mangasResponseData)
   }
-
-  if (!token) {
-    // Gérer le cas où le token est null ou inexistant
-    console.error("Token absent ou invalide")
-    return
-  }
-
-  // console.log("Token :", token)
 
   return (
     <>
       <HeaderAdmin />
-      <div className="main-container">
-        <h2>Liste des mangas</h2>
-        {mangas ? (
+      <div className="userDelete">
+        <h2>Liste des utilisateurs</h2>
+        {users ? (
           <>
-            {mangas.map((manga) => {
-              return (
-                <article key={manga.id}>
-                  <h3>{manga.title}</h3>
-                  {console.log(decodedToken.roles)}
-                  {decodedToken.roles !== 3 && (
-                    <button onClick={(event) => handleDeleteCoworking(event, manga.id)}>
-                      Supprimer
-                    </button>
-                  )}
-                  <Link to={`/admin/mangas/update/${manga.id}`}>
-                    <button>Modifier</button>
-                  </Link>
-                </article>
-              )
-            })}
+            {users.map((user) => (
+              <article key={user.id}>
+                <h3>{user.username}</h3>
+                {decodedToken && decodedToken.role !== 3 && (
+                  <button onClick={(event) => handleDeleteUser(event, user.id)}>Supprimer</button>
+                )}
+              </article>
+            ))}
           </>
         ) : (
-          <p>Mangas en préparation</p>
+          <p>Pas d'utilisateurs trouvés</p>
         )}
       </div>
     </>
   )
 }
 
-export default AdminMangasPage
+export default AdminUsersPage
