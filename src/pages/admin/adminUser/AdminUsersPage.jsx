@@ -9,7 +9,21 @@ const AdminUsersPage = () => {
 
   const [users, setUsers] = useState(null)
   const token = localStorage.getItem("jwt")
-  const decodedToken = jwtDecode(token)
+  // const decodedToken = jwtDecode(token)
+
+  // Vérifier si le token existe avant de le décoder
+  let decodedToken = null
+  if (token) {
+    try {
+      decodedToken = jwtDecode(token)
+      console.log("Token décodé:", decodedToken) // Afficher le contenu du token
+    } catch (error) {
+      console.error("Erreur lors du décodage du token:", error)
+      decodedToken = null // Assurez-vous que cette variable ne reste pas indéfinie
+    }
+  } else {
+    console.error("Token non trouvé")
+  }
 
   useEffect(() => {
     ;(async () => {
@@ -19,7 +33,7 @@ const AdminUsersPage = () => {
     })()
   }, [])
 
-  const handleDeleteCoworking = async (event, userId) => {
+  const handleDeleteUser = async (event, userId) => {
     await fetch(`http://localhost:3000/api/users/${userId}`, {
       method: "DELETE",
       headers: { Authorization: "Bearer " + token },
@@ -41,10 +55,8 @@ const AdminUsersPage = () => {
               return (
                 <article>
                   <h3>{user.username}</h3>
-                  {decodedToken.data.role !== 3 && (
-                    <button onClick={(event) => handleDeleteCoworking(event, user.id)}>
-                      Supprimer
-                    </button>
+                  {decodedToken.role !== 3 && (
+                    <button onClick={(event) => handleDeleteUser(event, user.id)}>Supprimer</button>
                   )}
                 </article>
               )
