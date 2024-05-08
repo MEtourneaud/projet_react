@@ -20,15 +20,18 @@ const Header = () => {
   }
 
   useEffect(() => {
+    console.log("Chemin actuel:", window.location.pathname)
     // Détermine si la route actuelle est publique (non soumise à l'authentification)
-    const publicRoutes =
-      window.location.pathname === "/" ||
-      window.location.pathname === "/contact" ||
-      window.location.pathname === "/users/sign_up" ||
-      window.location.pathname.includes("/users/sign_in")
+    const publicRoutes = ["/", "/contact", "/users/sign_up", "/users/sign_in"]
+    console.log("Routes publiques:", publicRoutes)
 
     // Redirige vers la page de connexion si l'utilisateur n'est pas authentifié
-    if (!isAuthenticated && !publicRoutes) {
+    console.log("Chemin actuel:", window.location.pathname)
+    const currentPath = window.location.pathname
+
+    console.log("Utilisateur authentifié:", isAuthenticated)
+    if (!isAuthenticated && !publicRoutes.includes(currentPath)) {
+      console.log("Redirection vers la page de connexion")
       navigate("/users/sign_in")
     }
 
@@ -42,10 +45,6 @@ const Header = () => {
         setUserRoles(roles)
       } catch (error) {
         console.error("Erreur lors du décodage du JWT:", error.message)
-      }
-    } else {
-      if (!isAuthenticated) {
-        navigate("/users/sign_in")
       }
     }
   }, [isAuthenticated, navigate])
