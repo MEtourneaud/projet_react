@@ -11,7 +11,6 @@ const HomePage = () => {
   // Aux chargements suivants, il prendra la valeur stocké dans le composant
   const [mangas, setMangas] = useState(null)
   const [reviews, setReviews] = useState(null)
-  const [selectedRecommendation, setSelectedRecommendation] = useState(null)
   const [topRatedMangas, setTopRatedMangas] = useState(null)
 
   // useEffect permet d'exécuter du code uniquement à certains chargements du composant
@@ -62,19 +61,11 @@ const HomePage = () => {
 
   const lastFourMangas = mangas ? mangas.slice(-3) : null
 
-  const manuallySelectedRecommendation = mangas ? mangas.find((manga) => manga.id === 1) : null
-
-  useEffect(() => {
-    // Mettez à jour le manga sélectionné manuellement
-    setSelectedRecommendation(manuallySelectedRecommendation)
-  }, [mangas])
-
   return (
     <>
       <Header />
       <main>
         <Carousel />
-
         <div>
           <h2 className="homeH2">Les derniers publiés</h2>
           <div className="mangasList">

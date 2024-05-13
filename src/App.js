@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import "./App.css"
 import MangasPage from "./pages/guest/mangasPage/MangasPage"
 import MangaRandomPage from "./pages/guest/mangaRandomPage/MangaRandomPage"
 import MangaDetailsPage from "./pages/guest/mangaDetailsPage/MangaDetailsPage"

@@ -3,7 +3,7 @@ import HeaderAdmin from "../../../../components/admin/HeaderAdmin"
 // import { useVerifyIfUserIsLogged } from "../../../../utils/security-utils"
 import { jwtDecode } from "jwt-decode"
 import { useNavigate } from "react-router-dom"
-import "./AdminMangasPage.scss"
+// import "./AdminMangasPage.scss"
 
 const AdminUsersPage = () => {
   const [users, setUsers] = useState(null)

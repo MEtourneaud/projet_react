@@ -1,33 +1,15 @@
-// Header.scss
-
-.header {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: "/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf" format("truetype");
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-}
-
-ul {
-  list-style-type: none;
-}
+@import "../../../scss/base/reset";
+@import "../../../scss/base/typography";
   
+.header-container {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
 .ulNav {
   background-color: #141414;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   font-size: 20px;
 }
 

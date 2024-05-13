@@ -2,8 +2,8 @@ import { useState } from "react"
 import { useNavigate } from "react-router"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
-import "./LoginPage.scss"
 import { Link } from "react-router-dom"
+import "./LoginPage.scss"
 
 const LoginPage = (event) => {
   const [message, setMessage] = useState(null)
