@@ -1,3 +1,5 @@
+@import "../../../scss/abstracts/variables";
+
 .carousel-container {
     max-width: 100%; /* Taille maximale du carrousel */
     height: 90vh; /* Hauteur fixe du carrousel */
@@ -27,10 +29,10 @@
     width: 200px; /* Largeur minimale */
     white-space: nowrap; /* Empêche le retour à la ligne */
     padding: 20px 40px;
-    color: #ffd18b;
-    background: #dd5d42;
-    border: 3px solid #ffd18b;
-    border-radius: 20px;
+    color: $caramel;
+    background: $medium-vermillon;
+    border: $border-slide-caramel;
+    border-radius: $border-radius-20;
     text-align: center;
     margin: 0 10px;
     font-size: 17px;
@@ -38,22 +40,22 @@
   }
   
   .slide-button:hover {
-    color: #dd5d42;
-    background: #ffd18b;
-    border: 3px solid #dd5d42;
+    color: $caramel;
+    background: #ff774c;
+    border: $border-slide-caramel;
   }
 
-  .slick-dots li button {
-    font-size: 16px; /* Augmentation de la taille de la police */
-  }
+  // .slick-dots li button {
+  //   font-size: 16px; /* Augmentation de la taille de la police */
+  // }
   
   .slick-dots li button:before {
     content: "•"; /* Utilisation d'un point comme indicateur */
     font-size: 20px; /* Taille du point indicateur */
-    color: #ffd18b; /* Couleur du point */
+    color: $caramel; /* Couleur du point */
   }
   
   .slick-dots li.slick-active button:before {
-    color: #dd5d42; /* Couleur du point actif */
+    color: $medium-vermillon; /* Couleur du point actif */
   }
   

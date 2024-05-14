@@ -1,0 +1,13 @@
+@mixin square-title {
+    position: absolute;
+    top: 0;
+    height: 100%; /* Prendre toute la hauteur du conteneur */
+    width: 35%; /* Largeur du carré */
+    padding: 10px; /* Ajoute de la marge intérieure */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond transparent foncé */
+    display: flex; /* Flexbox pour aligner les éléments */
+    flex-direction: column; /* Aligner le contenu verticalement */
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    box-sizing: border-box; /* Évite que le padding provoque des dépassements */
+}

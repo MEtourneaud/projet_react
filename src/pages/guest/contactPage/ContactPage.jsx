@@ -1,6 +1,6 @@
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
-// import "./ContactPage.scss"
+import "./ContactPage.scss"
 
 const ContactPage = () => {
   return (

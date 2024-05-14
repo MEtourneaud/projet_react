@@ -1,13 +1,9 @@
 @import "../../../scss/base/reset";
-@import "../../../scss/base/typography";
-  
-.header-container {
-  margin-left: 5vw;
-  margin-right: 5vw;
-}
+@import "../../../scss/abstracts/variables";
+
 
 .ulNav {
-  background-color: #141414;
+  background-color: $netflix-black;
   display: flex;
   align-items: center;
   font-size: 20px;
@@ -17,6 +13,7 @@
   margin-right: auto;
   height: 15vh;
   width: 15vh;
+  margin-left: 2vw;
 }
   
 .logo {
@@ -25,13 +22,13 @@
 }
   
 .liNav {
-  margin-right: 3%;
-  color: #FFD38C;
+  margin-right: 2vw;
+  color: $caramel;
 }
 
 .liNav a {
   text-decoration: none;
-  color: #FFD38C;
+  color: $caramel;
 }
 
 
@@ -51,7 +48,7 @@
   display: block;
   width: 0;
   height: 2px;
-  background: #FFD38C;
+  background: $caramel;
   transition: width .3s;
 }
 
