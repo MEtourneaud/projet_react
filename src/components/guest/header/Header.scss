@@ -1,5 +1,6 @@
 @import "../../../scss/base/reset";
 @import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
 
 
 .ulNav {
@@ -31,7 +32,6 @@
   color: $caramel;
 }
 
-
 .liContact{
   margin-right: auto;
 }
@@ -41,15 +41,7 @@
 }
 
 .hover-link::after {
-  content: '';
-  position: absolute; // pour que l'animation se déroule sous le texte
-  bottom: -2px; // ajuste la position de l'underline
-  left: 0;
-  display: block;
-  width: 0;
-  height: 2px;
-  background: $caramel;
-  transition: width .3s;
+  @include hover-nav
 }
 
 .hover-link:hover::after {

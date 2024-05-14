@@ -54,7 +54,7 @@ const Header = () => {
   }
 
   return (
-    <header className="header-container">
+    <header>
       <nav>
         <ul className="ulNav">
           <li className="liLogo">

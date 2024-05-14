@@ -11,3 +11,15 @@
     align-items: center; /* Centre horizontalement */
     box-sizing: border-box; /* Évite que le padding provoque des dépassements */
 }
+
+@mixin hover-nav{
+    content: '';
+    position: absolute; // pour que l'animation se déroule sous le texte
+    bottom: -2px; // ajuste la position de l'underline
+    left: 0;
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $caramel;
+    transition: width .3s;
+}

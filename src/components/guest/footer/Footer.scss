@@ -1,33 +1,80 @@
-.foot { 
-    margin-left: 5vw;
-    margin-right: 5vw;
+@import "../../../scss/base/reset";
+@import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
+
+
+.foot {
+    background-color: $netflix-black;
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    color: #FFD38C;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+.logoFooter {
+    height: 40vh;
+    width: 40vh;
 }
 
 .ulFooter {
-    background-color: #334768;
-    height: 15vh;
-    width: 100%;
-    display: flex; 
+    display: flex;
     align-items: center;
-    justify-content: flex-end;
+    
 }
-  
-.liTop {
-    height: 5vh;
-    width: 5vh;
-    cursor: pointer;
-    margin-right: 3%;
+
+.ulFooter a {
+    text-decoration: none;
+    color: $caramel;
 }
 
 .liFooter {
-    margin-right: auto;
-    color: #FFD38C;
-    padding-left: 10%;
+    margin-right: 2vw;
+    font-size: 20px;
+    margin-right: 5vw;
 }
 
-.topButton {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+
+.logoSocialMedia {
+    height: 10vh;
+    width: 10vh;
 }
-  
+
+.liCgu {
+    margin-right: auto;
+    font-size: 20px;
+    margin-left: 5vw;
+}
+
+.liYoutube{
+    margin-right: auto;
+}
+
+.copyright{
+    margin-top: 7vh;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+.hover-foot {
+    position: relative; // permet l'utilisation de ::after
+}
+
+.hover-foot::after {
+    @include hover-nav
+}
+
+.hover-foot:hover::after {
+    width: 100%;
+}
+
+// .topButton {
+//     height: 100%;
+//     width: 100%;
+//     object-fit: cover;
+// }
