@@ -20,7 +20,7 @@ const Footer = () => {
       <nav>
         <ul className="ulFooter">
           <li className="liCgu">
-            <Link className="hover-foot" to="/contact">
+            <Link className="hover-foot" to="/cgu">
               CGU
             </Link>
           </li>

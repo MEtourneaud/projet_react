@@ -13,6 +13,7 @@ import AdminMangaUpdate from "./pages/admin/AdminMangasUpdate/AdminMangaUpdate"
 import AdminUsersPage from "./pages/admin/adminUser/AdminUsersPage"
 import HomePage from "./pages/guest/homePage/HomePage"
 import ContactPage from "./pages/guest/contactPage/ContactPage"
+import CguPage from "./pages/guest/cguPage/CguPage"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/mangas/details/:mangaId" element={<MangaDetailsPage />} />s
         <Route path="/mangas/random" element={<MangaRandomPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/cgu" element={<CguPage />} />
         {/* <Route path="/users/:id" element={<ProfilePage />} />
         <Route path="/users/:id/collection" element={<CollectionMangaPage />} /> */}
         <Route path="/users/sign_up" element={<RegisterPage />} />
