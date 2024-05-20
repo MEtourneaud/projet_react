@@ -68,7 +68,7 @@ const HomePage = () => {
         <Carousel />
         <div>
           <h2 className="homeH2">Les derniers publiés</h2>
-          <div className="mangasList">
+          <div>
             {lastFourMangas ? (
               <>
                 {lastFourMangas.map((manga, index) => {
@@ -98,7 +98,7 @@ const HomePage = () => {
 
         <div>
           <h2 className="homeH2">Les mieux notés</h2>
-          <div className="mangasList">
+          <div>
             {topRatedMangas ? (
               topRatedMangas.map((manga, index) => {
                 // Utilise modulo pour alterner la position des carrés

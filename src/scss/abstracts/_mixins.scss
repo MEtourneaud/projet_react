@@ -23,3 +23,13 @@
     background: $caramel;
     transition: width .3s;
 }
+
+@mixin h2{
+    background-color: #dd5d42;
+    padding-top: 5vh; 
+    padding-bottom: 5vh; 
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}

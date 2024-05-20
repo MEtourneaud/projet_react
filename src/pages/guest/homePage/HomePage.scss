@@ -2,25 +2,8 @@
 @import "../../../scss/abstracts/variables";
 @import "../../../scss/abstracts/mixins";
 
-
-// main{
-//     background-color: $netflix-black;
-//     color: $caramel;
-// }
-
-// main a{
-//     text-decoration: none;
-//     color: $caramel;
-// }
-
 .homeH2{
-    background-color: #dd5d42;
-    padding-top: 5vh; 
-    padding-bottom: 5vh; 
-    text-align: center;
-    font-size: 30px;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    @include h2
 }
 
 /* Contrôle de la position des carrés */
