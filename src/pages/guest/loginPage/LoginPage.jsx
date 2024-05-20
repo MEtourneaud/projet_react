@@ -51,7 +51,7 @@ const LoginPage = (event) => {
     // Afficher un message en fonction du statut de la réponse
     if (loginResponse.status === 200) {
       setMessage("Vous êtes bien connecté")
-      navigate("/")
+      navigate("/home")
     } else {
       setMessage("Erreur lors de la connexion")
     }
