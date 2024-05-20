@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
 import "./RegisterPage.scss"
@@ -53,17 +53,26 @@ const RegisterPage = () => {
             <h2>Inscription</h2>
             <label>
               Nom d'utilisateur
-              <input type="text" name="username" />
+              <input type="text" name="username" placeholder="Nom d'utilisateur" />
             </label>
             <label>
               Mot de passe
-              <input type="password" name="password" />
+              <input type="password" name="password" placeholder="Mot de passe" />
             </label>
             <label>
               Confirmer le mot de passe
-              <input type="password" name="confirmPassword" />
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirmer le mot de passe"
+              />
             </label>
             <input type="submit" />
+            <div className="centeredContainer">
+              <Link className="loginFormLink" to="/users/sign_in">
+                Se connecter !
+              </Link>
+            </div>
           </form>
         </div>
       </section>

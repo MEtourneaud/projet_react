@@ -63,14 +63,14 @@ const LoginPage = (event) => {
       <section className="loginPage">
         <div className="loginContainer">
           <form className="loginForm" onSubmit={handleLogin}>
-            <h2>Login</h2>
+            <h2>Connexion</h2>
             <label>
-              username
-              <input type="text" name="username" />
+              Nom d'utilisateur
+              <input type="text" name="username" placeholder="Nom d'utilisateur" />
             </label>
             <label>
-              password
-              <input type="password" name="password" />
+              Mot de passe
+              <input type="password" name="password" placeholder="Mot de passe" />
             </label>
             <input type="submit" />
             <div className="centeredContainer">
