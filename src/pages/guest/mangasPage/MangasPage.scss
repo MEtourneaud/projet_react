@@ -1,11 +1,51 @@
-// .mangaList{
-//     background-color: #3c5891;
-//     color: black;
-// }
+@import "../../../scss/base/reset";
+@import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
 
-.mangaList a{
-    text-decoration: none;
-    color: black;
+.listBloc {
+    height: 45vh;
+    width: 30vh;
+    border: solid #e0dede 1px;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0; /* Empêche l'image de réduire sa taille si le conteneur est trop petit */
+    margin-bottom: 20px;
+    margin: auto 
+}
+
+.listImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
 }
 
 
+.centeredContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.centeredContainer h2{
+    text-align: center;
+    margin: 1em auto 1em auto;
+}
+  
+.mangasContainer {
+    width: 100%; /* Utilise toute la largeur de la page */
+    border-radius: 3px;
+}
+
+.mangasList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Répartit équitablement les mangas sur toute la largeur */
+    gap: 20px; /* Espace entre les mangas */
+    padding: 1em;
+    text-align: center;
+}
+
+.mangasList h3{
+    margin-top: 1em;
+}

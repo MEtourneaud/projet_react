@@ -32,8 +32,8 @@ const MangasPage = () => {
                     return (
                       <article>
                         <Link to={`/mangas/details/${manga.id}`}>
-                          <div className="imgBloc">
-                            <img className="mangaImg" src={manga.imageUrl} alt={manga.title}></img>
+                          <div className="listBloc">
+                            <img className="listImg" src={manga.imageUrl} alt={manga.title}></img>
                           </div>
                           <h3>{manga.title}</h3>
                         </Link>
