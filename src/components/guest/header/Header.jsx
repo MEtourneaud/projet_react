@@ -32,7 +32,7 @@ const Header = () => {
     console.log("Utilisateur authentifié:", isAuthenticated)
     if (!isAuthenticated && !publicRoutes.includes(currentPath)) {
       console.log("Redirection vers la page de connexion")
-      navigate("/users/sign_in")
+      navigate("/")
     }
 
     // Récupérer le JWT du localStorage et extraire le nom d'utilisateur
