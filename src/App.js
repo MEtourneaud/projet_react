@@ -4,8 +4,8 @@ import MangaRandomPage from "./pages/guest/mangaRandomPage/MangaRandomPage"
 import MangaDetailsPage from "./pages/guest/mangaDetailsPage/MangaDetailsPage"
 import LoginPage from "./pages/guest/loginPage/LoginPage"
 import RegisterPage from "./pages/guest/loginPage/RegisterPage"
-// import ProfilePage from "./pages/guest/profilePage/ProfilePage"
-// import CollectionMangaPage from "./pages/guest/profilePage/CollectionMangaPage"
+import ProfilePage from "./pages/guest/profilePage/ProfilePage"
+import CollectionMangaPage from "./pages/guest/profilePage/CollectionMangaPage"
 import AdminDashboard from "./pages/admin/AdminDashboard"
 import AdminMangasPage from "./pages/admin/adminManga/adminMangasPage/AdminMangasPage"
 import AdminMangaCreate from "./pages/admin/adminManga/adminMangaCreate/AdminMangaCreate"
@@ -28,8 +28,8 @@ function App() {
         <Route path="/mangas/random" element={<MangaRandomPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cgu" element={<CguPage />} />
-        {/* <Route path="/users/:id" element={<ProfilePage />} />
-        <Route path="/users/:id/collection" element={<CollectionMangaPage />} /> */}
+        <Route path="/users/:id" element={<ProfilePage />} />
+        <Route path="/users/:id/collection" element={<CollectionMangaPage />} />
         <Route path="/users/sign_up" element={<RegisterPage />} />
         <Route path="/users/sign_in" element={<LoginPage />} />
         {/* Routes Admin */}

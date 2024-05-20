@@ -5,7 +5,7 @@ const ProfilePage = () => {
   return (
     <>
       <Header />
-      <p>Bienvenue sur ton profil</p>
+      <p>En cours de construction</p>
       <Footer />
     </>
   )

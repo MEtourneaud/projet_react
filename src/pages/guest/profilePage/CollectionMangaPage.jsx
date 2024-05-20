@@ -5,7 +5,7 @@ const CollectionMangaPage = () => {
   return (
     <>
       <Header />
-      <p>Bienvenue sur ta collection</p>
+      <p>En cours de construction</p>
       <Footer />
     </>
   )
