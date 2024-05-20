@@ -14,13 +14,15 @@ import AdminUsersPage from "./pages/admin/adminUser/AdminUsersPage"
 import HomePage from "./pages/guest/homePage/HomePage"
 import ContactPage from "./pages/guest/contactPage/ContactPage"
 import CguPage from "./pages/guest/cguPage/CguPage"
+import WelcomePage from "./pages/guest/welcomePage/WelcomePage"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         {/* Routes Guest */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/mangas" element={<MangasPage />} />
         <Route path="/mangas/details/:mangaId" element={<MangaDetailsPage />} />s
         <Route path="/mangas/random" element={<MangaRandomPage />} />

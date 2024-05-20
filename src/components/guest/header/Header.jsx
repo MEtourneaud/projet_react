@@ -58,7 +58,7 @@ const Header = () => {
       <nav>
         <ul className="ulNav">
           <li className="liLogo">
-            <Link to="/">
+            <Link to="/home">
               <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
             </Link>
           </li>
