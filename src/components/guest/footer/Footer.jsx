@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="foot">
       <div className="logoContainer">
-        <Link to="/">
+        <Link to="/home">
           <img className="logoFooter" src="/assets/images/logo.png" alt="logo" />
         </Link>
       </div>

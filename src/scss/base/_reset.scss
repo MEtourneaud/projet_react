@@ -1,4 +1,6 @@
 @import "./typography";
+@import "../abstracts/variables";
+
 
 * {
     margin: 0;
@@ -6,4 +8,15 @@
     border: 0;
     list-style-type: none;
     font-family: "Montserrat", sans-serif;
+}
+
+
+body{
+    background-color: $netflix-black;
+    color: $caramel;
+}
+
+body a{
+    text-decoration: none;
+    color: $caramel;
 }
