@@ -17,17 +17,25 @@
   left: 0; /* Le carré est à gauche */
 }
 
-  /* Style de base pour le h3 */
-.square-left h3, 
+/* Style de base pour le h3 */
+.square-left h3,
 .square-right h3 {
-  transition: all 0.3s ease; /* Transition pour un effet fluide */
+    position: relative; /* Nécessaire pour le positionnement du pseudo-élément */
+    display: inline-block; /* Assure que l'élément occupe seulement la largeur de son contenu */
+    margin: 0; /* Supprime les marges par défaut */
+    transition: all 0.3s ease; /* Transition pour un effet fluide */
 }
 
-/* Effet de hover: changement de couleur */
-.square-left h3:hover, 
-.square-right h3:hover {
-  text-decoration: underline; /* Ajoute un soulignement */
+.square-left h3::after,
+.square-right h3::after {
+  @include hoverUnderline
 }
+
+.square-left h3:hover::after,
+.square-right h3:hover::after {
+    transform: scaleX(1); /* Animation du soulignement de gauche à droite */
+}
+  
 
 
 /* Contrôle de l'image */

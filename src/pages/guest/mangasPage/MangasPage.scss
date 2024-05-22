@@ -52,16 +52,7 @@
 }
 
 .mangasList h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px; /* Ajustez cette valeur selon l'espacement souhaité sous le texte */
-    width: 100%;
-    height: 2px; /* Épaisseur de la ligne */
-    background-color: $medium-vermillon; /* Couleur de la ligne */
-    transform: scaleX(0);
-    transform-origin: bottom left;
-    transition: transform 0.5s ease; /* Transition pour l'animation du soulignement */
+    @include hoverUnderline
 }
 
 .mangasList article:hover .listImg {
