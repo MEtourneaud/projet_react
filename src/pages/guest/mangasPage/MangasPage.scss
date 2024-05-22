@@ -5,30 +5,31 @@
 .listBloc {
     height: 45vh;
     width: 30vh;
-    border: solid #e0dede 1px;
+    border: solid $medium-vermillon 1px;
     border-radius: 5px;
     overflow: hidden;
     flex-shrink: 0; /* Empêche l'image de réduire sa taille si le conteneur est trop petit */
     margin-bottom: 20px;
-    margin: auto 
+    margin: auto;
+    transition: transform 0.3s ease; /* Transition pour le zoom de l'image */
 }
 
 .listImg {
     height: 100%;
     width: 100%;
-    object-fit: cover; 
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transition pour le zoom de l'image */
 }
-
 
 .centeredContainer {
     display: flex;
     justify-content: center;
 }
 
-.centeredContainer h2{
-    @include h2
+.centeredContainer h2 {
+    @include h2;
 }
-  
+
 .mangasContainer {
     width: 100%; /* Utilise toute la largeur de la page */
     border-radius: 3px;
@@ -44,6 +45,29 @@
     margin: 0 2vw 0 2vw;
 }
 
-.mangasList h3{
+.mangasList h3 {
     margin-top: 1em;
+    position: relative; /* Nécessaire pour le positionnement du pseudo-élément */
+    display: inline-block; /* Assure que l'élément occupe seulement la largeur de son contenu */
+}
+
+.mangasList h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Ajustez cette valeur selon l'espacement souhaité sous le texte */
+    width: 100%;
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: $medium-vermillon; /* Couleur de la ligne */
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.5s ease; /* Transition pour l'animation du soulignement */
+}
+
+.mangasList article:hover .listImg {
+    transform: scale(1.05); /* Zoom de l'image au survol */
+}
+
+.mangasList article:hover h3::after {
+    transform: scaleX(1); /* Animation du soulignement de gauche à droite */
 }
