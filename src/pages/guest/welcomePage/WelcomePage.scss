@@ -1,3 +1,43 @@
 @import "../../../scss/base/reset";
 @import "../../../scss/abstracts/variables";
 @import "../../../scss/abstracts/mixins";
+
+.image-container {
+    position: relative;
+    width: 100%;
+}
+
+.darkened-image {
+    width: 100%;
+    display: block;
+    filter: brightness(60%); /* Appliquer un effet sombre */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 30%; /* Ajuster selon vos besoins */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: $caramel;
+    width: 100%;
+}
+
+.library-button {
+    @include button;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.library-button:hover {
+    @include button-hover;
+}
+
+.left-button1 {
+    left: 30%; /* Ajuster la position du bouton gauche si nécessaire */
+}
+
+.right-button1 {
+    right: 30%; /* Ajuster la position du bouton droit si nécessaire */
+}

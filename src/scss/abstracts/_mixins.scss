@@ -46,3 +46,23 @@
     transform-origin: bottom left;
     transition: transform 0.5s ease; /* Transition pour l'animation du soulignement */
 }
+
+@mixin button{
+    width: 200px; /* Largeur minimale */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    padding: 20px 40px;
+    color: $caramel;
+    background: $medium-vermillon;
+    border: $border-slide-caramel;
+    border-radius: $border-radius-20;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+@mixin button-hover{
+    color: $caramel;
+    background: #ff774c;
+    border: $border-slide-caramel;
+}

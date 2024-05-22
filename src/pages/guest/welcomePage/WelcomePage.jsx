@@ -7,15 +7,18 @@ const WelcomePage = () => {
   return (
     <>
       <Header />
-      <h1>LES ARCHIVES D'OHARA</h1>
-      <p>Suivez vos lectures.</p>
-      <p>Découvrez de nouvelles œuvres</p>
-      <div>
-        <button className="slide-button left-button">
-          <Link to="/users/sign_up">Inscris-toi</Link>
+      <div class="image-container">
+        <img src="/assets/images/library.jpg" alt="Library" class="darkened-image"></img>
+        <div class="text-overlay">
+          <h1>LES ARCHIVES D'OHARA</h1>
+          <p>Suivez vos lectures.</p>
+          <p>Découvrez de nouvelles œuvres</p>
+        </div>
+        <button class="library-button left-button1">
+          <a href="/users/sign_up">Inscris-toi</a>
         </button>
-        <button className="slide-button right-button">
-          <Link to="/users/sign_in">Se connecter</Link>
+        <button class="library-button right-button1">
+          <a href="/users/sign_in">Se connecter</a>
         </button>
       </div>
       <Footer />
