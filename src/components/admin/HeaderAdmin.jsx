@@ -26,7 +26,7 @@ const HeaderAdmin = () => {
       <nav>
         <ul className="ulNavAdmin">
           <li className="liLogoAdmin">
-            <Link to="/admin">
+            <Link to="/home">
               <img className="logoAdmin" src="/assets/images/logo.png" alt="logo"></img>
             </Link>
           </li>

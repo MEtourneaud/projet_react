@@ -1,68 +1,68 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
+// * {
+//     margin: 0;
+//     padding: 0;
+//     border: 0;
+// }
 
-.adminMangaCreate{
-    background-color: #3c5891;
-}
+// .adminMangaCreate{
+//     background-color: #3c5891;
+// }
 
-.adminCreateContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 100vh;
-  }
+// .adminCreateContainer {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-around;
+//     height: 100vh;
+//   }
   
-.adminCreateForm {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 300px;
-}
+// .adminCreateForm {
+//     background-color: #fff;
+//     padding: 20px;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+//     width: 300px;
+// }
 
-.adminCreateForm textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+// .adminCreateForm textarea {
+//     width: 100%;
+//     padding: 10px;
+//     margin-top: 5px;
+//     margin-bottom: 15px;
+//     box-sizing: border-box;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+// }
 
-.adminCreateForm label {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: black;
-}
+// .adminCreateForm label {
+//     display: block;
+//     margin-top: 10px;
+//     font-size: 14px;
+//     color: black;
+// }
 
-.adminCreateForm input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+// .adminCreateForm input {
+//     width: 100%;
+//     padding: 10px;
+//     margin-top: 5px;
+//     margin-bottom: 15px;
+//     box-sizing: border-box;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+// }
 
-.adminCreateForm input[type="submit"] {
-    background-color: #dd5d42;
-    color: #fff;
-    cursor: pointer;
-}
+// .adminCreateForm input[type="submit"] {
+//     background-color: #dd5d42;
+//     color: #fff;
+//     cursor: pointer;
+// }
 
-.adminCreateForm input:hover {
-    background-color: #334768;
-    color: #FFD38C;
-}
+// .adminCreateForm input:hover {
+//     background-color: #334768;
+//     color: #FFD38C;
+// }
 
-.adminCreateForm textarea:hover {
-    background-color: #334768;
-    color: #FFD38C;
-}
+// .adminCreateForm textarea:hover {
+//     background-color: #334768;
+//     color: #FFD38C;
+// }

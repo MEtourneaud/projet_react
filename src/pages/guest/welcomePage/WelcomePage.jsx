@@ -8,7 +8,7 @@ const WelcomePage = () => {
     <>
       <Header />
       <div class="image-container">
-        <img src="/assets/images/library.jpg" alt="Library" class="darkened-image"></img>
+        <img src="/assets/images/OharaLibrary.webp" alt="Library" class="darkened-image"></img>
         <div class="text-overlay">
           <h1>LES ARCHIVES D'OHARA</h1>
           <p>Suivez vos lectures.</p>

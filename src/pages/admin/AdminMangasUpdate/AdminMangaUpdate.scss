@@ -1,68 +1,68 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
+// * {
+//     margin: 0;
+//     padding: 0;
+//     border: 0;
+// }
 
-.adminUpdateManga{
-    background-color: #3c5891;
-}
+// .adminUpdateManga{
+//     background-color: #3c5891;
+// }
 
-.adminUpdateContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    height: 100vh;
-  }
+// .adminUpdateContainer {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-around;
+//     height: 100vh;
+//   }
   
-.adminUpdateForm {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 300px;
-}
+// .adminUpdateForm {
+//     background-color: #fff;
+//     padding: 20px;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+//     width: 300px;
+// }
 
-.adminUpdateForm textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+// .adminUpdateForm textarea {
+//     width: 100%;
+//     padding: 10px;
+//     margin-top: 5px;
+//     margin-bottom: 15px;
+//     box-sizing: border-box;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+// }
 
-.adminUpdateForm label {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: black;
-}
+// .adminUpdateForm label {
+//     display: block;
+//     margin-top: 10px;
+//     font-size: 14px;
+//     color: black;
+// }
 
-.adminUpdateForm input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+// .adminUpdateForm input {
+//     width: 100%;
+//     padding: 10px;
+//     margin-top: 5px;
+//     margin-bottom: 15px;
+//     box-sizing: border-box;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+// }
 
-.adminUpdateForm input[type="submit"] {
-    background-color: #dd5d42;
-    color: #fff;
-    cursor: pointer;
-}
+// .adminUpdateForm input[type="submit"] {
+//     background-color: #dd5d42;
+//     color: #fff;
+//     cursor: pointer;
+// }
 
-.adminUpdateForm input:hover {
-    background-color: #334768;
-    color: #FFD38C;
-}
+// .adminUpdateForm input:hover {
+//     background-color: #334768;
+//     color: #FFD38C;
+// }
 
-.adminUpdateForm textarea:hover {
-    background-color: #334768;
-    color: #FFD38C;
-}
+// .adminUpdateForm textarea:hover {
+//     background-color: #334768;
+//     color: #FFD38C;
+// }

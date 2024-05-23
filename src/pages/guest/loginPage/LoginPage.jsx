@@ -60,27 +60,25 @@ const LoginPage = (event) => {
   return (
     <>
       <Header />
-      <section className="loginPage">
-        <div className="loginContainer">
-          <form className="loginForm" onSubmit={handleLogin}>
-            <h2>Connexion</h2>
-            <label>
-              Nom d'utilisateur
-              <input type="text" name="username" placeholder="Nom d'utilisateur" />
-            </label>
-            <label>
-              Mot de passe
-              <input type="password" name="password" placeholder="Mot de passe" />
-            </label>
-            <input type="submit" />
-            <div className="centeredContainer">
-              <Link className="loginFormLink" to="/users/sign_up">
-                Inscris-toi !
-              </Link>
-            </div>
-          </form>
-        </div>
-      </section>
+      <div className="loginContainer1">
+        <form className="loginForm1" onSubmit={handleLogin}>
+          <h2>Connexion</h2>
+          <label>
+            Nom d'utilisateur
+            <input type="text" name="username" placeholder="Nom d'utilisateur" />
+          </label>
+          <label>
+            Mot de passe
+            <input type="password" name="password" placeholder="Mot de passe" />
+          </label>
+          <input type="submit" />
+          <div className="centeredContainer1">
+            <Link className="loginFormLink1" to="/users/sign_up">
+              Inscris-toi !
+            </Link>
+          </div>
+        </form>
+      </div>
       <Footer />
     </>
   )
