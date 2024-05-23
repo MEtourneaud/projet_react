@@ -86,12 +86,9 @@ const Header = () => {
           </li>
           <li className="liNav">
             {isAuthenticated && (
-              <>
-                Bonjour, <span> </span>
-                <Link className="hover-link" to="/users/profile">
-                  {username}
-                </Link>
-              </>
+              <Link className="hover-link" to="/users/profile">
+                Bonjour, {username}
+              </Link>
             )}
           </li>
           <li className="liNav">

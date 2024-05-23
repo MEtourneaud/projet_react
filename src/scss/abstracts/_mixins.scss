@@ -1,10 +1,12 @@
-@mixin square-title {
+@import "../abstracts/variables";
+
+@mixin homePage-h3-rectangle {
     position: absolute;
     top: 0;
     height: 100%; /* Prendre toute la hauteur du conteneur */
     width: 35%; /* Largeur du carré */
     padding: 10px; /* Ajoute de la marge intérieure */
-    background-color: rgba(0, 0, 0, 0.5); /* Fond transparent foncé */
+    background-color: rgba(0, 0, 0, 0.753); /* Fond transparent foncé */
     display: flex; /* Flexbox pour aligner les éléments */
     flex-direction: column; /* Aligner le contenu verticalement */
     justify-content: center; /* Centre verticalement */
@@ -29,7 +31,7 @@
     padding-top: 5vh; 
     padding-bottom: 5vh; 
     text-align: center;
-    font-size: 30px;
+    font-size: $font-size-title;
     margin-top: 5vh;
     margin-bottom: 5vh;
 }
@@ -40,7 +42,7 @@
     left: 0;
     bottom: -2px; /* Ajustez cette valeur selon l'espacement souhaité sous le texte */
     width: 100%;
-    height: 2px; /* Épaisseur de la ligne */
+    height: 5px; /* Épaisseur de la ligne */
     background-color: $medium-vermillon; /* Couleur de la ligne */
     transform: scaleX(0);
     transform-origin: bottom left;
@@ -65,4 +67,16 @@
     color: $caramel;
     background: #ff774c;
     border: $border-slide-caramel;
+}
+
+@mixin square-hover{
+    .square-left .starRating:hover,
+    .square-right .starRating:hover {
+        font-size: $hover-bigger-star;
+    }
+
+    .square-left h3:hover,
+    .square-right h3:hover {
+        font-size: $hover-bigger-h3;
+    }
 }

@@ -38,7 +38,7 @@
 .mangasList {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Répartit équitablement les mangas sur toute la largeur */
+    justify-content: space-evenly; /* Répartit équitablement les mangas sur toute la largeur */
     gap: 20px; /* Espace entre les mangas */
     padding: 1em;
     text-align: center;

@@ -76,16 +76,16 @@ const HomePage = () => {
                   const squareClass = index % 2 === 0 ? "square-right" : "square-left"
                   return (
                     <article key={manga.id}>
-                      <div className="imgBloc">
-                        <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
-                        <div className={squareClass}>
-                          <Link to={`/mangas/details/${manga.id}`}>
+                      <Link to={`/mangas/details/${manga.id}`}>
+                        <div className="imgBloc">
+                          <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
+                          <div className={squareClass}>
                             <h3>{manga.title}</h3>
-                          </Link>
-                          {/* Les étoiles sous le titre, dans le même conteneur */}
-                          <StarRating className="starRating" rating={manga.averageRating} />
+                            {/* Les étoiles sous le titre, dans le même conteneur */}
+                            <StarRating className="starRating" rating={manga.averageRating} />
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                     </article>
                   )
                 })}
