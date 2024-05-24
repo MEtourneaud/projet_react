@@ -68,12 +68,12 @@ const AdminMangaCreate = () => {
       <HeaderAdmin />
       <section className="adminMangaCreate">
         {message && <p>{message}</p>}
-        <div className="adminCreateContainer">
-          <form className="adminCreateForm" onSubmit={handleCreateManga}>
+        <div className="formContainer">
+          <form className="form" onSubmit={handleCreateManga}>
             <div>
               <label>
                 Titre
-                <input type="text" name="title" />
+                <textarea type="text" name="title" />
               </label>
             </div>
             <div>

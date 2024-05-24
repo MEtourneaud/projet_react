@@ -83,12 +83,12 @@ const AdminMangaUpdate = () => {
       <section className="adminUpdateManga">
         {message && <p>{message}</p>}
         {manga && (
-          <div className="adminUpdateContainer">
-            <form className="adminUpdateForm" onSubmit={handleUpdateManga}>
+          <div className="formContainer">
+            <form className="form" onSubmit={handleUpdateManga}>
               <div>
                 <label>
                   Titre
-                  <input type="text" name="title" defaultValue={manga.title} />
+                  <textarea type="text" name="title" defaultValue={manga.title} />
                 </label>
               </div>
               <div>

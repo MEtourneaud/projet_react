@@ -1,4 +1,8 @@
- .userDelete {
+@import "../../../scss/base/reset";
+@import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
+
+.userDelete {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;

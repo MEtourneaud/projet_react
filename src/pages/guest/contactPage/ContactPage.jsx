@@ -4,10 +4,10 @@ import "./ContactPage.scss"
 
 const ContactPage = () => {
   return (
-    <section className="loginPage">
+    <>
       <Header />
-      <div className="loginContainer">
-        <form className="loginForm">
+      <div className="formContainer">
+        <form className="form">
           <h2>Contact</h2>
           <label>
             Nom
@@ -25,7 +25,7 @@ const ContactPage = () => {
         </form>
       </div>
       <Footer />
-    </section>
+    </>
   )
 }
 

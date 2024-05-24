@@ -1,3 +1,8 @@
+@import "../../scss/base/reset";
+@import "../../scss/abstracts/variables";
+@import "../../scss/abstracts/mixins";
+
+
 .DashboardContainer{
     max-width: 800px;
     margin: 20px auto;

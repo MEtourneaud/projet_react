@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router"
-import Footer from "../../../components/guest/footer/Footer"
+// import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
 import { Link } from "react-router-dom"
 import "./LoginPage.scss"
@@ -60,26 +60,26 @@ const LoginPage = (event) => {
   return (
     <>
       <Header />
-      <div className="loginContainer1">
-        <form className="loginForm1" onSubmit={handleLogin}>
+      <div className="formContainer">
+        <form className="form" onSubmit={handleLogin}>
           <h2>Connexion</h2>
           <label>
             Nom d'utilisateur
-            <input type="text" name="username" placeholder="Nom d'utilisateur" />
+            <input type="text" name="username" placeholder="Entrer votre nom d'utilisateur" />
           </label>
           <label>
             Mot de passe
-            <input type="password" name="password" placeholder="Mot de passe" />
+            <input type="password" name="password" placeholder="Entrer votre mot de passe" />
           </label>
           <input type="submit" />
-          <div className="centeredContainer1">
-            <Link className="loginFormLink1" to="/users/sign_up">
+          <div className="formLink">
+            <Link className="hover-link" to="/users/sign_up">
               Inscris-toi !
             </Link>
           </div>
         </form>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

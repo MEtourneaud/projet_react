@@ -1,4 +1,9 @@
- .main-container {
+@import "../../../../scss/base/reset";
+@import "../../../../scss/abstracts/variables";
+@import "../../../../scss/abstracts/mixins";
+
+
+.main-container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;

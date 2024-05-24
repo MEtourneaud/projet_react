@@ -1,0 +1,66 @@
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.form {
+    background-color: $light-netflix-black;
+    padding: 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 60%;
+}
+
+.form h2{
+    font-size: $font-size-title;
+    text-align: center;
+}
+
+.form label{
+    display: block;
+    margin-top: 3%;
+    font-size: $font-size-form;
+}
+
+.form input{
+    display: block;
+    width: 100%;
+    margin-top: 1%;
+    font-size: $font-size-form;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px 0 5px 5px;
+}
+
+.form input[type="submit"] {
+    background-color: #dd5d42;
+    color: $caramel;
+    cursor: pointer;
+    border: $border-slide-caramel;
+    margin-top: 3%;
+}
+
+.form input[type="submit"]:hover {
+    @include button-hover
+}
+
+.form textarea{
+    display: block;
+    width: 100%;
+    margin-top: 1%;
+    font-size: $font-size-form;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px 0 5px 5px;
+}
+
+.formLink {
+    text-align: left;
+    margin-top: 3%;
+    color: $caramel;
+    text-decoration: none;
+    font-size: 20px;
+}
+
