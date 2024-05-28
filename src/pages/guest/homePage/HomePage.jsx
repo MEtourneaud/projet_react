@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
-import StarRating from "../../../components/StarRating"
+import StarRating from "../../../components/StarRating/StarRating"
 import Carousel from "../../../components/guest/carrousel/carrousel"
 import "./HomePage.scss"
 

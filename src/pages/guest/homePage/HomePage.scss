@@ -56,17 +56,3 @@
   object-fit: cover; /* Pour s'assurer que l'image couvre tout le conteneur */
 }
 
-.starRating {
-  font-size: 50px; /* Taille des étoiles */
-  display: flex; /* Pour aligner les étoiles horizontalement */
-}
-
-.starRating span {
-  /* Crée un dégradé radial avec le centre doré et les branches rouge-orange */
-  background: radial-gradient(circle at 50% 55%, gold 10%, #dd5d42 40%, transparent 100%);
-  -webkit-background-clip: text; /* Applique le dégradé au texte */
-  color: transparent; /* Le texte doit être transparent pour voir le dégradé */
-  font-weight: bold; /* Pour rendre les étoiles plus visibles */
-  margin-right: 5px; /* Ajoute de l'espace entre les étoiles */
-}
-

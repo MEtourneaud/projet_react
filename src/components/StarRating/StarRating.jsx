@@ -1,3 +1,5 @@
+import "./StarRating.scss"
+
 const StarRating = ({ rating, maxStars = 5 }) => {
   const renderStars = () => {
     const stars = []

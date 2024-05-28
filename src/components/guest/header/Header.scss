@@ -8,13 +8,14 @@
   display: flex;
   align-items: center;
   font-size: 20px;
+  margin-bottom: 2vh;
 }
 
 .liLogo {
   margin-right: auto;
   height: 15vh;
   width: 15vh;
-  margin-left: 2vw;
+  margin-left: 0.6vw;
 }
   
 .logo {
@@ -23,7 +24,7 @@
 }
   
 .liNav {
-  margin-right: 2vw;
+  margin-right: 1vw;
   color: $caramel;
 }
 

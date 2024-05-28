@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
-import StarRating from "../../../components/StarRating"
+import StarRating from "../../../components/StarRating/StarRating"
 import "./MangaDetailsPage.scss"
 
 const MangaDetailsPage = () => {
@@ -93,60 +93,61 @@ const MangaDetailsPage = () => {
   return (
     <>
       <Header />
-      <section className="detailsManga">
+      <section>
         {manga ? (
-          <div className="centeredContainer">
-            <div className="mangasContainer">
-              <article className="recommendationArticle">
-                <div className="imgRandomBloc">
-                  <img className="mangaImg" src={manga.imageUrl} alt={manga.title}></img>
-                </div>
-                <div className="textContainer">
-                  <h3>{manga.title}</h3>
-                  <StarRating rating={averageRating} />
-                  <p>Auteur: {manga.author}</p>
-                  <p>Genres: {manga.genre}</p>
-                  <p>Nombre de tome: {manga.volumeNumber}</p>
-                  <p>Résumé: {manga.synopsis}</p>
-                  <div className="detailsButton">
-                    <Link to="#">Ajouter au profil</Link>
+          <div>
+            <article className="mangaArticle">
+              <div className="coverBloc">
+                <img className="coverImg" src={manga.imageUrl} alt={manga.title}></img>
+              </div>
+              <div className="textBloc">
+                <h3>{manga.title}</h3>
+                <div className="ratingContainer">
+                  <div className="rating">
+                    <StarRating rating={averageRating} />
+                    <span className="ratingValue">{averageRating.toFixed(1)}</span>{" "}
+                    {/* Affiche la note avec une décimale */}
                   </div>
                 </div>
-              </article>
+                <p>Auteur: {manga.author}</p>
+                <p>Genres: {manga.genre}</p>
+                <p>Nombre de tome: {manga.volumeNumber}</p>
+                <p>Résumé: {manga.synopsis}</p>
+                <div>
+                  <Link to="#">Ajouter au profil</Link>
+                </div>
+              </div>
+            </article>
 
-              <h4>Donnez votre avis</h4>
-              <div className="reviewsBloc">
-                {reviews ? (
-                  <div>
-                    {reviews
-                      .filter((review) => review.MangaId === manga.id)
-                      .map((review) => (
-                        <article className="reviewContent" key={review.id}>
-                          <p>Utilisateur : {review.User.username}</p>
-                          <p>Note : {review.rating}</p>
-                          <p>Commentaire : {review.content}</p>
-                          {/* <Link className="editButton" onClick={() => startEditing(review)}>
-                            Modifier
-                          </Link> */}
-                        </article>
-                      ))}
-                  </div>
-                ) : (
-                  <p>En cours de chargement</p>
-                )}
-                <div className="reviewFormSection">
-                  <form onSubmit={(event) => handleCreateReview(event, manga.id)}>
-                    <label>
-                      Note
-                      <input className="feedback-input" type="number" name="rating" />
-                    </label>
-                    <label>
-                      Commentaire
-                      <textarea className="feedback-input" type="text" name="content" />
-                    </label>
-                    <input type="submit" />
-                  </form>
+            <h4>Donnez votre avis</h4>
+            <div>
+              {reviews ? (
+                <div>
+                  {reviews
+                    .filter((review) => review.MangaId === manga.id)
+                    .map((review) => (
+                      <article key={review.id}>
+                        <p>Utilisateur : {review.User.username}</p>
+                        <p>Note : {review.rating}</p>
+                        <p>Commentaire : {review.content}</p>
+                      </article>
+                    ))}
                 </div>
+              ) : (
+                <p>En cours de chargement</p>
+              )}
+              <div>
+                <form onSubmit={(event) => handleCreateReview(event, manga.id)}>
+                  <label>
+                    Note
+                    <input type="number" name="rating" />
+                  </label>
+                  <label>
+                    Commentaire
+                    <textarea type="text" name="content" />
+                  </label>
+                  <input type="submit" />
+                </form>
               </div>
             </div>
           </div>
