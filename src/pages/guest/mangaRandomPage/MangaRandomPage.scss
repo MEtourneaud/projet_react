@@ -1,35 +1,8 @@
-.randomButton a{
-    text-decoration: none;
-}
+@import "../../../scss/base/reset";
+@import "../../../scss/abstracts/variables";
+@import "../../../scss/abstracts/mixins";
+@import "../../../scss/pages/mangaPage";
 
-.imgRandomBloc {
-    height: 60vh;
-    width: 40vh;
-    border: solid #e0dede 1px;
-    border-radius: 5px;
-    overflow: hidden;
-    flex-shrink: 0; /* Empêche l'image de réduire sa taille si le conteneur est trop petit */
-    margin-bottom: 20px; 
+.randomPage{
+    @include h2
 }
-
-.randomButton {
-    display: flex;
-    justify-content: center;
-}
-  
-.randomButton a {
-    margin-right: 10px; 
-    margin-top: 20px;
-    padding: 8px 12px; 
-    border: 1px solid #dd5d42; 
-    border-radius: 5px; 
-    color: #fff;
-    background-color: #dd5d42; 
-}
-
-.randomButton a:hover {
-    background-color: #334768;
-    color: #FFD38C;
-    border: 1px solid #334768; 
-}
-  

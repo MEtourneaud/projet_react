@@ -109,10 +109,18 @@ const MangaDetailsPage = () => {
                     {/* Affiche la note avec une décimale */}
                   </div>
                 </div>
-                <p>Auteur: {manga.author}</p>
-                <p>Genres: {manga.genre}</p>
-                <p>Nombre de tome: {manga.volumeNumber}</p>
-                <p>Résumé: {manga.synopsis}</p>
+                <p>
+                  <span>Auteur:</span> {manga.author}
+                </p>
+                <p>
+                  <span>Genres:</span> {manga.genre}
+                </p>
+                <p>
+                  <span>Nombre de tome:</span> {manga.volumeNumber}
+                </p>
+                <p>
+                  <span>Résumé:</span> {manga.synopsis}
+                </p>
                 <div>
                   <Link to="#">Ajouter au profil</Link>
                 </div>
