@@ -50,7 +50,7 @@ const MangaRandomPage = () => {
               <span>Résumé:</span> {randomMangaIndex.synopsis}
             </p>
             <div className="buttonContainer">
-              <Link className="mangaButton" to="#">
+              <Link className="mangaButton" to="/users/:id">
                 {" "}
                 Ajouter au profil
               </Link>

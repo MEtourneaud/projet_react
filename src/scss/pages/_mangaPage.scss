@@ -63,9 +63,10 @@
 }
 
 .buttonContainer{
-    margin-top: 4vw;
+    margin: 4vw 0 5vw 0;
     text-align: center
 }
+
 .mangaButton{
     @include button;
 }

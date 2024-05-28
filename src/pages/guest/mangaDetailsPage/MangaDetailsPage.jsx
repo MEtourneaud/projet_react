@@ -129,8 +129,21 @@ const MangaDetailsPage = () => {
               </div>
             </article>
 
-            <h4>Donnez votre avis</h4>
+            {/* <h4>Donnez votre avis</h4> */}
             <div>
+              <div className="formContainer">
+                <form className="form" onSubmit={(event) => handleCreateReview(event, manga.id)}>
+                  <label>
+                    Note
+                    <input type="number" name="rating" />
+                  </label>
+                  <label>
+                    Commentaire
+                    <textarea type="text" name="content" />
+                  </label>
+                  <input type="submit" />
+                </form>
+              </div>
               {reviews ? (
                 <div>
                   {reviews
@@ -146,19 +159,6 @@ const MangaDetailsPage = () => {
               ) : (
                 <p>En cours de chargement</p>
               )}
-              <div>
-                <form onSubmit={(event) => handleCreateReview(event, manga.id)}>
-                  <label>
-                    Note
-                    <input type="number" name="rating" />
-                  </label>
-                  <label>
-                    Commentaire
-                    <textarea type="text" name="content" />
-                  </label>
-                  <input type="submit" />
-                </form>
-              </div>
             </div>
           </div>
         ) : (
