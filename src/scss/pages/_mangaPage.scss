@@ -61,3 +61,15 @@
 .textBloc span{
     font-weight: bold;
 }
+
+.buttonContainer{
+    margin-top: 4vw;
+    text-align: center
+}
+.mangaButton{
+    @include button;
+}
+
+.mangaButton:hover{
+    @include button-hover;
+}

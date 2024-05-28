@@ -121,8 +121,10 @@ const MangaDetailsPage = () => {
                 <p>
                   <span>Résumé:</span> {manga.synopsis}
                 </p>
-                <div>
-                  <Link to="#">Ajouter au profil</Link>
+                <div className="buttonContainer">
+                  <Link className="mangaButton" to="#">
+                    Ajouter au profil
+                  </Link>
                 </div>
               </div>
             </article>

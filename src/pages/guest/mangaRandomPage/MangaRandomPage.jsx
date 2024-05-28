@@ -49,9 +49,14 @@ const MangaRandomPage = () => {
             <p>
               <span>Résumé:</span> {randomMangaIndex.synopsis}
             </p>
-            <div className="randomButton">
-              <Link to="#"> Ajouter au profil</Link>
-              <Link to={`/mangas/details/${randomMangaIndex.id}`}>Donnez votre avis</Link>
+            <div className="buttonContainer">
+              <Link className="mangaButton" to="#">
+                {" "}
+                Ajouter au profil
+              </Link>
+              <Link className="mangaButton" to={`/mangas/details/${randomMangaIndex.id}`}>
+                Donnez votre avis
+              </Link>
             </div>
           </div>
         </article>
