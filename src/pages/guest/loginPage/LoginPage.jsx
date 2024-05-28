@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router"
+import { jwtDecode } from "jwt-decode"
 // import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
 import { Link } from "react-router-dom"
@@ -45,13 +46,20 @@ const LoginPage = (event) => {
     // Si le jeton est présent, mettre à jour l'état d'authentification et enregistrer le jeton dans le localStorage
     if (token) {
       localStorage.setItem("jwt", token)
-      setIsAuthenticated(true) // Mettez à jour l'état d'authentification après la connexion réussie
-    }
+      setIsAuthenticated(true)
 
-    // Afficher un message en fonction du statut de la réponse
-    if (loginResponse.status === 200) {
+      // Décoder le token pour obtenir les rôles
+      const decodedToken = jwtDecode(token)
+      const roles = decodedToken.roles
+
+      // Vérifier les rôles et rediriger en conséquence
+      if (roles.includes("admin") || roles.includes("superadmin")) {
+        navigate("/admin") // Rediriger vers la section admin
+      } else {
+        navigate("/home")
+      }
+
       setMessage("Vous êtes bien connecté")
-      navigate("/home")
     } else {
       setMessage("Erreur lors de la connexion")
     }
