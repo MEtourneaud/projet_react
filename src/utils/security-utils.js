@@ -10,5 +10,5 @@ export const useVerifyIfUserIsLogged = () => {
     if (!token) {
       navigate("/users/sign_in")
     }
-  }, [])
+  }, [navigate])
 }

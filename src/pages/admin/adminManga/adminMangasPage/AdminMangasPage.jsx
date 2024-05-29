@@ -59,7 +59,7 @@ const AdminMangasPage = () => {
   return (
     <>
       <HeaderAdmin />
-      <div className="main-container">
+      <div className="admin-container">
         <h2>Liste des mangas</h2>
         {mangas ? (
           <>

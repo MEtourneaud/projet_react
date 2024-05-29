@@ -1,0 +1,37 @@
+.admin-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: $light-netflix-black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.admin-container h2 {
+  color: $caramel;
+  margin-bottom: 10px;
+  font-size: $font-size-title;
+}
+
+.admin-container article {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: $light-netflix-black;
+  border-radius: 4px;
+}
+
+.admin-container h3 {
+  color: $caramel;
+  margin-bottom: 10px;
+  font-size: $font-size-subtitle;
+}
+
+.admin-container button {
+  @include button
+}
+
+.admin-container button:hover {
+ @include button-hover
+}

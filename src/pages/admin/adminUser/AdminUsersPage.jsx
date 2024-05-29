@@ -71,7 +71,7 @@ const AdminUsersPage = () => {
   return (
     <>
       <HeaderAdmin />
-      <div className="userDelete">
+      <div className="admin-container">
         <h2>Liste des utilisateurs</h2>
         {users ? (
           <>

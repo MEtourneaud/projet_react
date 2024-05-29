@@ -73,31 +73,35 @@ const AdminMangaCreate = () => {
             <div>
               <label>
                 Titre
-                <textarea type="text" name="title" />
+                <textarea type="text" name="title" placeholder="Entrer le titre de l'oeuvre" />
               </label>
             </div>
             <div>
               <label>
                 Auteur
-                <input type="text" name="author" />
+                <input type="text" name="author" placeholder="Entrer le nom de l'auteur" />
               </label>
             </div>
             <div>
               <label>
                 Synopsis
-                <textarea type="text" name="synopsis" />
+                <textarea
+                  type="text"
+                  name="synopsis"
+                  placeholder="Entrer le synopsis de l'oeuvre"
+                />
               </label>
             </div>
             <div>
               <label>
                 Genres
-                <input type="text" name="genre" />
+                <input type="text" name="genre" placeholder="Entrer les genres de l'oeuvre" />
               </label>
             </div>
             <div>
               <label>
                 Nombre de volumes
-                <input type="number" name="volumeNumber" />
+                <input type="number" name="volumeNumber" placeholder="Entrer le nombre de volume" />
               </label>
             </div>
 
