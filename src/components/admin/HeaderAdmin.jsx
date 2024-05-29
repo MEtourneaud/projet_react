@@ -22,25 +22,33 @@ const HeaderAdmin = () => {
   }, [isAuthenticated, navigate])
 
   return (
-    <header className="headerAdmin">
+    <header>
       <nav>
-        <ul className="ulNavAdmin">
-          <li className="liLogoAdmin">
+        <ul className="ulNav">
+          <li className="liLogo">
             <Link to="/home">
-              <img className="logoAdmin" src="/assets/images/logo.png" alt="logo"></img>
+              <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
             </Link>
           </li>
-          <li className="liNavAdmin">
-            <Link to="/admin/mangas">Gestion des mangas</Link>
+          <li className="liNav">
+            <Link className="hover-link" to="/admin/mangas">
+              Gestion des mangas
+            </Link>
           </li>
-          <li className="liNavAdmin">
-            <Link to="/admin/mangas/create">Création d'un manga</Link>
+          <li className="liNav">
+            <Link className="hover-link" to="/admin/mangas/create">
+              Création d'un manga
+            </Link>
           </li>
-          <li className="liNavAdmin">
-            <Link to="/admin/users">Gestion des utilisateurs</Link>
+          <li className="liNav liSpace">
+            <Link className="hover-link" to="/admin/users">
+              Gestion des utilisateurs
+            </Link>
           </li>
-          <li className="liNavAdmin">
-            <Link onClick={handleLogout}>Se déconnecter</Link>
+          <li className="liNav">
+            <Link className="hover-link" onClick={handleLogout}>
+              Se déconnecter
+            </Link>
           </li>
         </ul>
       </nav>

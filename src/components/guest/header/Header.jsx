@@ -77,7 +77,7 @@ const Header = () => {
               </Link>
             )}
           </li>
-          <li className="liNav liContact">
+          <li className="liNav liSpace">
             {isAuthenticated && (
               <Link className="hover-link" to="/contact">
                 Contact
@@ -100,8 +100,8 @@ const Header = () => {
           </li>
           <li className="liNav">
             {isAuthenticated ? (
-              <Link className="hover-link username-link no-hover" to="#" onClick={handleLogout}>
-                Déconnexion
+              <Link className="hover-link" to="#" onClick={handleLogout}>
+                Se déconnecter
               </Link>
             ) : (
               <Link className="hover-link" to="/users/sign_in">

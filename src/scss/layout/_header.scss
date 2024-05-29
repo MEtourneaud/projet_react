@@ -1,0 +1,46 @@
+.ulNav {
+    background-color: $netflix-black;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 2vh;
+  }
+  
+  .liLogo {
+    margin-right: auto;
+    height: 15vh;
+    width: 15vh;
+    margin-left: 0.6vw;
+  }
+    
+  .logo {
+    height: 100%;
+    width: 100%;
+  }
+    
+  .liNav {
+    margin-right: 1vw;
+    color: $caramel;
+  }
+  
+  .liNav a {
+    text-decoration: none;
+    color: $caramel;
+  }
+  
+  .liSpace{
+    margin-right: auto;
+  }
+  
+  .hover-link {
+    position: relative; // permet l'utilisation de ::after
+  }
+  
+  .hover-link::after {
+    @include hover-nav
+  }
+  
+  .hover-link:hover::after {
+    width: 100%;
+  }
+  
