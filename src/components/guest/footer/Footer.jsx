@@ -3,19 +3,21 @@ import "./Footer.scss"
 import { Link } from "react-router-dom"
 
 const Footer = () => {
-  // const scrollToTop = () => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   })
-  // }
+  // Fonction pour le défilement fluide vers le haut
+  const scrollToTop = (e) => {
+    e.preventDefault() // Empêche le comportement par défaut du lien
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
 
   return (
     <footer className="foot">
       <div className="logoContainer">
-        <Link to="/home">
-          <img className="logoFooter" src="/assets/images/logo.png" alt="logo" />
-        </Link>
+        <a href="#top" onClick={scrollToTop}>
+          <img className="logoFooter" src="/assets/images/logo.png" alt="logo to top" />
+        </a>
       </div>
       <nav>
         <ul className="ulFooter">
