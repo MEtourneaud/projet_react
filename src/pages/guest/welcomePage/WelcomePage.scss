@@ -2,6 +2,10 @@
 @import "../../../scss/abstracts/variables";
 @import "../../../scss/abstracts/mixins";
 
+h1{
+    font-size: 60px;
+}
+
 .image-container {
     position: relative;
     width: 100%;
@@ -9,6 +13,8 @@
 
 .darkened-image {
     width: 100%;
+    height: 75vh;
+    object-fit: cover;
     display: block;
     filter: brightness(60%); /* Appliquer un effet sombre */
 }
@@ -21,6 +27,7 @@
     text-align: center;
     color: $caramel;
     width: 100%;
+    font-size: $font-size-text
 }
 
 .library-button {

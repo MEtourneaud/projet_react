@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
 import "./WelcomePage.scss"
