@@ -5,7 +5,7 @@
 
 .foot {
     background-color: $netflix-black;
-    padding-top: 5vh;
+    padding-top: 3vh;
     display: flex;
     flex-direction: column;
     color: #FFD38C;
@@ -14,12 +14,12 @@
 .logoContainer {
     display: flex;
     justify-content: center;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
 }
 
 .logoFooter {
-    height: 40vh;
-    width: 40vh;
+    height: 30vh;
+    width: 30vh;
 }
 
 .ulFooter {
@@ -41,8 +41,8 @@
 
 
 .logoSocialMedia {
-    height: 10vh;
-    width: 10vh;
+    height: 8vh;
+    width: 8vh;
 }
 
 .liCgu {
@@ -73,8 +73,3 @@
     width: 100%;
 }
 
-// .topButton {
-//     height: 100%;
-//     width: 100%;
-//     object-fit: cover;
-// }
