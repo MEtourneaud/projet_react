@@ -30,21 +30,30 @@ h1{
     font-size: $font-size-text
 }
 
+.button-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; /* Espace entre les boutons */
+  }
+
 .library-button {
     @include button;
-    position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
 }
 
 .library-button:hover {
     @include button-hover;
 }
 
-.left-button1 {
-    left: 30%; /* Ajuster la position du bouton gauche si nécessaire */
-}
-
-.right-button1 {
-    right: 30%; /* Ajuster la position du bouton droit si nécessaire */
-}
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Les boutons sont affichés en colonne */
+        gap: 5px; /* Réduire l'espace entre les boutons */
+    }
+  
+    .slide-button {
+        width: 100%; /* Les boutons prennent toute la largeur disponible */
+    }
+  }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
 import "./WelcomePage.scss"
@@ -13,12 +14,14 @@ const WelcomePage = () => {
           <p>Suivez vos lectures.</p>
           <p>Découvrez de nouvelles œuvres</p>
         </div>
-        <button class="library-button left-button1">
-          <a href="/users/sign_up">Inscris-toi</a>
-        </button>
-        <button class="library-button right-button1">
-          <a href="/users/sign_in">Se connecter</a>
-        </button>
+        <div className="button-container">
+          <Link className="library-button" to={`/users/sign_up`}>
+            Inscris-toi
+          </Link>
+          <Link className="library-button" to={`/users/sign_in`}>
+            Inscris-toi
+          </Link>
+        </div>
       </div>
       <Footer />
     </>

@@ -64,7 +64,10 @@
 
 .buttonContainer{
     margin: 4vw 0 5vw 0;
-    text-align: center
+    text-align: center;
+    display: flex;
+    gap: 10px; /* Espace entre les boutons */
+    justify-content: center;
 }
 
 .mangaButton{
@@ -73,4 +76,15 @@
 
 .mangaButton:hover{
     @include button-hover;
+}
+
+@media (max-width: 1078px) {
+    .buttonContainer {
+        flex-direction: column; /* Les boutons sont affichés en colonne */
+        gap: 5px; /* Réduire l'espace entre les boutons */
+    }
+
+    .mangaButton {
+        width: 80%; /* Les boutons prennent 80% de la largeur disponible */
+    }
 }

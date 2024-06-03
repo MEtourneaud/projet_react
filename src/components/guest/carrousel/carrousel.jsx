@@ -1,5 +1,6 @@
 import React from "react"
 import Slider from "react-slick"
+import { Link } from "react-router-dom"
 
 // Importez les styles de slick-carousel
 import "slick-carousel/slick/slick.css"
@@ -11,7 +12,6 @@ const images = [
   "/assets/images/carrousel/haikyu.jpg",
   "/assets/images/carrousel/gintama.jpg",
   "/assets/images/carrousel/vinlandSaga.jpg",
-  "https://via.placeholder.com/800x400?text=Image+4",
 ]
 
 const Carousel = () => {
@@ -37,10 +37,10 @@ const Carousel = () => {
             {/* Chaque diapositive */}
             <img src={image} alt={`Slide ${index}`} className="carousel-image" />
             {/* Ajout des boutons en bas et au centre */}
-            <div className="button-container">
-              <button className="slide-button left-button">Détails</button>
-              <button className="slide-button right-button">Ajout au profil</button>
-            </div>
+            {/* <div className="button-container">
+              <Link className="slide-button left-button">Détails</Link>
+              <Link className="slide-button right-button">Ajout au profil</Link>
+            </div> */}
           </div>
         ))}
       </Slider>

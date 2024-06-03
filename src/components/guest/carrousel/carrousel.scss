@@ -20,25 +20,6 @@
     object-fit: cover; /* Remplit le cadre sans déformation */
   }
   
-  .button-container {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .slide-button {
-    @include button;
-  }
-  
-  .slide-button:hover {
-    @include button-hover;
-  }
-
-  // .slick-dots li button {
-  //   font-size: 16px; /* Augmentation de la taille de la police */
-  // }
-  
   .slick-dots li button:before {
     content: "•"; /* Utilisation d'un point comme indicateur */
     font-size: 20px; /* Taille du point indicateur */
@@ -48,4 +29,32 @@
   .slick-dots li.slick-active button:before {
     color: $medium-vermillon; /* Couleur du point actif */
   }
+
+//   .button-container {
+//     position: absolute;
+//     bottom: 50px;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     display: flex;
+//     gap: 10px; /* Espace entre les boutons */
+//   }
   
+//   .slide-button {
+//     @include button;
+//   }
+  
+//   .slide-button:hover {
+//     @include button-hover;
+//   }
+
+//   /* Media query pour changer la disposition des boutons à partir d'une certaine taille */
+// @media (max-width: 768px) {
+//   .button-container {
+//       flex-direction: column; /* Les boutons sont affichés en colonne */
+//       gap: 5px; /* Réduire l'espace entre les boutons */
+//   }
+
+//   .slide-button {
+//       width: 100%; /* Les boutons prennent toute la largeur disponible */
+//   }
+// }
