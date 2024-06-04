@@ -55,13 +55,13 @@ const Header = () => {
 
   return (
     <header>
+      <div className="liLogo">
+        <Link to="/home">
+          <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
+        </Link>
+      </div>
       <nav>
         <ul className="ulNav">
-          <li className="liLogo">
-            <Link to="/home">
-              <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
-            </Link>
-          </li>
           <li className="liNav">
             {/* Lien vers la liste des mangas visible uniquement si l'utilisateur est connecté */}
             {isAuthenticated && (
