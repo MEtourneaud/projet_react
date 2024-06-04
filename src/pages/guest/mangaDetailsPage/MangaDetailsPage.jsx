@@ -145,14 +145,16 @@ const MangaDetailsPage = () => {
                 </form>
               </div>
               {reviews ? (
-                <div>
+                <div className="commentContainer">
                   {reviews
                     .filter((review) => review.MangaId === manga.id)
                     .map((review) => (
-                      <article key={review.id}>
-                        <p>Utilisateur : {review.User.username}</p>
-                        <p>Note : {review.rating}</p>
-                        <p>Commentaire : {review.content}</p>
+                      <article className="commentSection" key={review.id}>
+                        <p className="userName">{review.User.username}</p>
+                        <div className="rating">
+                          <StarRating rating={averageRating} />
+                        </div>
+                        <p className="comment">{review.content}</p>
                       </article>
                     ))}
                 </div>
