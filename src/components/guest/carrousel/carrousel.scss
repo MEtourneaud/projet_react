@@ -4,20 +4,21 @@
 
 .carousel-container {
     max-width: 100%; /* Taille maximale du carrousel */
-    height: 90vh; /* Hauteur fixe du carrousel */
+    height: 80vh; /* Hauteur fixe du carrousel */
     overflow: hidden; /* Cache ce qui dépasse */
     margin: auto; /* Centre le carrousel */
   }
   
   .carousel-slide {
     position: relative; /* Permet le positionnement absolu des enfants */
-    height: 80vh; /* Hauteur fixe pour chaque diapositive */
+    height: 70vh; /* Hauteur fixe pour chaque diapositive */
   }
   
   .carousel-image {
     width: 100%; /* Image prend toute la largeur */
     height: 100%; /* Image prend toute la hauteur */
     object-fit: cover; /* Remplit le cadre sans déformation */
+    object-position: 50% 25%;
   }
   
   .slick-dots li button:before {

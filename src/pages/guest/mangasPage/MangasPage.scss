@@ -45,6 +45,11 @@
     margin: 0 2vw 0 2vw;
 }
 
+.break{
+    word-break: break-all;
+    width: 30vh;
+
+}
 .mangasList h3 {
     margin-top: 1em;
     position: relative; /* Nécessaire pour le positionnement du pseudo-élément */

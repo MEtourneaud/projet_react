@@ -105,7 +105,7 @@ const MangaDetailsPage = () => {
                 <div className="ratingContainer">
                   <div className="rating">
                     <StarRating rating={averageRating} />
-                    <span className="ratingValue">{averageRating.toFixed(1)}</span>{" "}
+                    <span className="ratingValue">{averageRating.toFixed(0)}</span>{" "}
                     {/* Affiche la note avec une décimale */}
                   </div>
                 </div>
@@ -131,8 +131,8 @@ const MangaDetailsPage = () => {
 
             {/* <h4>Donnez votre avis</h4> */}
             <div>
-              <div className="formContainer">
-                <form className="form" onSubmit={(event) => handleCreateReview(event, manga.id)}>
+              <div className="formComContainer">
+                <form className="formCom" onSubmit={(event) => handleCreateReview(event, manga.id)}>
                   <label>
                     Note
                     <input type="number" name="rating" />

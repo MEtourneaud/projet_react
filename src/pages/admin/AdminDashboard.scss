@@ -3,12 +3,27 @@
 @import "../../scss/abstracts/mixins";
 
 
-.DashboardContainer{
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.image-admin {
+    position: relative;
+    width: 100%;
+}
+
+.darkened-image {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    display: block;
+    filter: brightness(60%); /* Appliquer un effet sombre */
+    object-position: 50% 5%;
+}
+
+.text-admin {
+    position: absolute;
+    top: 30%; /* Ajuster selon vos besoins */
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    border-radius: 4px;
+    color: $caramel;
+    width: 100%;
+    font-size: $font-size-text
 }

@@ -5,23 +5,88 @@
 @import "../../../scss/components/form";
 
 
+.formComContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1vh 0 1vh 0;
+}
+
+.formCom {
+    background-color: $light-netflix-black;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 60%;
+}
+
+.formCom h2{
+    font-size: $font-size-title;
+    text-align: center;
+}
+
+.formCom label{
+    display: block;
+    margin-top: 1%;
+    font-size: $font-size-form;
+}
+
+.formCom input{
+    display: block;
+    width: 100%;
+    margin-top: 1%;
+    font-size: $font-size-form;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px 0 5px 5px;
+}
+
+.formCom input[type="submit"] {
+    background-color: #dd5d42;
+    color: $caramel;
+    cursor: pointer;
+    border: $border-slide-caramel;
+    margin-top: 3%;
+}
+
+.formCom input[type="submit"]:hover {
+    @include button-hover
+}
+
+.formCom textarea{
+    display: block;
+    width: 100%;
+    margin-top: 1%;
+    font-size: $font-size-form;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 30px 0 5px 5px;
+}
+
 .commentContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 3vh 0 3vh 0;
+    flex-direction: column;
 }
 
 .commentSection{
     background-color: $light-netflix-black;
-    padding: 35px;
+    padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 60%;
     font-size: $font-size-form;
-    padding-bottom: 10vh;
+    margin-top: 1%;
 }
 
 .userName{
     font-weight: bold;
+}
+
+.comment{
+    border: solid 2px $caramel;
+    border-radius: 8px;
+    padding: 2vh;
 }

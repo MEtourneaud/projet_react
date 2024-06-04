@@ -35,7 +35,9 @@ const MangasPage = () => {
                           <div className="listBloc">
                             <img className="listImg" src={manga.imageUrl} alt={manga.title}></img>
                           </div>
-                          <h3>{manga.title}</h3>
+                          <div className="break">
+                            <h3>{manga.title}</h3>
+                          </div>
                         </Link>
                       </article>
                     )

@@ -8,9 +8,12 @@ const AdminDashboard = () => {
   return (
     <>
       <HeaderAdmin />
-      <div className="DashboardContainer">
-        <h1>Bienvenue sur la page d'administration</h1>
-        <img src="/assets/images/logo.png" alt="logo"></img>
+      <div class="image-admin">
+        <img src="/assets/images/admin-gorosei.webp" alt="Library" class="darkened-image"></img>
+        <div class="text-admin">
+          <h1>BIENVENUE</h1>
+          <h1>ADMINISTRATEUR</h1>
+        </div>
       </div>
     </>
   )
