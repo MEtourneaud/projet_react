@@ -19,7 +19,7 @@ const Footer = () => {
           <img className="logoFooter" src="/assets/images/logo.png" alt="logo to top" />
         </a>
       </div>
-      <nav>
+      <div>
         <ul className="ulFooter">
           <li className="liCgu">
             <Link className="hover-foot" to="/cgu">
@@ -68,7 +68,7 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-      </nav>
+      </div>
       <h2 className="copyright">&copy;Les Archives d'Ohara</h2>
     </footer>
   )

@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
     border: 0;
-    list-style-type: none;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -19,4 +18,10 @@ body{
 body a{
     text-decoration: none;
     color: $caramel;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }

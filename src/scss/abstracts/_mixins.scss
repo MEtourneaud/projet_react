@@ -16,7 +16,7 @@
 @mixin hover-nav{
     content: '';
     position: absolute; // pour que l'animation se déroule sous le texte
-    bottom: -2px; // ajuste la position de l'underline
+    bottom: -3px; // ajuste la position de l'underline
     left: 0;
     display: block;
     width: 0;
