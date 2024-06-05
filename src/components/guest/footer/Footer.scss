@@ -78,9 +78,14 @@ color: #FFD38C;
         width: 15vh;
     }
 
-    .ulFooter .liFooter {
+    .ulFooter .liFooter .liCgu {
         margin: 1rem;
         font-size: calc($font-size-form * 0.8);
+
+        .liCgu{
+            text-align: center;
+            font-size: calc($font-size-form * 0.8);
+        }
     }
 
     .ulFooter .logoSocialMedia {
@@ -116,6 +121,10 @@ color: #FFD38C;
             .logoSocialMedia {
                 height: 4vh;
                 width: 4vh;
+            }
+
+            .liCgu{
+                font-size: calc($font-size-form * 0.7);
             }
         }
 
