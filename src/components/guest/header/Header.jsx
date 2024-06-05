@@ -59,72 +59,74 @@ const Header = () => {
   }
 
   return (
-    <nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
-      <div className="liLogo navbar_logo">
-        <Link to="/home">
-          <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
-        </Link>
-      </div>
-      <ul className="navbar_links">
-        <li className="navbar_item slideInDown-1">
-          {/* Lien vers la liste des mangas visible uniquement si l'utilisateur est connecté */}
-          {isAuthenticated && (
-            <Link className="hover-link navbar_link" to="/mangas">
-              Liste des mangas
-            </Link>
-          )}
-        </li>
-        <li className="navbar_item slideInDown-1">
-          {isAuthenticated && (
-            <Link className="hover-link navbar_link" to="/mangas/random">
-              Au hasard
-            </Link>
-          )}
-        </li>
-        <li className="liSpace navbar_item slideInDown-2">
-          {isAuthenticated && (
-            <Link className="hover-link navbar_link" to="/contact">
-              Contact
-            </Link>
-          )}
-        </li>
-        <li className="navbar_item slideInDown-3">
-          {isAuthenticated && (
-            <Link className="hover-link navbar_link" to="/users/profile">
-              Bonjour, {username}
-            </Link>
-          )}
-        </li>
-        <li className="navbar_item slideInDown-4">
-          {isAuthenticated && (hasRole("admin") || hasRole("superadmin")) && (
-            <Link className="hover-link navbar_link" to="/admin/">
-              Administration
-            </Link>
-          )}
-        </li>
-        <li className="navbar_item slideInDown-5">
-          {!isAuthenticated && (
-            <Link className="hover-link navbar_link" to="/users/sign_up">
-              Inscris-toi !
-            </Link>
-          )}
-        </li>
-        <li className="navbar_item slideInDown-6">
-          {isAuthenticated ? (
-            <Link className="hover-link navbar_link" to="#" onClick={handleLogout}>
-              Se déconnecter
-            </Link>
-          ) : (
-            <Link className="hover-link navbar_link" to="/users/sign_in">
-              Se connecter
-            </Link>
-          )}
-        </li>
-      </ul>
-      <button className="navbar_burger" onClick={handleShowLinks}>
-        <span className="burger-bar"></span>
-      </button>
-    </nav>
+    <header>
+      <nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"}`}>
+        <div className="liLogo navbar_logo">
+          <Link to="/home">
+            <img className="logo" src="/assets/images/logo.png" alt="logo"></img>
+          </Link>
+        </div>
+        <ul className="navbar_links">
+          <li className="navbar_item slideInDown-1">
+            {/* Lien vers la liste des mangas visible uniquement si l'utilisateur est connecté */}
+            {isAuthenticated && (
+              <Link className="hover-link navbar_link" to="/mangas">
+                Liste des mangas
+              </Link>
+            )}
+          </li>
+          <li className="navbar_item slideInDown-1">
+            {isAuthenticated && (
+              <Link className="hover-link navbar_link" to="/mangas/random">
+                Au hasard
+              </Link>
+            )}
+          </li>
+          <li className="liSpace navbar_item slideInDown-2">
+            {isAuthenticated && (
+              <Link className="hover-link navbar_link" to="/contact">
+                Contact
+              </Link>
+            )}
+          </li>
+          <li className="navbar_item slideInDown-3">
+            {isAuthenticated && (
+              <Link className="hover-link navbar_link" to="/users/profile">
+                Bonjour, {username}
+              </Link>
+            )}
+          </li>
+          <li className="navbar_item slideInDown-4">
+            {isAuthenticated && (hasRole("admin") || hasRole("superadmin")) && (
+              <Link className="hover-link navbar_link" to="/admin/">
+                Administration
+              </Link>
+            )}
+          </li>
+          <li className="navbar_item slideInDown-5">
+            {!isAuthenticated && (
+              <Link className="hover-link navbar_link" to="/users/sign_up">
+                Inscris-toi !
+              </Link>
+            )}
+          </li>
+          <li className="navbar_item slideInDown-6">
+            {isAuthenticated ? (
+              <Link className="hover-link navbar_link" to="#" onClick={handleLogout}>
+                Se déconnecter
+              </Link>
+            ) : (
+              <Link className="hover-link navbar_link" to="/users/sign_in">
+                Se connecter
+              </Link>
+            )}
+          </li>
+        </ul>
+        <button className="navbar_burger" onClick={handleShowLinks}>
+          <span className="burger-bar"></span>
+        </button>
+      </nav>
+    </header>
   )
 }
 
