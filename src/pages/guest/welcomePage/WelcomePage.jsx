@@ -19,7 +19,7 @@ const WelcomePage = () => {
             Inscris-toi
           </Link>
           <Link className="library-button" to={`/users/sign_in`}>
-            Inscris-toi
+            Connecte-toi
           </Link>
         </div>
       </div>

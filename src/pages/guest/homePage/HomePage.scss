@@ -39,11 +39,6 @@
     transform: scaleX(1); /* Animation du soulignement de gauche à droite */
 }
 
-// .square-left:hover,
-// .square-right :hover {
-//     font-size: $hover-bigger-star;
-// }
-
 /* Contrôle de l'image */
 .imgBloc {
   position: relative; /* Permet le positionnement absolu */
@@ -57,3 +52,24 @@
   object-fit: cover; /* Pour s'assurer que l'image couvre tout le conteneur */
 }
 
+@media screen and (max-width: 1520px) {
+  .square-left h3,
+  .square-right h3 {
+    word-break: keep-all
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .square-left h3,
+  .square-right h3 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .square-left h3,
+  .square-right h3 {
+    font-size: 20px;
+  }
+}

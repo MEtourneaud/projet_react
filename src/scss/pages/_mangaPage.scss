@@ -83,9 +83,27 @@
     .buttonContainer {
         flex-direction: column; /* Les boutons sont affichés en colonne */
         gap: 5px; /* Réduire l'espace entre les boutons */
+        align-items: center
     }
 
-    .mangaButton {
-        width: 80%; /* Les boutons prennent 80% de la largeur disponible */
+    // .mangaButton {
+    //     width: 50%; /* Les boutons prennent 80% de la largeur disponible */
+    // }
+}
+
+@media (max-width: 425px) {
+    .mangaArticle {
+        flex-direction: column; /* Change la direction de flex à colonne pour les petits écrans */
+        align-items: center; /* Centre les éléments horizontalement */
+        text-align: center; /* Centre le texte */
+    }
+
+    .textBloc {
+        margin-left: 0; /* Supprime la marge gauche */
+        margin-top: 20px; /* Ajoute une marge en haut pour séparer l'image du texte */
+    }
+
+    .buttonContainer {
+        width: 100%; /* Assure que le conteneur prend toute la largeur disponible */
     }
 }
