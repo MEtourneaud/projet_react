@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-// import Footer from "../../../components/guest/footer/Footer"
 import Header from "../../../components/guest/header/Header"
 import "./RegisterPage.scss"
 
@@ -8,25 +7,30 @@ const RegisterPage = () => {
   const [message, setMessage] = useState(null)
   const navigate = useNavigate()
 
+  // Fonction appelée lors de la soumission du formulaire d'inscription
   const handleRegistration = async (event) => {
-    event.preventDefault()
+    event.preventDefault() // Empêche le rechargement de la page
+    // Récupérer les valeurs du formulaire
     const username = event.target.username.value
     const password = event.target.password.value
     const confirmPassword = event.target.confirmPassword.value
 
+    // Vérifie si les mots de passe correspondent
     if (password !== confirmPassword) {
       setMessage(`Le mot de passe ne correspond pas.`)
       return
     }
 
+    // Crée l'objet de données d'inscription
     const registerData = {
       username: username,
       password: password,
-      RoleId: 3,
+      RoleId: 3, // Définit le rôle par défaut à 3 (utilisateur)
     }
 
-    const registerDataJson = JSON.stringify(registerData)
+    const registerDataJson = JSON.stringify(registerData) // Convertit l'objet en JSON
 
+    // Envoie la requête POST à l'API pour l'enregistrement
     const registerResponse = await fetch("http://localhost:3000/api/users", {
       method: "POST",
       headers: {
@@ -36,10 +40,11 @@ const RegisterPage = () => {
     })
 
     if (registerResponse.status === 201) {
-      setMessage("Vous vous êtes bien enregistré")
+      window.alert("Vous vous êtes bien enregistré")
       navigate("/users/sign_in")
     } else {
-      setMessage("Erreur lors de l'enregistrement")
+      const responseData = await registerResponse.json()
+      window.alert(`Erreur lors de l'enregistrement : ${responseData.message}`)
     }
   }
 

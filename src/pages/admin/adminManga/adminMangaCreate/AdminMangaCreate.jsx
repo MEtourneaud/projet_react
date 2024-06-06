@@ -1,12 +1,9 @@
-import { useState } from "react"
 import { useVerifyIfUserIsLogged } from "../../../../utils/security-utils"
 import HeaderAdmin from "../../../../components/admin/HeaderAdmin"
 import "./AdminMangaCreate.scss"
 
 const AdminMangaCreate = () => {
   useVerifyIfUserIsLogged()
-
-  const [message, setMessage] = useState(null)
 
   const handleCreateManga = async (event) => {
     event.preventDefault()
@@ -59,7 +56,7 @@ const AdminMangaCreate = () => {
       }
     } catch (error) {
       console.error("Error parsing JSON response:", error)
-      setMessage("Erreur lors de la communication avec le serveur.")
+      alert("Erreur lors de la communication avec le serveur.")
     }
   }
 
@@ -67,7 +64,6 @@ const AdminMangaCreate = () => {
     <>
       <HeaderAdmin />
       <section className="adminMangaCreate">
-        {message && <p>{message}</p>}
         <div className="formContainer">
           <form className="form" onSubmit={handleCreateManga}>
             <div>

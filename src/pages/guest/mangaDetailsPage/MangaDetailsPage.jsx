@@ -105,7 +105,7 @@ const MangaDetailsPage = () => {
                 <div className="ratingContainer">
                   <div className="rating">
                     <StarRating rating={averageRating} />
-                    <span className="ratingValue">{averageRating.toFixed(0)}</span>{" "}
+                    <span className="ratingValue">{averageRating.toFixed(1)}</span>{" "}
                     {/* Affiche la note avec une décimale */}
                   </div>
                 </div>

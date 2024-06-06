@@ -1,6 +1,5 @@
 import React from "react"
 import Slider from "react-slick"
-import { Link } from "react-router-dom"
 
 // Importez les styles de slick-carousel
 import "slick-carousel/slick/slick.css"
@@ -17,13 +16,13 @@ const images = [
 const Carousel = () => {
   // Configuration du carrousel
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 3000, // Changer la vitesse d'autoplay
+    dots: true, // Afficher les points de navigation
+    infinite: true, // Faire défiler en boucle
+    speed: 500, // Vitesse de défilement (en ms)
+    slidesToShow: 1, // Nombre de diapositives affichées à la fois
+    slidesToScroll: 1, // Nombre de diapositives défilées à la fois
+    autoplay: true, // Activer le défilement automatique
+    autoplaySpeed: 3000, // Vitesse du défilement automatique (en ms)
   }
 
   return (
@@ -36,7 +35,6 @@ const Carousel = () => {
             {" "}
             {/* Chaque diapositive */}
             <img src={image} alt={`Slide ${index}`} className="carousel-image" />
-            {/* Ajout des boutons en bas et au centre */}
             {/* <div className="button-container">
               <Link className="slide-button left-button">Détails</Link>
               <Link className="slide-button right-button">Ajout au profil</Link>

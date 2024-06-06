@@ -9,7 +9,7 @@ const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("jwt") !== null)
   const [username, setUsername] = useState("") // État pour le nom d'utilisateur
   const [userRoles, setUserRoles] = useState([]) // Stocker les rôles
-  const [showLinks, setShowLinks] = useState(false)
+  const [showLinks, setShowLinks] = useState(false) // État pour afficher ou masquer les liens de navigation
 
   // Fonction appelée lors du clic sur le bouton de déconnexion
   const handleLogout = () => {
@@ -23,7 +23,7 @@ const Header = () => {
   useEffect(() => {
     console.log("Chemin actuel:", window.location.pathname)
     // Détermine si la route actuelle est publique (non soumise à l'authentification)
-    const publicRoutes = ["/", "/contact", "/users/sign_up", "/users/sign_in"]
+    const publicRoutes = ["/", "/contact", "/cgu", "/mangas", "/users/sign_up", "/users/sign_in"]
     console.log("Routes publiques:", publicRoutes)
 
     // Redirige vers la page de connexion si l'utilisateur n'est pas authentifié
@@ -54,6 +54,7 @@ const Header = () => {
     return userRoles.includes(role) // Vérifier si l'utilisateur a un rôle spécifique
   }
 
+  // Bascule l'état de showLinks entre true et false pour afficher ou masquer les liens de navigation
   const handleShowLinks = () => {
     setShowLinks(!showLinks)
   }
@@ -67,14 +68,13 @@ const Header = () => {
           </Link>
         </div>
         <ul className="navbar_links">
+          {/* Lien vers la liste des mangas visible par tous les utilisateurs */}
           <li className="navbar_item slideInDown-1">
-            {/* Lien vers la liste des mangas visible uniquement si l'utilisateur est connecté */}
-            {isAuthenticated && (
-              <Link className="hover-link navbar_link" to="/mangas">
-                Liste des mangas
-              </Link>
-            )}
+            <Link className="hover-link navbar_link" to="/mangas">
+              Liste des mangas
+            </Link>
           </li>
+          {/* Lien vers une page aléatoire de manga visible uniquement si l'utilisateur est connecté */}
           <li className="navbar_item slideInDown-1">
             {isAuthenticated && (
               <Link className="hover-link navbar_link" to="/mangas/random">
@@ -82,6 +82,7 @@ const Header = () => {
               </Link>
             )}
           </li>
+          {/* Lien vers la page de contact visible uniquement si l'utilisateur est connecté */}
           <li className="liSpace navbar_item slideInDown-2">
             {isAuthenticated && (
               <Link className="hover-link navbar_link" to="/contact">
@@ -89,6 +90,7 @@ const Header = () => {
               </Link>
             )}
           </li>
+          {/* Affiche le nom d'utilisateur si l'utilisateur est connecté et renvoie vers la page de profil*/}
           <li className="navbar_item slideInDown-3">
             {isAuthenticated && (
               <Link className="hover-link navbar_link" to="/users/profile">
@@ -96,6 +98,7 @@ const Header = () => {
               </Link>
             )}
           </li>
+          {/* Lien vers l'administration visible uniquement pour les utilisateurs ayant les rôles admin ou superadmin */}
           <li className="navbar_item slideInDown-4">
             {isAuthenticated && (hasRole("admin") || hasRole("superadmin")) && (
               <Link className="hover-link navbar_link" to="/admin/">
@@ -103,6 +106,7 @@ const Header = () => {
               </Link>
             )}
           </li>
+          {/* Lien vers la page d'inscription visible uniquement si l'utilisateur n'est pas connecté */}
           <li className="navbar_item slideInDown-5">
             {!isAuthenticated && (
               <Link className="hover-link navbar_link" to="/users/sign_up">
@@ -110,6 +114,7 @@ const Header = () => {
               </Link>
             )}
           </li>
+          {/* Lien pour se déconnecter si l'utilisateur est connecté, sinon lien pour se connecter */}
           <li className="navbar_item slideInDown-6">
             {isAuthenticated ? (
               <Link className="hover-link navbar_link" to="#" onClick={handleLogout}>
@@ -122,6 +127,7 @@ const Header = () => {
             )}
           </li>
         </ul>
+        {/* Bouton pour afficher ou masquer le menu burger */}
         <button className="navbar_burger" onClick={handleShowLinks}>
           <span className="burger-bar"></span>
         </button>
