@@ -5,7 +5,6 @@
   justify-content: space-between;
   width: 100%;
   min-height: 75px;
-  padding: 1rem;
   background-color: $netflix-black;
   font-size: $font-size-form;
   z-index: 1000; /* Ajout d'un z-index élevé */
@@ -25,6 +24,8 @@
   background-color: transparent;
   color: $caramel;
   z-index: 1001; /* Assurez-vous que le bouton burger est au-dessus du menu */
+  position: relative; /* Ajoutez cette ligne si nécessaire */
+  right: 10px; /* Déplacez-le légèrement vers la gauche */
 }
 
 .liLogo {
@@ -61,7 +62,6 @@
     bottom: 0;
     width: 0;
     height: 100%;
-    padding: 2rem;
     visibility: hidden;
     background-color: $netflix-black;
     transition: all 0.8s ease-out;
@@ -82,7 +82,7 @@
 
   .navbar_burger {
     display: block;
-    position: fixed;
+    // position: fixed;
     top: 1rem;
     right: 1rem;
   }
