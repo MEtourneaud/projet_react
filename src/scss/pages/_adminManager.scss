@@ -1,5 +1,5 @@
 .admin-container {
-    max-width: 800px;
+    max-width: 80vw;
     margin: 20px auto;
     padding: 20px;
     background-color: $light-netflix-black;
@@ -36,3 +36,11 @@
 .admin-container button:hover {
  @include button-hover
 }
+
+
+// @media screen and (max-width: 375px) {
+//   .square-left h3,
+//   .square-right h3 {
+//     font-size: $font-size-text;
+//   }
+// }

@@ -25,5 +25,14 @@
     text-align: center;
     color: $caramel;
     width: 100%;
-    font-size: $font-size-text
+    font-size: $font-size-title
 }
+
+@media screen and (max-width: 425px) {
+    .text-admin {
+      font-size: 30px;
+    }
+
+}
+  
+  
