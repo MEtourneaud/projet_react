@@ -135,7 +135,7 @@ const MangaDetailsPage = () => {
                 <form className="formCom" onSubmit={(event) => handleCreateReview(event, manga.id)}>
                   <label>
                     Note
-                    <input type="number" name="rating" />
+                    <input type="number" name="rating" min="0" max="5" />
                   </label>
                   <label>
                     Commentaire

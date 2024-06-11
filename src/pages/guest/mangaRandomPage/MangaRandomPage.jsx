@@ -21,6 +21,10 @@ const MangaRandomPage = () => {
       ? randomManga[Math.floor(Math.random() * randomManga.length)]
       : null
 
+  function refreshPage() {
+    window.location.reload()
+  }
+
   return (
     <>
       <Header />
@@ -36,6 +40,11 @@ const MangaRandomPage = () => {
           </div>
           <div className="textBloc">
             <h3>{randomMangaIndex.title}</h3>
+            <div className="buttonContainer">
+              <Link className="mangaButton" onClick={refreshPage} to="/mangas/random">
+                Encore une fois !
+              </Link>
+            </div>
             <p>
               <span>Auteur:</span> {randomMangaIndex.author}
             </p>
