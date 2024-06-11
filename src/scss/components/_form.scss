@@ -22,7 +22,6 @@
     display: block;
     margin-top: 3%;
     font-size: $font-size-form;
-    
 }
 
 .form input{
@@ -65,3 +64,11 @@
     font-size: $font-size-text;
 }
 
+@media screen and (max-width: 425px) {
+    .form input{
+        font-size: 4.5vw;
+    }
+    .form textarea{
+        font-size: 4.5vw;
+    }
+}
