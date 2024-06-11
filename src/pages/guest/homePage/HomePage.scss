@@ -63,7 +63,7 @@
 @media screen and (max-width: 550px) {
   .square-left h3,
   .square-right h3 {
-    font-size: 20px;
+    font-size: $font-size-text;
     text-align: center;
   }
 }
@@ -71,6 +71,6 @@
 @media screen and (max-width: 375px) {
   .square-left h3,
   .square-right h3 {
-    font-size: 20px;
+    font-size: $font-size-text;
   }
 }

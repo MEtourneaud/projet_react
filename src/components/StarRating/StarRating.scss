@@ -4,32 +4,32 @@
 }
 
 .starRating span {
-font-weight: bold; /* Pour rendre les étoiles plus visibles */
-margin-right: 5px; /* Ajoute de l'espace entre les étoiles */
+  font-weight: bold; /* Pour rendre les étoiles plus visibles */
+  margin-right: 5px; /* Ajoute de l'espace entre les étoiles */
 }
 
 .full-star {
-background: radial-gradient(circle at 50% 55%, gold 10%, #dd5d42 40%, transparent 100%);
--webkit-background-clip: text;
-color: transparent; /* Le texte doit être transparent pour voir le dégradé */
+  background: radial-gradient(circle at 50% 55%, gold 10%, #dd5d42 40%, transparent 100%);
+  -webkit-background-clip: text;
+  color: transparent; /* Le texte doit être transparent pour voir le dégradé */
 }
 
 .half-star {
-position: relative;
-color: transparent;
-background: none;
+  position: relative;
+  color: transparent;
+  background: none;
 }
 
 .half-star::before {
-content: '★';
-background: radial-gradient(circle at 50% 55%, gold 10%, #dd5d42 40%, transparent 100%);
--webkit-background-clip: text;
-color: transparent;
-position: absolute;
-width: 50%; /* Largeur de la demi-étoile */
-overflow: hidden;
-left: 0;
-top: 0;
+  content: '★';
+  background: radial-gradient(circle at 50% 55%, gold 10%, #dd5d42 40%, transparent 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  position: absolute;
+  width: 50%; /* Largeur de la demi-étoile */
+  overflow: hidden;
+  left: 0;
+  top: 0;
 }
 
 @media screen and (max-width: 690px) {
