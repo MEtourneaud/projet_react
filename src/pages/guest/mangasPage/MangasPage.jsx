@@ -30,7 +30,7 @@ const MangasPage = () => {
                 <>
                   {mangas.map((manga) => {
                     return (
-                      <article>
+                      <article key={manga.id}>
                         <Link to={`/mangas/details/${manga.id}`}>
                           <div className="listBloc">
                             <img className="listImg" src={manga.imageUrl} alt={manga.title}></img>

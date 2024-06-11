@@ -42,51 +42,49 @@ const MangaDetailsPage = () => {
     fetchData()
   }, [mangaId])
 
-  // je créé une fonction, qui récupère un  id de manga et qui va créer sur l'api une review
+  // Fonction pour créer une review
   const handleCreateReview = async (event, mangaId) => {
     event.preventDefault()
 
-    // je récupère les valeurs du formulaire
+    if (!token) {
+      alert("Vous devez être connecté pour laisser un commentaire.")
+      return
+    }
+
+    // Récupère les valeurs du formulaire
     const content = event.target.content.value
     const rating = event.target.rating.value
 
-    // je créé un objet avec les valeurs du formulaire
+    // Crée un objet avec les valeurs du formulaire
     const reviewToCreate = {
       content: content,
       rating: rating,
-      // + l'id du manga passé en parametre
       MangaId: mangaId,
     }
     console.log(reviewToCreate)
 
-    // je transforme en JSON mon objet
+    // Transforme en JSON l'objet
     const reviewToCreateJson = JSON.stringify(reviewToCreate)
 
-    // je fais mon appel fetch sur la création d'une review
-
+    // Fait un appel fetch pour créer une review
     try {
       const reviewResponse = await fetch("http://localhost:3000/api/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // en passant le token en authorization
           Authorization: "Bearer " + token,
         },
-        // et le json avec les données du form (et l'id du manga)
         body: reviewToCreateJson,
       })
       console.log(reviewToCreate)
-      //on teste la réponse via un boolen si réponse ou si pas de réponse via le .ok
       if (reviewResponse.ok) {
-        //la fonction alert permet de comuniquer un résultat
         alert("Commentaire créé.")
-
         window.location.reload()
       } else {
-        alert("Le commentaire n'as pus être créé. Veuillez réessayer. ")
+        alert("Le commentaire n'a pas pu être créé. Veuillez réessayer.")
       }
     } catch (error) {
-      alert("Une erreur est survenue. Veullez réessayer")
+      alert("Une erreur est survenue. Veuillez réessayer.")
     }
   }
 
@@ -105,8 +103,7 @@ const MangaDetailsPage = () => {
                 <div className="ratingContainer">
                   <div className="rating">
                     <StarRating rating={averageRating} />
-                    <span className="ratingValue">{averageRating.toFixed(1)}</span>{" "}
-                    {/* Affiche la note avec une décimale */}
+                    <span className="ratingValue">{averageRating.toFixed(1)}</span>
                   </div>
                 </div>
                 <p>
@@ -131,19 +128,31 @@ const MangaDetailsPage = () => {
 
             <h3 className="reviewTitle">Donnez votre avis</h3>
             <div>
-              <div className="formComContainer">
-                <form className="formCom" onSubmit={(event) => handleCreateReview(event, manga.id)}>
-                  <label>
-                    Note
-                    <input type="number" name="rating" min="0" max="5" />
-                  </label>
-                  <label>
-                    Commentaire
-                    <textarea type="text" name="content" />
-                  </label>
-                  <input type="submit" />
-                </form>
-              </div>
+              {token ? (
+                <div className="formComContainer">
+                  <form
+                    className="formCom"
+                    onSubmit={(event) => handleCreateReview(event, manga.id)}
+                  >
+                    <label>
+                      Note
+                      <input type="number" name="rating" min="0" max="5" />
+                    </label>
+                    <label>
+                      Commentaire
+                      <textarea type="text" name="content" />
+                    </label>
+                    <input type="submit" />
+                  </form>
+                </div>
+              ) : (
+                <>
+                  <p>Vous devez être connecté pour laisser un avis.</p>
+                  <Link className="hover-link navbar_link" to="/users/sign_in">
+                    Connecte-toi !
+                  </Link>
+                </>
+              )}
               {reviews ? (
                 <div className="commentContainer">
                   {reviews
@@ -152,7 +161,7 @@ const MangaDetailsPage = () => {
                       <article className="commentSection" key={review.id}>
                         <p className="userName">{review.User.username}</p>
                         <div className="rating">
-                          <StarRating rating={averageRating} />
+                          <StarRating rating={review.rating} />
                         </div>
                         <p className="comment">{review.content}</p>
                       </article>
