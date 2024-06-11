@@ -8,7 +8,7 @@ padding-top: 3vh;
 display: flex;
 flex-direction: column;
 align-items: center;
-color: #FFD38C;
+color: $caramel;
 
 .logoContainer {
     display: flex;
@@ -43,7 +43,6 @@ color: #FFD38C;
     }
 
     .liCgu, .liYoutube {
-        margin-right: auto;
         margin-left: 2vw;
         font-size: $font-size-form;
     }
