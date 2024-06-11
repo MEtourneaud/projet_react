@@ -89,4 +89,13 @@
     border: solid 2px $caramel;
     border-radius: 8px;
     padding: 2vh;
+    word-break: break-all;
+}
+
+
+.reviewTitle{
+    text-align: center;
+    font-size: $font-size-subtitle;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
 }

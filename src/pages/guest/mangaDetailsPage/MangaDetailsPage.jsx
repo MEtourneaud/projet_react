@@ -129,7 +129,7 @@ const MangaDetailsPage = () => {
               </div>
             </article>
 
-            {/* <h4>Donnez votre avis</h4> */}
+            <h3 className="reviewTitle">Donnez votre avis</h3>
             <div>
               <div className="formComContainer">
                 <form className="formCom" onSubmit={(event) => handleCreateReview(event, manga.id)}>
