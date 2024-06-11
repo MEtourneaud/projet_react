@@ -42,7 +42,7 @@ const MangaRandomPage = () => {
             <h3>{randomMangaIndex.title}</h3>
             <div className="buttonContainer">
               <Link className="mangaButton" onClick={refreshPage} to="/mangas/random">
-                Encore une fois !
+                Nouvelle proposition
               </Link>
             </div>
             <p>
