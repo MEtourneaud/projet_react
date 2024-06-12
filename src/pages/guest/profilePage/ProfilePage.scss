@@ -1,0 +1,11 @@
+.constructionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.construction {
+    max-width: 50%; /* Adjust the max-width as needed */
+    height: auto; /* Maintain the aspect ratio */
+}
+  
