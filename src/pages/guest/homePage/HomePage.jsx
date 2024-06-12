@@ -76,16 +76,16 @@ const HomePage = () => {
                   const squareClass = index % 2 === 0 ? "square-right" : "square-left"
                   return (
                     <article key={manga.id}>
-                      <Link to={`/mangas/details/${manga.id}`}>
-                        <div className="imgBloc">
-                          <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
-                          <div className={squareClass}>
+                      <div className="imgBloc">
+                        <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
+                        <div className={squareClass}>
+                          <Link to={`/mangas/details/${manga.id}`}>
                             <h3>{manga.title}</h3>
                             {/* Les étoiles sous le titre, dans le même conteneur */}
                             <StarRating className="starRating" rating={manga.averageRating} />
-                          </div>
+                          </Link>
                         </div>
-                      </Link>
+                      </div>
                     </article>
                   )
                 })}
@@ -105,15 +105,15 @@ const HomePage = () => {
                 const squareClass = index % 2 === 0 ? "square-right" : "square-left"
                 return (
                   <article key={manga.id}>
-                    <Link to={`/mangas/details/${manga.id}`}>
-                      <div className="imgBloc">
-                        <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
-                        <div className={squareClass}>
+                    <div className="imgBloc">
+                      <img className="mangaImg" src={manga.imageUrl} alt={manga.title} />
+                      <div className={squareClass}>
+                        <Link to={`/mangas/details/${manga.id}`}>
                           <h3>{manga.title}</h3>
                           <StarRating className="starRating" rating={manga.averageRating} />
-                        </div>
+                        </Link>
                       </div>
-                    </Link>
+                    </div>
                   </article>
                 )
               })
