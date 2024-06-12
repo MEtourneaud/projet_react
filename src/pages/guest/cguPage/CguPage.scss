@@ -9,4 +9,13 @@
 
 .cguContainer p{
     font-size: $font-size-text;
+    margin-bottom: 1vh;
+}
+
+.cguContainer h2{
+    @include h2
+}
+
+.cguContainer h3{
+    margin-bottom: 1vh;
 }
