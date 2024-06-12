@@ -11,6 +11,7 @@ const MangaDetailsPage = () => {
   const [manga, setManga] = useState(null)
   const [reviews, setReviews] = useState(null)
   const [averageRating, setAverageRating] = useState(0) // Ajout de l'état pour la moyenne des notes
+  const [message, setMessage] = useState(null) // État pour gérer les messages
   const token = localStorage.getItem("jwt")
 
   useEffect(() => {
@@ -47,7 +48,7 @@ const MangaDetailsPage = () => {
     event.preventDefault()
 
     if (!token) {
-      alert("Vous devez être connecté pour laisser un commentaire.")
+      setMessage("Vous devez être connecté pour laisser un commentaire.")
       return
     }
 
@@ -78,13 +79,13 @@ const MangaDetailsPage = () => {
       })
       console.log(reviewToCreate)
       if (reviewResponse.ok) {
-        alert("Commentaire créé.")
+        setMessage("Commentaire créé.")
         window.location.reload()
       } else {
-        alert("Le commentaire n'a pas pu être créé. Veuillez réessayer.")
+        setMessage("Le commentaire n'a pas pu être créé. Veuillez réessayer.")
       }
     } catch (error) {
-      alert("Une erreur est survenue. Veuillez réessayer.")
+      setMessage("Une erreur est survenue. Veuillez réessayer. Un avis par utilisateur")
     }
   }
 
@@ -159,6 +160,7 @@ const MangaDetailsPage = () => {
                     .filter((review) => review.MangaId === manga.id)
                     .map((review) => (
                       <article className="commentSection" key={review.id}>
+                        {message && <p className="message">{message}</p>}
                         <p className="userName">{review.User.username}</p>
                         <div className="rating">
                           <StarRating rating={review.rating} />
