@@ -1,3 +1,7 @@
+.randomPage{
+    @include h2
+}
+
 .mangaArticle {
     display: flex;
     align-items: flex-start; /* Aligne les éléments au début verticalement */
@@ -79,6 +83,32 @@
     @include button-hover;
 }
 
+.randomContainer{
+    margin: 1vw 0 5vw 0;
+    text-align: center;
+    display: flex;
+    gap: 10px; /* Espace entre les boutons */
+    justify-content: center;
+}
+
+.randomButton{
+    width: 200px; /* Largeur minimale */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    padding: 20px 40px;
+    color: $caramel;
+    background: $medium-vermillon;
+    border: $border-slide-caramel;
+    border-radius: 50px;
+    text-align: center;
+    margin: 10px;
+    font-size: $font-size-text;
+    cursor: pointer;
+}
+
+.randomButton:hover{
+    @include button-hover;
+}
+
 @media (max-width: 1078px) {
     .buttonContainer {
         flex-direction: column; /* Les boutons sont affichés en colonne */
@@ -107,3 +137,4 @@
         width: 100%; /* Assure que le conteneur prend toute la largeur disponible */
     }
 }
+

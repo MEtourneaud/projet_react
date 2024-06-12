@@ -40,8 +40,8 @@ const MangaRandomPage = () => {
           </div>
           <div className="textBloc">
             <h3>{randomMangaIndex.title}</h3>
-            <div className="buttonContainer">
-              <Link className="mangaButton" onClick={refreshPage} to="/mangas/random">
+            <div className="randomContainer">
+              <Link className="randomButton" onClick={refreshPage} to="/mangas/random">
                 Nouvelle proposition
               </Link>
             </div>
