@@ -91,7 +91,7 @@ const RegisterPage = () => {
           <input type="submit" />
           <div className="formLink">
             <Link className="hover-link" to="/users/sign_in">
-              Se connecter !
+              Connectez-vous !
             </Link>
           </div>
         </form>

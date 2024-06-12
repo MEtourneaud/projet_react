@@ -99,3 +99,18 @@
     margin-top: 1vh;
     margin-bottom: 5vh;
 }
+
+.logToComcontainer {
+    display: flex;
+    justify-content: center;
+}
+  
+.logToCom {
+    text-align: center;
+    font-size: $font-size-text;
+}
+
+.logToCom p{
+    margin-bottom: 1vh;
+}
+  

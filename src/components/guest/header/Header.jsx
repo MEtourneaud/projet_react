@@ -105,18 +105,18 @@ const Header = () => {
           <li className="navbar_item slideInDown-5">
             {!isAuthenticated && (
               <Link className="hover-link navbar_link" to="/users/sign_up">
-                Inscris-toi !
+                Inscription
               </Link>
             )}
           </li>
           <li className="navbar_item slideInDown-6">
             {isAuthenticated ? (
               <Link className="hover-link navbar_link" to="#" onClick={handleLogout}>
-                Se déconnecter
+                Déconnexion
               </Link>
             ) : (
               <Link className="hover-link navbar_link" to="/users/sign_in">
-                Se connecter
+                Connexion
               </Link>
             )}
           </li>

@@ -147,12 +147,14 @@ const MangaDetailsPage = () => {
                   </form>
                 </div>
               ) : (
-                <>
-                  <p>Vous devez être connecté pour laisser un avis.</p>
-                  <Link className="hover-link navbar_link" to="/users/sign_in">
-                    Connecte-toi !
-                  </Link>
-                </>
+                <div class="logToComcontainer">
+                  <div class="logToCom">
+                    <p>Vous devez être connecté pour laisser un avis.</p>
+                    <Link className="hover-link navbar_link" to="/users/sign_in">
+                      Connecte-toi !
+                    </Link>
+                  </div>
+                </div>
               )}
               {reviews ? (
                 <div className="commentContainer">

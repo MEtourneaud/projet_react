@@ -101,12 +101,11 @@ const LoginPage = () => {
           <input type="submit" />
           <div className="formLink">
             <Link className="hover-link" to="/users/sign_up">
-              Inscris-toi !
+              Inscrivez-vous !
             </Link>
           </div>
         </form>
       </div>
-      {/* <Footer /> */}
     </>
   )
 }

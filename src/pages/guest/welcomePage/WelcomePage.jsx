@@ -16,10 +16,10 @@ const WelcomePage = () => {
         </div>
         <div className="button-container">
           <Link className="library-button" to={`/users/sign_up`}>
-            Inscris-toi
+            Inscrivez-vous
           </Link>
           <Link className="library-button" to={`/users/sign_in`}>
-            Connecte-toi
+            Connectez-vous
           </Link>
         </div>
       </div>

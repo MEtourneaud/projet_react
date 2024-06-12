@@ -52,7 +52,7 @@ const HeaderAdmin = () => {
           </li>
           <li className="navbar_item slideInDown-1">
             <Link className="hover-link navbar_link" onClick={handleLogout}>
-              Se déconnecter
+              Déconnexion
             </Link>
           </li>
         </ul>

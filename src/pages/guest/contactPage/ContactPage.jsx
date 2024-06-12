@@ -57,13 +57,13 @@ const ContactPage = () => {
             <input
               type="text"
               name="username"
-              placeholder="Entrer votre nom d'utilisateur"
+              placeholder="Entrez votre nom d'utilisateur"
               required
             />
           </label>
           <label>
             Adresse e-mail
-            <input type="email" name="email" placeholder="Entrer votre adresse e-mail" required />
+            <input type="email" name="email" placeholder="Entrez votre adresse e-mail" required />
           </label>
           <label>
             Message
