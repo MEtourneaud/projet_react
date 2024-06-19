@@ -69,7 +69,7 @@ const ContactPage = () => {
             Message
             <textarea type="text" name="content" placeholder="Écrivez votre message" required />
           </label>
-          <input type="submit" value="Send" />
+          <input type="submit" value="Envoyer" />
         </form>
       </div>
       <Footer />
