@@ -8,6 +8,7 @@ import "./LoginPage.scss"
 
 const LoginPage = () => {
   const [message, setMessage] = useState(null) // État pour gérer les messages
+  // eslint-disable-next-line
   const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem("jwt") !== null)
   const navigate = useNavigate()
 

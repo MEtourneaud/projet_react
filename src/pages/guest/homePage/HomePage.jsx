@@ -10,6 +10,7 @@ const HomePage = () => {
   // useState permet de stocker dans une variable et donner par défaut la valeur "null" et l'utilisera au premier chargement du composant
   // Aux chargements suivants, il prendra la valeur stocké dans le composant
   const [mangas, setMangas] = useState(null)
+  // eslint-disable-next-line
   const [reviews, setReviews] = useState(null)
   const [topRatedMangas, setTopRatedMangas] = useState(null)
 
